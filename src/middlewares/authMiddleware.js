@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { LOG_IN, saveUser } from 'src/actions/auth';
 
-const API_URL = 'http://ec2-3-85-110-30.compute-1.amazonaws.com/OnTheSpot-Unofficial/Backend/public/api/user';
+const API_URL = 'http://localhost:3001';
 
 const authMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware auth: ', action);
