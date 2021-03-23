@@ -8,6 +8,7 @@ import Products from 'src/components/Products';
 import CGU from 'src/components/CGU';
 import Product from 'src/components/Product';
 import Contact from 'src/components/Contact';
+import CGV from 'src/components/CGV';
 
 const Page = () => (
   <div className="page">
@@ -25,6 +26,9 @@ const Page = () => (
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="/cgv">
+          <CGV />
         </Route>
         <Route path="/">
           <div>HomePage</div>
