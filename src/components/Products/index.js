@@ -14,7 +14,7 @@ const Products = () => (
 
   <div className="product-listElements">
     <div className="product-name">
-      <Link to="/product">
+      <Link to="/product/">
         <p>canette coco-cola</p>
       </Link>
 
