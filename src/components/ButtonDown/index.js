@@ -3,18 +3,12 @@ import React from 'react';
 
 import './button-down.scss';
 
-const ButtonDown = () => {
- 
-
-  return (
-    <button
-      className="button-down"
-      type="button"
-      
-    >-
-    </button>
-  );
-};
-
+const ButtonDown = () => (
+  <button
+    className="button-down"
+    type="button"
+  >-
+  </button>
+);
 
 export default ButtonDown;

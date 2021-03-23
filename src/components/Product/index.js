@@ -1,23 +1,16 @@
 import React from 'react';
 /* import PropTypes from 'prop-types'; */
-/* import Product from 'src/components/Product'; */
-
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
-
-import { Link } from 'react-router-dom';
 import product from '../../assets/images/pictures-size-small-77x77/can-coca 44x77.png';
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
-import './products.scss';
+import './product.scss';
 
-const Products = () => (
+const Product = () => (
 
-  <div className="product-listElements">
+  <div className="product-element">
     <div className="product-name">
-      <Link to="/product">
-        <p>canette coco-cola</p>
-      </Link>
-
+      <h3>canette coco-cola</h3>
     </div>
     <div className="price">
       <p>2€</p>
@@ -25,9 +18,11 @@ const Products = () => (
     <div className="rounded-picture">
       <img src={product} alt="product" />
     </div>
-
     <div className="quantity">
       <input placeholder="quantité" />
+    </div>
+    <div className="description-product">
+      <p>descriptif du produit</p>
     </div>
     <div className="button-plus">
       <ButtonUp />
@@ -35,8 +30,12 @@ const Products = () => (
     <div className="button-minus">
       <ButtonDown />
     </div>
+    <div className="button-validate">
+      <button type="submit">Valider</button>
+    </div>
+
   </div>
 
 );
 
-export default Products;
+export default Product;

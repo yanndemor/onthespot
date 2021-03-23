@@ -3,19 +3,13 @@ import React from 'react';
 
 import './buttonUp.scss';
 
-const ButtonUp = () => {
- 
-
-  return (
-    <button
-      className="button-up"
-      type="button"
-      
-    >
+const ButtonUp = () => (
+  <button
+    className="button-up"
+    type="button"
+  >
     +
-    </button>
-  );
-};
-
+  </button>
+);
 
 export default ButtonUp;
