@@ -12,11 +12,15 @@ const Products = () => (
       <div className='product-name'>
         <h3>canette coco-cola</h3>
       </div>
+      <div className="price">
+        <p>2€</p>
+      </div>
       <div className='rounded-picture'>
         <img src={product} alt="picture-product" />
       </div>
-      <div className="quantity">
-        <input />
+      
+      <div className="quantity" >
+        <input placeholder="quantité"/>
       </div>
       <ButtonUp className="button-plus" />
       <ButtonDown className="button-down" />
