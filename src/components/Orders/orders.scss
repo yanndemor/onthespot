@@ -31,8 +31,8 @@
       .order-date {
         background-color: vars.$primary-color;
         color: vars.$light-color;
-        padding: 0.4em;
-        margin: 0.2em 0;
+        padding: 0.2em;
+        margin: 0.1em 0;
         display: inline;
         text-transform: uppercase;
       }
@@ -40,6 +40,13 @@
       .order-details {
         color: vars.$order-text-color;
         margin-top: vars.$gutter / 2;
+      }
+
+      .order-total {
+        display: flex;
+        color: vars.$order-text-color;
+        margin-top: vars.$gutter / 2;
+        justify-content: flex-end;
       }
 
       &:hover {

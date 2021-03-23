@@ -8,7 +8,7 @@ const Order = () => (
       <p>Produit 1  Prix €</p>
       <p>Produit 2  Prix €</p>
       <p>Produit 3  Prix €</p>
-      <p>Total €</p>
+      <div className="order-total">Total €</div>
     </div>
   </article>
 );
