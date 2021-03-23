@@ -10,7 +10,7 @@ const Footer = () => {
   console.log('footer');
   return (
     <div className="footer">
-      <div className="footer-mobile d-sm-none row">
+      <div className="footer-mobile d-sm-none">
         <div className="social-network col-3 col-sm-1">
           <a href="https://oclock.io/">
             <Facebook color="blue" />
