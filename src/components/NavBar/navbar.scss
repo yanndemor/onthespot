@@ -9,14 +9,31 @@
     width: 20vw;
   }
 
+  .navlink{
+    margin-right: 0.5rem;
+  }
+
   h1{
     background-color: #f0f;
-    position: absolute;
-    top: 43%;
-    right: 50%;
+    // position: absolute;
+    // top: 43%;
+    // margin-right: auto;
+  }
+
+  .selected{
+    color: #f0f;
   }
   
   .navbar1{
     background: linear-gradient(#3c2b9b, #f0e87e);;
+
+    .show{
+      text-align: right;
+    }
+    #responsive-navbar-nav{
+      text-align: right;
+      flex-direction: row-reverse;
+    }
   }
+
 }
