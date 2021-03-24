@@ -1,24 +1,29 @@
 // == Import npm
 import React from 'react';
+import { ShoppingCart, User } from 'react-feather';
 
 // == Import
 import './navbar.scss';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import reactLogo from 'src/components/App/react-logo.svg';
 
 // == Composant
 const NavBar = () => {
   console.log('navbar');
   return (
 
-    <div className="navbarX">
+    <div className="navbarX lg-d-flex col-sm-auto-d-grid">
       <Navbar className="navbar1" collapseOnSelect expand="sm" variant="dark">
-        <Navbar.Brand href="#home"> <img src={reactLogo} alt="" /></Navbar.Brand>
-        <h1>Test</h1>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <div className="shopping-cart ">
+          <ShoppingCart />
+        </div>
+        <div className="user-account ">
+          <User />
+        </div>
+        <div className="Title lg-d-flex align-center">OnTheSpot</div>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav col-lg" />
+        <Navbar.Collapse id="responsive-navbar-nav col-lg">
           <Nav className="mr-auto">
             {/* <Nav.Link href="#features">Features</Nav.Link>
               <Nav.Link href="#pricing">Pricing</Nav.Link> */}

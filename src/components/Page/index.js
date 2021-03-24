@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom';
 
 import Products from 'src/components/Products';
+import Orders from 'src/components/Orders';
+import Cart from 'src/components/Cart';
 
 const Page = () => (
   <div className="page">
@@ -12,6 +14,12 @@ const Page = () => (
       <Switch>
         <Route path="/products/">
           <Products />
+        </Route>
+        <Route path="/cart/">
+          <Cart />
+        </Route>
+        <Route path="/orders">
+          <Orders />
         </Route>
         <Route path="/">
           <div>HomePage</div>
