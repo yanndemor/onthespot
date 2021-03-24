@@ -20,7 +20,6 @@ const NavBar = () => {
     <div className="navbarX lg-d-flex col-sm-auto-d-grid">
       <Navbar className="navbar1" collapseOnSelect expand="sm" variant="dark">
 
-
         {/* <Navbar.Brand href="."> <img src={reactLogo} /></Navbar.Brand> */}
         <NavLink to="/" activeClassName="selected">
           <img src={reactLogo} alt="" />
