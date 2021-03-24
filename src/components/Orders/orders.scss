@@ -24,13 +24,11 @@
         font-family: vars.$title-font;
         font-weight: vars.$title-font-weight;
         text-transform: uppercase;
-        color: vars.$title-color;
+
         margin: vars.$gutter / 2 0;
       }
 
       .order-date {
-        background-color: vars.$primary-color;
-        color: vars.$light-color;
         padding: 0.2em;
         margin: 0.1em 0;
         display: inline;

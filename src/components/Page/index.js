@@ -5,10 +5,13 @@ import {
 } from 'react-router-dom';
 
 import Products from 'src/components/Products';
+
 import CGU from 'src/components/CGU';
 import Product from 'src/components/Product';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
+
+
 
 const Page = () => (
   <div className="page">
