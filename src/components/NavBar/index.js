@@ -15,7 +15,7 @@ const NavBar = () => {
 
     <div className="navbarX">
       <Navbar className="navbar1" collapseOnSelect expand="sm" variant="dark">
-        <Navbar.Brand href="#home"> <img src={reactLogo} /></Navbar.Brand>
+        <Navbar.Brand href="#home"> <img src={reactLogo} alt="" /></Navbar.Brand>
         <h1>Test</h1>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

@@ -6,6 +6,7 @@ import Caroussel from 'src/components/Caroussel';
 import NavBar from 'src/components/NavBar';
 // import Orders from 'src/components/Orders';
 import Page from 'src/components/Page';
+import Footer from 'src/components/Footer';
 import reactLogo from './react-logo.svg';
 
 import './styles.css';
@@ -20,6 +21,7 @@ const App = () => (
       <h1>OnTheSpot</h1>
       <Page />
       {/* <Orders /> */}
+      <Footer />
     </Router>
 
   </div>
