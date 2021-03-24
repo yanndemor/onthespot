@@ -1,6 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 // == Import
 import Caroussel from 'src/components/Caroussel';
@@ -35,12 +35,11 @@ const App = ({ loadProduct }) => {
   );
 };
 
-// App.propTypes = {
+App.propTypes = {
 //   // fonction qui permet de charger les recettes
 //   // pas de paramètre
-//   fetchProducts: PropTypes.func.isRequired,
- 
- 
-// };
+  loadProduct: PropTypes.func.isRequired,
+
+};
 // == Export
 export default App;

@@ -2,7 +2,7 @@ import React from 'react';
 /* import PropTypes from 'prop-types'; */
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
-import product from '../../assets/images/pictures-size-small-77x77/can-coca 44x77.png';
+import product from 'src/assets/images/products/can-coca.png';
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './product.scss';
 

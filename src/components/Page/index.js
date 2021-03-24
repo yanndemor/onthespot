@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Products from 'src/components/Products';
+import Products from 'src/containers/Products';
 
 import CGU from 'src/components/CGU';
 import Product from 'src/components/Product';
