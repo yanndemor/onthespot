@@ -22,7 +22,7 @@ const Cart = () => (
 
           <li className="list-group-item ">
             <ul className="total-group flex">
-              <li className="text-center">Total</li>
+              <li className="m">Total</li>
               <li className="text-center">Total (ht) : 126€</li>
               <li className="text-center">TVA (5%) : 7.05€</li>
               <li className="text-center">Total (ttc) 132</li>
