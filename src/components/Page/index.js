@@ -10,22 +10,28 @@ import CGU from 'src/components/CGU';
 import Product from 'src/components/Product';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
-
-
+import Orders from 'src/components/Orders';
+import Cart from 'src/components/Cart';
 
 const Page = () => (
   <div className="page">
     <div className="page-content">
       <Switch>
 
-        <Route path="/products/">
+        <Route path="/products">
           <Products />
         </Route>
         <Route path="/cgu">
           <CGU />
         </Route>
-        <Route path="/product/">
+        <Route path="/product/{slug}">
           <Product />
+        </Route>
+        <Route path="/orders/{id}">
+          <Orders />
+        </Route>
+        <Route path="/cart/">
+          <Cart />
         </Route>
         <Route path="/contact">
           <Contact />
