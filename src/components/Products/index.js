@@ -13,7 +13,7 @@ import './products.scss';
 const Products = ({ productItems }) => {
   console.log('test', productItems);
   return (
-    <div className="container">
+    <div className="container px-2">
       {productItems.map((item) => (
         <div key={item.id} className="d-flex align-items-center product-listElements ">
           <div className="col pr-0 rounded-picture">
