@@ -14,31 +14,30 @@ const Product = () => (
         <div className="col-2 rounded-picture">
           <img src={product} alt="product" />
         </div>
-        <div className="col-1 px-0 align-self-end price">
+        <div className="col-1 px-0 align-self-start price">
           <p className="">prix</p>
         </div>
-        <div className="col fs-6-xs product-name ">
-          <p className="w-75 p-3">Nom du produit</p>
+        <div className="col text-center product-name ">
+          <p className="">Nom du produit</p>
         </div>
       </div>
-      <div className="col my-2 ">
-        <p className="w-75 text-center mx-auto my-2">Description du produit</p>
-        <div className="mx-2">
+      <div className="col my-2 py-2 product-description">
+        <p className="w-75 text-center mx-auto my-2">Détail du produit</p>
+        <div className="mx-2"> 
           <li>quantité: 33cl</li>
           <li>allergéne</li>
           <li>Ingrédients</li>
         </div>
-
       </div>
-      <div className="row mx-auto my-2 text-center">
-        <div className="col-4 button-plus ">
+      <div className="row mx-auto my-2 align-items-center text-center">
+        <div className="col-5 pr-0 button-plus-product ">
           <ButtonDown />
         </div>
-        <div className="col-4 quantity ">
-          <input placeholder="quantité" />
+        <div className=" col-2 px-0 quantity-product ">
+          <input className="w-100" placeholder="quantité" />
         </div>
 
-        <div className="col-4 button-minus ">
+        <div className="col-5 pl-0 button-minus-product ">
           <ButtonUp />
         </div>
 

@@ -2,6 +2,13 @@
   border: solid 1px black;
   text-align: center;
   padding: 2%;
+  // TODO fixed right in page
+ 
+  // right: 0;
+  top: 25%;
+  // width: 20em;
+  // margin-top: -2.5em;
+  // overflow-y: auto;
 
   h2{
     font-size: 1.2rem;
@@ -45,4 +52,10 @@
 
   }
 
+}
+
+@media (min-width: 576px) {
+  .cart {
+    position: absolute;
+  }
 }

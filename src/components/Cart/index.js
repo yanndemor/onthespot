@@ -6,7 +6,7 @@ import React from 'react';
 import './cart.scss';
 
 const Cart = () => (
-  <div className="cart col-12 col-sm-4 ">
+  <div className="cart">
     <div className="listDelevery">
       <h2>Panier</h2>
       <ul className="item-group">
