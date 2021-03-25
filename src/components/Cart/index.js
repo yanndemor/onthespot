@@ -6,7 +6,7 @@ import React from 'react';
 import './cart.scss';
 
 const Cart = () => (
-  <div className="cart col-12 col-sm-4">
+  <div className="cart col- col-sm-4">
     <div className="listDelevery">
       <h2>Panier</h2>
       <ul className="item-group">
@@ -17,7 +17,7 @@ const Cart = () => (
       </ul>
     </div>
     <div className="listDelevery">
-      <label htmlFor="delevry-point">Choisir un point de retrait:</label>
+      <label htmlFor="delevery-point ">Choisir un point de retrait:</label>
       <select name="pets" id="delevry-point">
         <option value="">--Choisir un point de retrait--</option>
         <option value="test">test</option>
@@ -39,7 +39,6 @@ const Cart = () => (
     </div>
 
   </div>
-
 );
 
 export default Cart;
