@@ -11,6 +11,7 @@ import Product from 'src/components/Product';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
 import Orders from 'src/components/Orders';
+import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
 
 const Page = () => (
@@ -27,8 +28,11 @@ const Page = () => (
         <Route path="/product/{slug}">
           <Product />
         </Route>
-        <Route path="/orders/{id}">
+        <Route path="/orders">
           <Orders />
+        </Route>
+        <Route path="/order/{id}">
+          <Order />
         </Route>
         <Route path="/cart/">
           <Cart />

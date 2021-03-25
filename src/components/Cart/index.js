@@ -1,52 +1,45 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable max-len */
 // == Import npm
 import React from 'react';
+// import Product from 'src/components/Product';
+import './cart.scss';
 
 const Cart = () => (
-  <div>
-    <div className="row">
-      <div className="col-sm-2 cart" />
-      <div className="col-sm-3 cart-summary">
-
-        <ul className="list-group">
-          <li className="list-group-item text-center">Panier</li>
-          <li className="list-group-products">
-            <ul className="list-group flex">
-              <li className="text-left">Produit1</li>
-              <li className="text-right">5.00€</li>
-            </ul>
-            <ul className="list-group flex">
-              <li className="text-left">Produit2</li>
-              <li className="text-right">7.00€</li>
-            </ul>
-          </li>
-
-          <li className="list-group-item ">
-            <ul className="total-group flex">
-              <li className="m">Total</li>
-              <li className="text-center">Total (ht) : 126€</li>
-              <li className="text-center">TVA (5%) : 7.05€</li>
-              <li className="text-center">Total (ttc) 132</li>
-            </ul>
-          </li>
-
-          <li className="list-group-item ">
-            <ul className="total-group flex">
-              <li className="text-center">Point de retrait</li>
-              <li className="text-center">Petit Nice</li>
-              <li className="text-center">Adresse</li>
-            </ul>
-          </li>
-
-          <li className="list-group-item ">
-            <ul className="total-group flex">
-              <li className="text-center">Heure de retrait</li>
-              <li className="text-center">31/02/2022 - 16H42</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <div className="cart col-12 col-sm-4">
+    <div className="listDelevery">
+      <h2>Panier</h2>
+      <ul className="item-group">
+        <li className="">Total</li>
+        <li className="text-center">Total (ht) : 126€</li>
+        <li className="text-center">TVA (5%) : 7.05€</li>
+        <li className="text-center">Total (ttc) 132€</li>
+      </ul>
     </div>
+    <div className="listDelevery">
+      <label htmlFor="delevry-point">Choisir un point de retrait:</label>
+      <select name="pets" id="delevry-point">
+        <option value="">--Choisir un point de retrait--</option>
+        <option value="test">test</option>
+        <option value="test2">test2</option>
+      </select>
+    </div>
+
+    <div className="listDelevery">
+      <label htmlFor="delevry-time">Choisir une heure de retrait:</label>
+      <select name="pets" id="delevry-time">
+        <option value="">--Choisir une heure de retrait--</option>
+        <option value="test">test</option>
+        <option value="test2">test2</option>
+      </select>
+    </div>
+
+    <div className="text-center">
+      <a className="btn btn-success " href="">Valider</a>
+    </div>
+
   </div>
+
 );
 
 export default Cart;

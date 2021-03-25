@@ -1,0 +1,48 @@
+.cart{
+  border: solid 1px black;
+  text-align: center;
+  padding: 2%;
+
+  h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 2%;
+  }
+
+  .listDelevery{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 1px black;
+    margin: 2%;
+    padding: 2%;
+
+    select{
+      // width: 50vw;
+      // margin: auto;
+      display: flex;
+      margin-top: 2%;
+      
+
+      option{
+        text-align: center;
+        
+      }
+
+    }
+
+    .item-group{
+      margin: 2%;
+
+    }
+    .delevery-point {
+  
+    }
+
+    .delevery-time {
+
+    }  
+
+  }
+
+}
