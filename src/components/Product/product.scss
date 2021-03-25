@@ -1,4 +1,30 @@
-/* .product-element {
+.product-detail{
+  border: 2px solid black;
+  border-radius:30px;
+  background-color: coral;
+  margin:2%;
+  .product-name {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    font-size:15px;
+    margin:5px 5px;
+    font-weight:900;
+    padding: 2%;
+    // padding-right: 64px;
+  }
+  .product-description{
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+  }
+ 
+}
+
+
+
+
+/*  .product-element {
   border: 2px solid black;
   border-radius: 20px;
   height: 300px;
@@ -6,7 +32,8 @@
   margin: 2% auto;
   position: relative;
   background-color: coral;
-
+ } */
+/*
   .button-plus {
     position: absolute;
     right:125px;
