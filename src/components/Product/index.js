@@ -7,31 +7,43 @@ import product from 'src/assets/images/products/can-coca.png';
 import './product.scss';
 
 const Product = () => (
+  <div className="container px-2">
 
-  <div className="product-element">
-    <div className="product-name">
-      <h3>canette coco-cola</h3>
-    </div>
-    <div className="price">
-      <p>2€</p>
-    </div>
-    <div className="rounded-picture">
-      <img src={product} alt="product" />
-    </div>
-    <div className="quantity">
-      <input placeholder="quantité" />
-    </div>
-    <div className="description-product">
-      <p>descriptif du produit</p>
-    </div>
-    <div className="button-plus">
-      <ButtonUp />
-    </div>
-    <div className="button-minus">
-      <ButtonDown />
-    </div>
-    <div className="button-validate">
-      <button type="submit">Valider</button>
+    <div className="container  product-detail ">
+      <div className="d-flex align-items-center">
+        <div className="col-2 rounded-picture">
+          <img src={product} alt="product" />
+        </div>
+        <div className="col-1 px-0 align-self-end price">
+          <p className="">prix</p>
+        </div>
+        <div className="col fs-6-xs product-name ">
+          <p className="w-75 p-3">Nom du produit</p>
+        </div>
+      </div>
+      <div className="col my-2 ">
+        <p className="w-75 text-center mx-auto my-2">Description du produit</p>
+        <div className="mx-2"> 
+          <li>quantité: 33cl</li>
+          <li>allergéne</li>
+          <li>Ingrédients</li>
+        </div>
+       
+      </div>
+      <div className="row">
+        <div className="col-2 pl-0 button-plus ">
+          <ButtonDown />
+        </div>
+        <div className="col-2 pl-0 quantity ">
+          <input placeholder="quantité" />
+        </div>
+
+        <div className="col-2 pl-0 button-minus ">
+          <ButtonUp />
+        </div>
+
+      </div>
+
     </div>
 
   </div>
