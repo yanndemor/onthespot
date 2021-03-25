@@ -7,40 +7,51 @@ import ButtonDown from 'src/components/ButtonDown';
 
 import { Link } from 'react-router-dom';
 import product from 'src/assets/images/products/can-coca.png';
+
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './products.scss';
+import Cart from 'src/components/Cart';
 
 const Products = ({ productItems }) => {
-  console.log('test', productItems);
+  console.log('products-items', productItems);
   return (
-    <div className="container px-2">
-      {productItems.map((item) => (
-        <div key={item.id} className="d-flex align-items-center product-listElements ">
-          <div className="col pr-0 rounded-picture">
-            <img src={product} alt="product" />
-          </div>
-          <div className="col-1 px-0 price">
-            <p>{item.price}</p>
-          </div>
-          <div className="col-3 fs-6 text product-name ">
-            <Link to="/product/">
-              {item.name}
-            </Link>
-          </div>
+    <div className="products">
+      <div className="container">
+        {productItems.map((item) => (
+          <div key={item.id} className="product-listElements ">
+            <div className="products-items">
+              <div className="rounded-picture">
+                <img src={product} alt="product" />
+              </div>
+              <div className="price">
+                <p>{item.price}</p>
+              </div>
+            </div>
 
-          <div className="col-2 pl-0 button-plus ">
-            <ButtonDown />
-          </div>
-          <div className="col-2 pl-0 quantity ">
-            <input placeholder="quantité" />
-          </div>
+            <div className="text product-name ">
+              <Link to="/product/{slug}">
+                {item.name}
+              </Link>
+            </div>
 
-          <div className="col-2 pl-0 button-minus ">
-            <ButtonUp />
-          </div>
+            <div className="product-quantity">
+              <div className="button-plus ">
+                <ButtonDown />
+              </div>
+              <div className="quantity ">
+                <input placeholder="0" />
+              </div>
+              <div className="button-minus ">
+                <ButtonUp />
+              </div>
+            </div>
 
-        </div>
-      ))}
+          </div>
+        ))}
+        {/* <div className="">
+          <Cart />
+        </div> */}
+      </div>
     </div>
   );
 };
