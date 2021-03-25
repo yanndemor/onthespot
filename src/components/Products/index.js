@@ -29,14 +29,14 @@ const Products = ({ productItems }) => {
           </div>
 
           <div className="col-2 pl-0 button-plus ">
-            <ButtonUp />
+            <ButtonDown />
           </div>
           <div className="col-2 pl-0 quantity ">
             <input placeholder="quantité" />
           </div>
 
           <div className="col-2 pl-0 button-minus ">
-            <ButtonDown />
+            <ButtonUp />
           </div>
 
         </div>
