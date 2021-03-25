@@ -13,30 +13,34 @@ import './products.scss';
 const Products = ({ productItems }) => {
   console.log('test', productItems);
   return (
-    <div className="container px-2">
+    <div className="container ">
       {productItems.map((item) => (
-        <div key={item.id} className="d-flex align-items-center product-listElements ">
-          <div className="col pr-0 rounded-picture">
-            <img src={product} alt="product" />
+        <div key={item.id} className="product-listElements ">
+          <div className="test">
+            <div className="rounded-picture">
+              <img src={product} alt="product" />
+            </div>
+            <div className="price">
+              <p>{item.price}</p>
+            </div>
           </div>
-          <div className="col-1 px-0 price">
-            <p>{item.price}</p>
-          </div>
-          <div className="col-3 fs-6 text product-name ">
-            <Link to="/product/">
+
+          <div className="text product-name ">
+            <Link to="/product/{slug}">
               {item.name}
             </Link>
           </div>
 
-          <div className="col-2 pl-0 button-plus ">
-            <ButtonDown />
-          </div>
-          <div className="col-2 pl-0 quantity ">
-            <input placeholder="quantité" />
-          </div>
-
-          <div className="col-2 pl-0 button-minus ">
-            <ButtonUp />
+          <div className="product-quantity">
+            <div className="button-plus ">
+              <ButtonDown />
+            </div>
+            <div className="quantity ">
+              <input placeholder="quantité" />
+            </div>
+            <div className="button-minus ">
+              <ButtonUp />
+            </div>
           </div>
 
         </div>

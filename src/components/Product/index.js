@@ -23,22 +23,22 @@ const Product = () => (
       </div>
       <div className="col my-2 ">
         <p className="w-75 text-center mx-auto my-2">Description du produit</p>
-        <div className="mx-2"> 
+        <div className="mx-2">
           <li>quantité: 33cl</li>
           <li>allergéne</li>
           <li>Ingrédients</li>
         </div>
-       
+
       </div>
-      <div className="row">
-        <div className="col-2 pl-0 button-plus ">
+      <div className="row mx-auto my-2 text-center">
+        <div className="col-4 button-plus ">
           <ButtonDown />
         </div>
-        <div className="col-2 pl-0 quantity ">
+        <div className="col-4 quantity ">
           <input placeholder="quantité" />
         </div>
 
-        <div className="col-2 pl-0 button-minus ">
+        <div className="col-4 button-minus ">
           <ButtonUp />
         </div>
 
