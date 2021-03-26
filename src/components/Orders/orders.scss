@@ -1,33 +1,35 @@
 @use 'src/styles/vars';
 
 .orders {
-  margin: vars.$gutter auto;
+  // margin: vars.$gutter auto;
 
-  .orders.title {
+  .title {
+    margin-top: 1%;
     font-family: vars.$title-font;
     font-weight: vars.$title-font-weight;
     color: vars.$dark-color;
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: 500;
     margin-bottom: vars.$gutter;
     text-align: center;
     text-transform: uppercase;
   }
 
   .orders-container {
+    
 
     .order-detail {
       border: 2px solid black;
       border-radius:30px;
       background-color: coral;
       margin:2%;
-      color: vars.$order-text-color;
-      margin-top: vars.$gutter / 2;
+      padding: 1.5%;
     
       .order-name {
         border: 1px solid black;
         border-radius: 10px;
         font-size:15px;
-        margin:5px 5px;
+        margin-bottom: 2%;
         font-weight:900;
         padding: 2%;
         // padding-right: 64px;
@@ -35,17 +37,23 @@
         font-weight: vars.$title-font-weight;
         text-transform: uppercase;
         width: 45%;
-        margin: vars.$gutter / 2 0;
+
       }
       .order-description {
-        width : 70%;
+        width : 90%;
         border: 1px solid black;
         background-color: white;
         border-radius: 10px;
+        padding: 0.5% 0%;
+
       }
     
       .order-state {
+        display: flex;
         width: 30%;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.5% 5%;
     
         .order-date {
           // padding: 0.2em;
