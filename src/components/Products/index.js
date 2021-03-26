@@ -6,7 +6,7 @@ import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
 
 import { Link } from 'react-router-dom';
-import { $ } from 'src/assets/images/products/can-coca.png';
+/* import { $ } from 'src/assets/images/products/can-coca.png'; */
 
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './products.scss';
@@ -29,7 +29,7 @@ const Products = ({ productItems }) => {
             </div>
 
             <div className="text product-name ">
-              <Link to="/product/{slug}">
+              <Link to="/product/:slug">
                 {item.name}
               </Link>
             </div>

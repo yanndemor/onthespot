@@ -7,14 +7,15 @@ import {
 import Products from 'src/containers/Products';
 
 import CGU from 'src/components/CGU';
-import Product from 'src/components/Product';
+import Product from 'src/containers/Product';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
 import Orders from 'src/components/Orders';
 import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
+import LoadingSpinner from 'src/components/LoadingSpinner';
 
-const Page = () => (
+const Page = ({ loading }) => (
   <div className="page">
     <div className="page-content">
       <Switch>
@@ -32,11 +33,14 @@ const Page = () => (
         <Route path="/cgu">
           <CGU />
         </Route>
-        <Route path="/product/{slug}">
+        <Route path="/product/:slug" exact>
           <div className="row position-relative">
+            {loading && LoadingSpinner}
+            {!loading && (
             <div className="col-sm-8  ">
-              <Product className="f" />
+              <Product className="" />
             </div>
+            )}
             <div className="col-sm-4 ">
               <Cart />
             </div>

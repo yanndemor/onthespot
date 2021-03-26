@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
+
 // == Import
 import Caroussel from 'src/components/Caroussel';
 import NavBar from 'src/components/NavBar';
