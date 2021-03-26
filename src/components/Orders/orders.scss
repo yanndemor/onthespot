@@ -1,13 +1,12 @@
 @use 'src/styles/vars';
 
 .orders {
-  max-width: 800px;
   margin: vars.$gutter auto;
 
-  .title {
+  .orders.title {
     font-family: vars.$title-font;
     font-weight: vars.$title-font-weight;
-    color: vars.$primary-color;
+    color: vars.$dark-color;
     font-size: 2em;
     margin-bottom: vars.$gutter;
     text-align: center;
@@ -16,40 +15,150 @@
 
   .orders-container {
 
-    .order {
-      width: 50%;
-      padding: vars.$gutter;
-
-      .order-title {
+    .order-detail {
+      border: 2px solid black;
+      border-radius:30px;
+      background-color: coral;
+      margin:2%;
+      color: vars.$order-text-color;
+      margin-top: vars.$gutter / 2;
+    
+      .order-name {
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size:15px;
+        margin:5px 5px;
+        font-weight:900;
+        padding: 2%;
+        // padding-right: 64px;
         font-family: vars.$title-font;
         font-weight: vars.$title-font-weight;
         text-transform: uppercase;
-
+        width: 45%;
         margin: vars.$gutter / 2 0;
       }
-
-      .order-date {
-        padding: 0.2em;
-        margin: 0.1em 0;
-        display: inline;
-        text-transform: uppercase;
+      .order-description {
+        width : 70%;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 10px;
       }
-
-      .order-details {
-        color: vars.$order-text-color;
-        margin-top: vars.$gutter / 2;
-      }
-
-      .order-total {
-        display: flex;
-        color: vars.$order-text-color;
-        margin-top: vars.$gutter / 2;
-        justify-content: flex-end;
-      }
-
-      &:hover {
-        background-color: vars.$order-hover-color;
-      }
+    
+      .order-state {
+        width: 30%;
+    
+        .order-date {
+          // padding: 0.2em;
+          // margin: 0.1em 0;
+          // text-transform: uppercase;
+        }
+  
+        .order-status {
+        
+        }
+  
+        .order-amount{
+          // color: vars.$order-text-color;
+          // margin-top: vars.$gutter / 2;
+        }
+  
+        &:hover {
+          background-color: vars.$order-hover-color;
+        }
     }
   }
 }
+}
+/* .product-element {
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 300px;
+  max-width: 90%;
+  margin: 2% auto;
+  position: relative;
+  background-color: coral;
+
+  .button-plus {
+    position: absolute;
+    right:125px;
+    bottom: 37px;
+    
+  }
+
+  .button-minus{
+    position:absolute;
+    left:125px;
+    bottom: 37px;
+  }
+  .product-name {
+
+    border: 1px solid black;
+    width: 32%;
+    height: 10%;
+    margin-left: 33%;
+    margin-top: 3.25%;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 0.5%;
+    font-weight: 900;
+
+  }
+
+  .quantity {
+
+
+    input {
+      width: 20%;
+      border: 1px solid black;
+      position: absolute;
+      right: 178px;
+      bottom: 45px;
+    }
+  }
+  .description-product{
+
+    width:50%;
+    height:50%;   
+    border-radius:25px;
+    border: 2px solid black;
+    background-color:white;
+    margin:20px auto; 
+    padding:5px;
+  }
+
+  .price {
+    
+    border: 2px solid black;
+    border-radius: 55%;
+    height: 50px;
+    width: 50px;
+    font-size:1.5em;
+    padding-top:10px;
+    position: absolute;
+    left: 30px;
+    z-index:1;
+    background-color:white;
+
+  }
+
+  .button-validate{
+    position:absolute;
+    bottom: 15px;
+    left: 195px;
+    
+
+  }
+
+} */
+
+/* .rounded-picture {
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 55%;
+  height: 100px;
+  width: 100px;
+  padding-top: 10px;
+  background-color: yellow;
+  top: -30px;
+  left: -25px;
+} */
