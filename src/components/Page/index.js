@@ -2,12 +2,15 @@ import React from 'react';
 import {
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 
 import Products from 'src/containers/Products';
+import PropTypes from 'prop-types';
 
 import CGU from 'src/components/CGU';
 import Product from 'src/containers/Product';
+import LoginForm from 'src/containers/LoginForm';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
 import Orders from 'src/components/Orders';
@@ -15,7 +18,7 @@ import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 
-const Page = ({ loading }) => (
+const Page = ({ isLogged, loading }) => (
   <div className="page">
     <div className="page-content">
       <Switch>
@@ -35,7 +38,7 @@ const Page = ({ loading }) => (
         </Route>
         <Route path="/product/:slug" exact>
           <div className="row position-relative">
-            {loading && LoadingSpinner}
+            {loading && <LoadingSpinner />}
             {!loading && (
             <div className="col-sm-8  ">
               <Product className="" />
@@ -61,6 +64,10 @@ const Page = ({ loading }) => (
         <Route path="/cgv">
           <CGV />
         </Route>
+        <Route path="/connexion">
+          {isLogged ? <Redirect to="/products" /> : <LoginForm />}
+          {/* <Redirect to="/products" /> */}
+        </Route>
         <Route path="/">
           <div>HomePage</div>
         </Route>
@@ -70,15 +77,9 @@ const Page = ({ loading }) => (
   </div>
 );
 
-export default Page;
+Page.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 
-{ /* <div class="row">
-<div class="col-xs-8 content">Content goes here...</div>
-<div class="col-xs-3 col-xs-offset-1 sidebar-outer" >
-    <div class="fixed col-xs-3">
-        <img class="img-responsive"
-             src="http://placekitten.com/300/200"/>
-        Some links go here.
-    </div>
-</div>
-</div> */ }
+export default Page;

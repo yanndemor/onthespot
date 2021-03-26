@@ -29,7 +29,7 @@ const Products = ({ productItems }) => {
             </div>
 
             <div className="text product-name ">
-              <Link to="/product/:slug">
+              <Link to={`/product/${item.slug}`}>
                 {item.name}
               </Link>
             </div>
