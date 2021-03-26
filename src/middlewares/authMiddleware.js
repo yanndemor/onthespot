@@ -2,17 +2,17 @@ import axios from 'axios';
 
 import { LOG_IN, saveUser } from 'src/actions/auth';
 
-const API_URL = 'http://ec2-3-85-110-30.compute-1.amazonaws.com/OnTheSpot-Unofficial/Backend/public/api/user';
+const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
 const authMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware auth: ', action);
 
   switch (action.type) {
     case LOG_IN: {
-      const { email, password } = store.getState().auth;
+      const { username, password } = store.getState().auth;
 
       axios.post(`${API_URL}/login`, {
-        email: email,
+        username: username,
         password: password,
       })
         .then((response) => {

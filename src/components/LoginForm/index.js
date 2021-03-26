@@ -6,7 +6,7 @@ import Field from './Field';
 import './loginForm.scss';
 
 const LoginForm = ({
-  email,
+  username,
   password,
   changeField,
   handleLogin,
@@ -18,7 +18,7 @@ const LoginForm = ({
     evt.preventDefault();
     handleLogin();
   };
-
+  console.log(username);
   return (
     <div className="login-form">
       <h2>Connexion</h2>
@@ -39,10 +39,10 @@ const LoginForm = ({
       {!logged && (
         <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
           <Field
-            name="email"
+            name="username"
             placeholder="Adresse Email"
             manageChange={changeField}
-            value={email}
+            value={username}
           />
           <Field
             name="password"
@@ -64,8 +64,8 @@ const LoginForm = ({
 };
 
 LoginForm.propTypes = {
-  /** value for the email */
-  email: PropTypes.string.isRequired,
+  /** value for the username */
+  username: PropTypes.string.isRequired,
   /** value for the password */
   password: PropTypes.string.isRequired,
   /** called when onChange event is received by an input, two parameters :

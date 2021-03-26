@@ -9,7 +9,7 @@ import LoginForm from 'src/components/LoginForm';
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  email: state.auth.email,
+  username: state.auth.username,
   password: state.auth.password,
   isLogged: state.auth.isLogged,
 });

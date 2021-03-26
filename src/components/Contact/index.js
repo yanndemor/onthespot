@@ -27,16 +27,16 @@ const Contact = () => (
         value="{telephone}"
       />
       <Field
-        name="email"
+        name="username"
         placeholder="Adresse Email"
         manageChange="{changeField}"
-        value="{email}"
+        value="{username}"
       />
       <Message
         name="message"
         placeholder="Message"
         manageChange="{changeField}"
-        value="{email}"
+        value="{username}"
       />
 
       <button
@@ -75,7 +75,7 @@ export default Contact;
       </div>
       <div>
         <label htmlFor="mail">e-mail:</label>
-        <input type="email" id="mail" name="user_mail" />
+        <input type="username" id="mail" name="user_mail" />
       </div>
       <div>
         <label htmlFor="msg">Message :</label>

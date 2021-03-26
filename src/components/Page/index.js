@@ -13,7 +13,7 @@ import CGV from 'src/components/CGV';
 import Orders from 'src/components/Orders';
 import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
-import LoginForm from 'src/components/LoginForm';
+import LoginForm from 'src/containers/LoginForm';
 
 const Page = () => (
   <div className="page">
