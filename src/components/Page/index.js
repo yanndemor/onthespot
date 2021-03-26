@@ -21,7 +21,7 @@ const Page = () => (
 
         <Route path="/products">
           <div className="row position-relative">
-            <div className="col-sm-8  ">
+            <div className="col-sm-8">
               <Products />
             </div>
             <div className="col-sm-4 position-relative">
