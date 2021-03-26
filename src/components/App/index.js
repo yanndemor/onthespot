@@ -24,7 +24,7 @@ const App = ({ loadProduct }) => {
       <Router>
         <NavBar />
         <h1>OnTheSpot</h1>
-        <Caroussel />
+       {/*  <Caroussel /> */}
         <Page />
 
         {/* <Orders /> */}

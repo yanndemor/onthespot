@@ -1,38 +1,46 @@
+.product {
+  display: flex;
+  align-items: center;
+  .product-detail {
 
-.product-detail{
+    border: 2px solid black;
+    border-radius: 30px;
+    background-color: coral;
 
-  border: 2px solid black;
-  border-radius:30px;
-  background-color: coral;
-  .product-header{
-    margin-top:5%;
-  }
-  .product-name {
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 10px;
-    font-size:15px;
-    margin:5px auto;
-    
-    font-weight:900;
-    padding: 2%;
-    
-    // padding-right: 64px;
-  
-  }
-  .product-description{
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 10px;
-  }
-   .product-image{
+    .product-header {
+      margin-top: 5%;
+    }
+
+    .product-name {
+      border: 1px solid black;
+      background-color: white;
+      border-radius: 10px;
+      font-size: 15px;
+      margin: 5px auto;
+
+      font-weight: 900;
+      padding: 2%;
+
+      // padding-right: 64px;
+
+    }
+
+    .product-description {
+      border: 1px solid black;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .product-image {
       position: relative;
+
       // border: solid 1px #f0f;
-      img{
-        height:100%;
-        width:100%;
+      img {
+        height: 100%;
+        width: 100%;
         margin: 0 auto;
       }
+
       .price {
         position: absolute;
         display: flex;
@@ -40,27 +48,46 @@
         border-radius: 55%;
         height: 30px;
         width: 30px;
-        font-size:1em;
-        align-items:center;
-        
-        top:-10px;
-        right:-10px;
-    
-        z-index:1;
-        background-color:white;
-        p{
-          text-align:center;
+        font-size: 1em;
+        align-items: center;
+
+        top: -10px;
+        right: -10px;
+
+        z-index: 1;
+        background-color: white;
+
+        p {
+          text-align: center;
         }
-        
+
       }
     }
+  }
+
+  input {
+
+    border: 1px solid black;
+    width: 2em;
+    bottom: 12px;
+  }
+  .button-return{
+    margin:2% auto;
+    width:10em;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding:1%;
+    background-color: white;
+    
+    text-align:center;
+
+  }
 }
-input {
-      
-  border: 1px solid black;
-  width:2em;
-  
-  bottom: 12px;
+
+@media (min-width: 576px) {
+  .product {
+    min-height: 85vh;
+  }
 }
 
 /* .product-element {

@@ -6,7 +6,7 @@ import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
 
 import { Link } from 'react-router-dom';
-import product from 'src/assets/images/products/can-coca.png';
+import { $ } from 'src/assets/images/products/can-coca.png';
 
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './products.scss';
@@ -21,7 +21,7 @@ const Products = ({ productItems }) => {
           <div key={item.id} className="product-listElements ">
             <div className="products-items">
               <div className="rounded-picture">
-                <img src={product} alt="product" />
+                <img src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`} alt="product" />
               </div>
               <div className="price">
                 <p>{item.price}</p>

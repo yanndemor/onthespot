@@ -20,7 +20,7 @@ const Page = () => (
       <Switch>
 
         <Route path="/products">
-          <div className="row position-relative">
+          <div className="row mx-0 position-relative">
             <div className="col-sm-8  ">
               <Products />
             </div>
@@ -33,7 +33,14 @@ const Page = () => (
           <CGU />
         </Route>
         <Route path="/product/{slug}">
-          <Product />
+          <div className="row position-relative">
+            <div className="col-sm-8  ">
+              <Product className="f" />
+            </div>
+            <div className="col-sm-4 ">
+              <Cart />
+            </div>
+          </div>
         </Route>
         <Route path="/orders">
           <Orders />
@@ -61,8 +68,8 @@ const Page = () => (
 
 export default Page;
 
-{/* <div class="row">
-<div class="col-xs-8 content">Content goes here...</div> 
+{ /* <div class="row">
+<div class="col-xs-8 content">Content goes here...</div>
 <div class="col-xs-3 col-xs-offset-1 sidebar-outer" >
     <div class="fixed col-xs-3">
         <img class="img-responsive"
@@ -70,4 +77,4 @@ export default Page;
         Some links go here.
     </div>
 </div>
-</div> */}
+</div> */ }

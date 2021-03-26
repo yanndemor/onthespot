@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { FETCH_PRODUCTS, saveProducts } from 'src/actions/products';
 
-const API_URL = 'http://ec2-3-85-110-30.compute-1.amazonaws.com/apo-OnTheSpot-back/public/api';
+// const API_URL = 'http://ec2-3-85-110-30.compute-1.amazonaws.com/apo-OnTheSpot-back/public/api';
+const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
 const productsMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
