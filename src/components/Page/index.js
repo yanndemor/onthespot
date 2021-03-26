@@ -13,6 +13,7 @@ import CGV from 'src/components/CGV';
 import Orders from 'src/components/Orders';
 import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
+import LoginForm from 'src/components/LoginForm';
 
 const Page = () => (
   <div className="page">
@@ -49,6 +50,9 @@ const Page = () => (
         </Route>
         <Route path="/cgv">
           <CGV />
+        </Route>
+        <Route path="/connexion">
+          <LoginForm />
         </Route>
         <Route path="/">
           <div>HomePage</div>
