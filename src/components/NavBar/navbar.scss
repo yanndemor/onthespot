@@ -1,12 +1,14 @@
-
+@use 'src/styles/vars';
 .navbarX{
  width: 100vw;
+  // height:4vh;
  margin: 0;
  padding: 0rem;
- position: relative;
+/*  position: relative; */
 
   img{
-    width: 20vw;
+    width: 5vw;
+    height:5vw
   }
 
   .navlink{
@@ -25,7 +27,7 @@
   }
   
   .navbar1{
-    background: linear-gradient(#3c2b9b, #f0e87e);;
+    background:vars.$header-background;
 
     .show{
       text-align: right;

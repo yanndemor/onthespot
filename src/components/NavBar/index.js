@@ -1,10 +1,8 @@
 // == Import npm
 import React from 'react';
 
-
-
 //!  Logo a récupérer panier et compte
-// import { ShoppingCart, User } from 'react-feather';
+import { ShoppingCart, User } from 'react-feather';
 
 // == Import
 import './navbar.scss';
@@ -12,7 +10,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import reactLogo from 'src/components/App/react-logo.svg';
+import logoIconeBeach from 'src/assets/images/iconbeach.png';
 
 // == Composant
 const NavBar = () => {
@@ -24,7 +22,9 @@ const NavBar = () => {
 
         {/* <Navbar.Brand href="."> <img src={reactLogo} /></Navbar.Brand> */}
         <NavLink to="/" activeClassName="selected">
-          <img src={reactLogo} alt="" />
+          <img src={logoIconeBeach} alt="" />
+          <ShoppingCart size={40} />
+          <User size={40} />
         </NavLink>
         <h1>Test</h1>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -36,7 +36,7 @@ const NavBar = () => {
             <NavLink to="/contact" className="navlink" activeClassName="selected">
               Contact
             </NavLink>
-            <NavLink to="/commandes" className="navlink" activeClassName="selected">
+            <NavLink to="/orders" className="navlink" activeClassName="selected">
               Commandes
             </NavLink>
             <NavLink to="/connexion" className="navlink" activeClassName="selected">
