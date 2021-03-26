@@ -7,14 +7,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Caroussel from 'src/components/Caroussel';
 import NavBar from 'src/components/NavBar';
 // import Orders from 'src/components/Orders';
-import Page from 'src/components/Page';
+import Page from 'src/containers/Page';
 
 import Footer from 'src/components/Footer';
 
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct }) => {
+const App = ({ loadProduct, isLogged }) => {
   useEffect(() => {
     // on veut charger les recettes
     loadProduct();
@@ -25,6 +25,7 @@ const App = ({ loadProduct }) => {
       <Router>
         <NavBar />
         <h1>OnTheSpot</h1>
+        {isLogged && <div> Connecté </div>}
         <Caroussel />
         <Page />
 
@@ -40,6 +41,8 @@ App.propTypes = {
 //   // fonction qui permet de charger les recettes
 //   // pas de paramètre
   loadProduct: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+
 
 };
 // == Export

@@ -2,9 +2,11 @@ import React from 'react';
 import {
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 
 import Products from 'src/containers/Products';
+import PropTypes from 'prop-types';
 
 import CGU from 'src/components/CGU';
 import Product from 'src/components/Product';
@@ -15,7 +17,7 @@ import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
 import LoginForm from 'src/containers/LoginForm';
 
-const Page = () => (
+const Page = ({ isLogged }) => (
   <div className="page">
     <div className="page-content">
       <Switch>
@@ -52,7 +54,8 @@ const Page = () => (
           <CGV />
         </Route>
         <Route path="/connexion">
-          <LoginForm />
+          {isLogged ? <Redirect to="/products" /> : <LoginForm />}
+          {/* <Redirect to="/products" /> */}
         </Route>
         <Route path="/">
           <div>HomePage</div>
@@ -63,15 +66,8 @@ const Page = () => (
   </div>
 );
 
-export default Page;
+Page.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
 
-{/* <div class="row">
-<div class="col-xs-8 content">Content goes here...</div> 
-<div class="col-xs-3 col-xs-offset-1 sidebar-outer" >
-    <div class="fixed col-xs-3">
-        <img class="img-responsive"
-             src="http://placekitten.com/300/200"/>
-        Some links go here.
-    </div>
-</div>
-</div> */}
+export default Page;
