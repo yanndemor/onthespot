@@ -8,6 +8,7 @@ import Caroussel from 'src/components/Caroussel';
 import NavBar from 'src/components/NavBar';
 // import Orders from 'src/components/Orders';
 import Page from 'src/containers/Page';
+import ButtonLogout from 'src/containers/ButtonLogout';
 
 import Footer from 'src/components/Footer';
 
@@ -25,7 +26,7 @@ const App = ({ loadProduct, isLogged }) => {
       <Router>
         <NavBar />
         <h1>OnTheSpot</h1>
-        {isLogged && <div> Connecté </div>}
+        {isLogged && <div> Connecté , <ButtonLogout /></div>}
         <Caroussel />
         <Page />
 
