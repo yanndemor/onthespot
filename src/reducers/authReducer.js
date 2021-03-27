@@ -21,6 +21,12 @@ function authReducer(state = initialState, action) {
           firstname: action.newValue,
         };
       }
+      if (action.name === 'username') {
+        return {
+          ...state,
+          username: action.newValue,
+        };
+      }
       if (action.name === 'lastname') {
         return {
           ...state,
