@@ -31,7 +31,7 @@ const authMiddleware = (store) => (next) => (action) => {
         firstname,
         lastname,
         emailRegister,
-        passwordRegister,
+        // passwordRegister,
         passwordRegisterCheck,
         phoneNumber,
       } = store.getState().auth;
@@ -39,10 +39,10 @@ const authMiddleware = (store) => (next) => (action) => {
       axios.post(`${API_URL}/users`, {
         firstname: firstname,
         lastname: lastname,
-        emailRegister: emailRegister,
-        passwordRegister: passwordRegister,
-        passwordRegisterCheck: passwordRegisterCheck,
-        phoneNumber: phoneNumber,
+        email: emailRegister,
+        // passwordRegister: passwordRegister,
+        password: passwordRegisterCheck,
+        telNumber: phoneNumber,
       })
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');

@@ -34,14 +34,14 @@ const RegistrationForm = ({
         />
         <Field
           name="lastname"
-          placeholder="Mot de passe"
+          placeholder="Nom"
           manageChange={changeField}
           value={lastname}
         />
         <Field
           name="emailRegister"
-          placeholder="Adresse Email"
           type="email"
+          placeholder="Adresse Email"
           manageChange={changeField}
           value={emailRegister}
         />
