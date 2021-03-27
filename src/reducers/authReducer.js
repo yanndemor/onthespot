@@ -5,22 +5,61 @@ const initialState = {
   password: '',
   firstname: '',
   lastname: '',
-  tel_number: '',
+  emailRegister: '',
+  passwordRegister: '',
+  passwordRegisterCheck: '',
+  phoneNumber: '',
   isLogged: false,
 };
 
 function authReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_USER_FIELD:
-      if (action.name === 'username') {
+      if (action.name === 'firstname') {
         return {
           ...state,
-          username: action.newValue,
+          firstname: action.newValue,
+        };
+      }
+      if (action.name === 'lastname') {
+        return {
+          ...state,
+          lastname: action.newValue,
+        };
+      }
+      if (action.name === 'emailRegister') {
+        return {
+          ...state,
+          emailRegister: action.newValue,
+        };
+      }
+      if (action.name === 'passwordRegister') {
+        return {
+          ...state,
+          passwordRegister: action.newValue,
+        };
+      }
+      if (action.name === 'passwordRegisterCheck') {
+        return {
+          ...state,
+          passwordRegisterCheck: action.newValue,
+        };
+      }
+      if (action.name === 'phoneNumber') {
+        return {
+          ...state,
+          phoneNumber: action.newValue,
+        };
+      }
+      if (action.name === 'password') {
+        return {
+          ...state,
+          password: action.newValue,
         };
       }
       return {
         ...state,
-        password: action.newValue,
+        // password: action.newValue,
       };
 
     case SAVE_USER:

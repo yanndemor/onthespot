@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { LOG_IN, saveUser } from 'src/actions/auth';
+import { LOG_IN, REGISTRATION, saveUser } from 'src/actions/auth';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
@@ -18,6 +18,35 @@ const authMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
           store.dispatch(saveUser(response.data.logged, response.data.token));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      next(action);
+      break;
+    }
+    case REGISTRATION: {
+      const {
+        firstname,
+        lastname,
+        emailRegister,
+        passwordRegister,
+        passwordRegisterCheck,
+        phoneNumber,
+      } = store.getState().auth;
+
+      axios.post(`${API_URL}/users`, {
+        firstname: firstname,
+        lastname: lastname,
+        emailRegister: emailRegister,
+        passwordRegister: passwordRegister,
+        passwordRegisterCheck: passwordRegisterCheck,
+        phoneNumber: phoneNumber,
+      })
+        .then((response) => {
+          // console.log('middleware auth : on dispatch les actions');
+          alert('Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes');
         })
         .catch((error) => {
           console.log(error);
