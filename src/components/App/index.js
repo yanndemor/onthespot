@@ -15,10 +15,11 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct, isLogged }) => {
+const App = ({ loadProduct, isLogged, loadCategories }) => {
   useEffect(() => {
     // on veut charger les recettes
     loadProduct();
+    loadCategories();
   }, []);
 
   return (
@@ -43,7 +44,7 @@ App.propTypes = {
 //   // pas de paramètre
   loadProduct: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
-
+  loadCategories: PropTypes.func.isRequired,
 
 };
 // == Export

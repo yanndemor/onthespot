@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Products from 'src/containers/Products';
-import Categories from 'src/components/Categories';
+import Categories from 'src/containers/Categories';
 import PropTypes from 'prop-types';
 
 import CGU from 'src/components/CGU';
@@ -70,10 +70,13 @@ const Page = ({ isLogged, loading }) => (
           {isLogged ? <Redirect to="/products" /> : <div><LoginForm /><RegistrationForm /></div>}
           {/* <Redirect to="/products" /> */}
         </Route>
-        <Route path="/">
+        <Route path="/categories">
+          {loading && <LoadingSpinner />}
+          {!loading && (
           <div>
             <Categories />
           </div>
+          )}
         </Route>
 
       </Switch>

@@ -7,7 +7,7 @@ const initialState = {
   picture: '',
   price: '',
   availability: '', */
-  productsList: [],
+  categoriesList: [],
 
   loading: true,
 };
