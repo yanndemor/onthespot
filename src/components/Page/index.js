@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Products from 'src/containers/Products';
+import Categories from 'src/components/Categories';
 import PropTypes from 'prop-types';
 
 import CGU from 'src/components/CGU';
@@ -70,7 +71,9 @@ const Page = ({ isLogged, loading }) => (
           {/* <Redirect to="/products" /> */}
         </Route>
         <Route path="/">
-          <div>HomePage</div>
+          <div>
+            <Categories />
+          </div>
         </Route>
 
       </Switch>
