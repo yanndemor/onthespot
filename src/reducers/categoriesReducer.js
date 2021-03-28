@@ -1,4 +1,4 @@
-import { SAVE_CATEGORIES } from 'src/actions/categories';
+import { SAVE_CATEGORIES, SHOW_CATEGORIE } from 'src/actions/categories';
 
 const initialState = {
   /*  id: '',
@@ -18,6 +18,13 @@ function categoriesReducer(state = initialState, action) {
       return {
         ...state,
         categoriesList: action.loadedCategories,
+        loading: false,
+      };
+
+    case SHOW_CATEGORIE:
+      return {
+        ...state.filter.categories,
+        categoriesList: action.loadedCategorie,
         loading: false,
       };
 

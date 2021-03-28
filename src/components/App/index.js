@@ -17,7 +17,6 @@ import './styles.css';
 // == Composant
 const App = ({ loadProduct, isLogged, loadCategories }) => {
   useEffect(() => {
-    // on veut charger les recettes
     loadProduct();
     loadCategories();
   }, []);

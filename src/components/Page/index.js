@@ -70,7 +70,10 @@ const Page = ({ isLogged, loading }) => (
           {isLogged ? <Redirect to="/products" /> : <div><LoginForm /><RegistrationForm /></div>}
           {/* <Redirect to="/products" /> */}
         </Route>
-        <Route path="/categories">
+        <Route path="/category/">
+          <div>Ici bientôt une category</div>
+        </Route>
+        <Route path="/">
           {loading && <LoadingSpinner />}
           {!loading && (
           <div>
