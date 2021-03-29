@@ -7,22 +7,25 @@ const Categories = ({ categoryItems }) => {
   console.log('category-items', categoryItems);
   return (
     <>
-      <h1 className="text-center">Les catégories de produits</h1>
-      {categoryItems.map((item) => (
-        <main key={item.id} className="categories p-2">
-          <h2 className="categories-title mb-2">
-            {item.title}
-          </h2>
-          <div className="categories-thumbnail border">
-            <img
-              width="20%"
-              height="20%"
-              src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`}
-              alt="categories-thumbnail"
-            />
+      <h1 className="page-name">Les catégories de produits</h1>
+      <div className="container">
+
+        {categoryItems.map((item) => (
+          <div key={item.id} className="categories p-2">
+            <div className="categories-title">
+              <h2 className="category-name mb-2">
+                {item.title}
+              </h2>
+            </div>
+            <div className="categories-thumbnail">
+              <img
+                src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`}
+                alt="categories-thumbnail"
+              />
+            </div>
           </div>
-        </main>
-      ))}
+        ))}
+      </div>
     </>
   );
 };
