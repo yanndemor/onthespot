@@ -15,8 +15,6 @@ const Categories = ({ categoryItems }) => {
           </h2>
           <div className="categories-thumbnail border">
             <img
-              width="20%"
-              height="20%"
               src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`}
               alt="categories-thumbnail"
             />

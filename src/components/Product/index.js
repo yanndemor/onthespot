@@ -4,6 +4,7 @@ import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
 import product from 'src/assets/images/products/can-coca.png';
 import PropTypes from 'prop-types';
+/* import ControlQuantity from 'src/components/ControlQuantity'; */
 
 import { useParams, Link } from 'react-router-dom';
 
@@ -47,6 +48,7 @@ const Product = ({ productDetails }) => {
             </div>
 
             <div className="d-flex  my-2 align-items-center justify-content-center text-center">
+             {/*  <ControlQuantity /> */}
               <div className="button-minus ">
                 <ButtonDown />
               </div>

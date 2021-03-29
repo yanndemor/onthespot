@@ -4,16 +4,19 @@ import PropTypes from 'prop-types';
 
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
-
+import ControlQuantity from 'src/components/ControlQuantity';
 import { Link } from 'react-router-dom';
 /* import { $ } from 'src/assets/images/products/can-coca.png'; */
 
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
-import './products.scss';
-import Cart from 'src/components/Cart';
-import ControlQuantity from 'src/components/ControlQuantity';
+import './cartProduct.scss';
 
-const Products = ({ productItems }) => {
+const CartProduct = ({ productItems, 
+  value,
+  name,
+  placeholder,
+  changeField
+ }) => {
   console.log('products-items', productItems);
   return (
     <div className="products">
@@ -23,41 +26,35 @@ const Products = ({ productItems }) => {
             <div className="products-items">
               <div className="rounded-picture">
                 <img src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`} alt="product" />
-              </div>
-              <div className="price">
-                <p>{item.price}</p>
+                <div className="price">
+                  <p>{item.price}</p>
+                </div>
               </div>
             </div>
 
-            <div className="text product-name ">
+            <div className="product-name ">
               <Link to={`/product/${item.slug}`}>
                 {item.name}
               </Link>
             </div>
-
-            <div className="product-quantity">
-              <div className="button-plus ">
-                <ButtonDown />
-              </div>
-              <div className="quantity ">
-                <input placeholder="0" />
-              </div>
-              <div className="button-minus ">
-                <ButtonUp />
-              </div>
+            <ControlQuantity
+              value={value}
+              name={item.id}
+              placeholder={placeholder}
+              manageChange={changeField}
+             />
+            <div className="total">
+              <p>total prix</p>
+              <p>42€</p>
             </div>
-            <ControlQuantity />
           </div>
         ))}
-        {/* <div className="">
-          <Cart />
-        </div> */}
       </div>
     </div>
   );
 };
 
-Products.propTypes = {
+CartProduct.propTypes = {
   productItems: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -66,5 +63,11 @@ Products.propTypes = {
       price: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  value: PropTypes.number.isRequired,
+  name: PropTypes.number.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  changeField: PropTypes.func.isRequired,
+
+
 };
-export default Products;
+export default CartProduct;

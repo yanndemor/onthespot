@@ -18,7 +18,8 @@ import Orders from 'src/components/Orders';
 import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
-import RegistrationForm from '../../containers/RegistrationForm';
+import RegistrationForm from 'src/containers/RegistrationForm';
+import CartProduct from 'src/containers/CartProduct';
 
 const Page = ({ isLogged, loading }) => (
   <div className="page">
@@ -51,14 +52,24 @@ const Page = ({ isLogged, loading }) => (
             </div>
           </div>
         </Route>
-        <Route path="/orders">
+        <Route path="/commandes">
           <Orders />
         </Route>
-        <Route path="/order/{id}">
+        <Route path="/commande/{id}">
           <Order />
         </Route>
-        <Route path="/cart/">
-          <Cart />
+        <Route path="/panier">
+          <div className="row position-relative">
+            {loading && <LoadingSpinner />}
+            {!loading && (
+            <div className="col-sm-8  ">
+              <CartProduct />
+            </div>
+            )}
+            <div className="col-sm-4 ">
+              <Cart />
+            </div>
+          </div>
         </Route>
         <Route path="/contact">
           <Contact />
