@@ -1,6 +1,10 @@
 import { UPDATE_QUANTITY_FIELD } from 'src/actions/cart';
 
 const initialState = {
+  name: '',
+  type: 'number',
+  placeholder: '',
+  value: '',
   orderProducts: [{
     product: '',
     quantity: '',

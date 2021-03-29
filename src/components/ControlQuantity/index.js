@@ -10,7 +10,7 @@ const ControlQuantity = ({
   value,
   name,
   placeholder,
-  changeField,
+  manageChange,
 }) => (
   <div className="product-quantity">
     <div className="button-plus ">
@@ -20,7 +20,7 @@ const ControlQuantity = ({
       value={value}
       name={name}
       placeholder="quantité"
-      manageChange={changeField}
+      manageChange={manageChange}
     />
     <div className="button-minus ">
       <ButtonUp />

@@ -15,7 +15,7 @@ const CartProduct = ({ productItems,
   value,
   name,
   placeholder,
-  changeField
+  changeField,
  }) => {
   console.log('products-items', productItems);
   return (
@@ -67,7 +67,6 @@ CartProduct.propTypes = {
   name: PropTypes.number.isRequired,
   placeholder: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
-
-
 };
+
 export default CartProduct;
