@@ -10,7 +10,7 @@ const ButtonAddCart = ({ handleAddCart, name }) => (
       className="login-form-button"
       onClick={() => handleAddCart(name)}
     >
-      Déconnexion
+      Ajouter au panier
     </button>
   </div>
 
