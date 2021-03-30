@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
+import ButtonAddCart from 'src/containers/ButtonAddCart';
 
 import { Link } from 'react-router-dom';
 /* import { $ } from 'src/assets/images/products/can-coca.png'; */
@@ -33,6 +34,7 @@ const Products = ({ productItems }) => {
                 {item.name}
               </Link>
             </div>
+            <ButtonAddCart name={item} />
 
             <div className="product-quantity">
               <div className="button-plus ">
