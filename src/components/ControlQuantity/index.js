@@ -11,6 +11,7 @@ const ControlQuantity = ({
   name,
   placeholder,
   manageChange,
+  changeField2,
 }) => (
   <div className="product-quantity">
     <div className="button-plus ">
@@ -21,6 +22,12 @@ const ControlQuantity = ({
       name={name}
       placeholder="quantité"
       manageChange={manageChange}
+    />
+    <AddCart
+      value={value}
+      name={name}
+      placeholder="quantité"
+      manageChange={changeField2}
     />
     <div className="button-minus ">
       <ButtonUp />

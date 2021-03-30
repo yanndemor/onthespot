@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateQuantityField } from 'src/actions/cart';
+import { updateQuantityField, editCart } from 'src/actions/cart';
 
 // on importe le composant de présentation
 import CartProduct from 'src/components/CartProduct';
@@ -17,6 +17,10 @@ const mapDispatchToProps = (dispatch) => ({
   changeField: (newValue, name) => {
     // console.log(`newValue '${newValue}' for field '${name}'`);
     dispatch(updateQuantityField(newValue, name));
+  },
+  changeField2: (newValue, name) => {
+    // console.log(`newValue '${newValue}' for field '${name}'`);
+    dispatch(editCart(newValue, name));
   },
 });
 

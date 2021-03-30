@@ -1,4 +1,4 @@
-import { updateQuantityField } from 'src/actions/cart';
+import { updateQuantityField, editCart } from 'src/actions/cart';
 
 import { connect } from 'react-redux';
 
@@ -9,6 +9,7 @@ import ControlQuantity from 'src/components/ControlQuantity';
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
+  value: state.cart.id.quantity,
 
 });
 
@@ -19,6 +20,10 @@ const mapDispatchToProps = (dispatch) => ({
   changeField: (newValue, name) => {
     // console.log(`newValue '${newValue}' for field '${name}'`);
     dispatch(updateQuantityField(newValue, name));
+  },
+  changeField2: (newValue, name) => {
+    // console.log(`newValue '${newValue}' for field '${name}'`);
+    dispatch(editCart(newValue, name));
   },
 });
 

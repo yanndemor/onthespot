@@ -16,6 +16,7 @@ const CartProduct = ({ productItems,
   name,
   placeholder,
   changeField,
+  changeField2,
  }) => {
   console.log('products-items', productItems);
   return (
@@ -42,6 +43,7 @@ const CartProduct = ({ productItems,
               name={item.id}
               placeholder={placeholder}
               manageChange={changeField}
+              changeField={changeField2}
              />
             <div className="total">
               <p>total prix</p>
