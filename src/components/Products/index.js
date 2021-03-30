@@ -12,12 +12,12 @@ import { Link } from 'react-router-dom';
 import './products.scss';
 import Cart from 'src/components/Cart';
 
-const Products = ({ productItems }) => {
-  console.log('products-items', productItems);
+const Products = ({ products, productsList }) => {
+  console.log('productsList', products);
   return (
     <div className="products">
       <div className="container">
-        {productItems.map((item) => (
+        {products.map((item) => (
           <div key={item.id} className="product-listElements ">
             <div className="products-items">
               <div className="rounded-picture">
@@ -57,7 +57,7 @@ const Products = ({ productItems }) => {
 };
 
 Products.propTypes = {
-  productItems: PropTypes.arrayOf(
+  products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

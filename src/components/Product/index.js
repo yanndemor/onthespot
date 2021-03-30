@@ -1,8 +1,7 @@
 import React from 'react';
-/* import PropTypes from 'prop-types'; */
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
-import product from 'src/assets/images/products/can-coca.png';
+// import product from 'src/assets/images/products/can-coca.png';
 import PropTypes from 'prop-types';
 
 import { useParams, Link } from 'react-router-dom';
@@ -10,16 +9,16 @@ import { useParams, Link } from 'react-router-dom';
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './product.scss';
 
-const Product = ({ productDetails }) => {
+const Product = ({ productsList, categoriesList }) => {
   const { slug } = useParams();
-  console.log('porductDetails', productDetails);
+  console.log('productsList', productsList);
 
-  const theProduct = productDetails.find((singleProduct) => singleProduct.slug === slug);
+  const theProduct = productsList.find((product) => product.slug === slug);
 
   console.log('the product', theProduct);
   return (
     <>
-      <div className="product">
+      <div key={theProduct.slug} className="product">
 
         <div className="container mb-1">
           <div className="container  product-detail ">
@@ -70,8 +69,9 @@ const Product = ({ productDetails }) => {
     </>
   );
 };
+
 Product.propTypes = {
-  productDetails: PropTypes.arrayOf(
+  productsList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
@@ -80,4 +80,5 @@ Product.propTypes = {
     }).isRequired,
   ).isRequired,
 };
+
 export default Product;

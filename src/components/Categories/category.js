@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Category = ({
-  title, slug, picture, thumbnail,
+  title,
+  slug,
+  picture,
+  thumbnail,
 }) => (
 
-  const categoryItem = categoryDetails.find((singleProduct) => singleProduct.slug === slug);
   <Link to={`/category/${slug}`} className="category">
     <article>
       <h2 className="category-title">{title}</h2>

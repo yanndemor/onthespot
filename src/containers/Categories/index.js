@@ -6,7 +6,8 @@ import Categories from 'src/components/Categories';
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  categoryItems: state.categories.categoriesList,
+  categoriesList: state.categories.categoriesList,
+  productsList: state.products.productsList,
 });
 
 // === mapDispatchToProps
