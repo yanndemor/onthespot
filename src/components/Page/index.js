@@ -11,10 +11,11 @@ import PropTypes from 'prop-types';
 
 import CGU from 'src/components/CGU';
 import Product from 'src/containers/Product';
+import CartProduct from 'src/containers/CartProduct';
 import LoginForm from 'src/containers/LoginForm';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
-import Orders from 'src/components/Orders';
+import Orders from 'src/containers/Orders';
 import Order from 'src/components/Orders/Order';
 import Cart from 'src/components/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
@@ -58,7 +59,7 @@ const Page = ({ isLogged, loading }) => (
           <Order />
         </Route>
         <Route path="/cart/">
-          <Cart />
+          <CartProduct />
         </Route>
         <Route path="/contact">
           <Contact />
