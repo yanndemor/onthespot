@@ -58,7 +58,7 @@ const Page = ({ isLogged, loading }) => (
         <Route path="/commande/{id}">
           <Order />
         </Route>
-        <Route path="/panier">
+        <Route path="/panier/">
           <Cart />
         </Route>
         <Route path="/contact">
@@ -71,7 +71,7 @@ const Page = ({ isLogged, loading }) => (
           {isLogged ? <Redirect to="/products" /> : <div><LoginForm /><RegistrationForm /></div>}
           {/* <Redirect to="/products" /> */}
         </Route>
-        <Route path="/categorie/:id" exact>
+        <Route path="/categorie/:slug" exact>
           <div>Ici bientôt une category</div>
         </Route>
         <Route path="/categories">

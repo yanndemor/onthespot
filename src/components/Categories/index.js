@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import { getProductsByCategory } from 'src/utils';
+/* import { getProductsByCategory } from 'src/utils'; */
 // import LoadingSpinner from 'src/components/LoadingSpinner';
 import PropTypes from 'prop-types';
 
-import Products from 'src/components/Product';
+import Products from 'src/containers/Products';
 
 import './categories.scss';
 
@@ -14,19 +14,18 @@ const Categories = ({
   productsList,
   loading,
 }) => {
+  
   console.log('categoriesList', categoriesList);
   console.log('productsList', productsList);
   return (
     <div>
       <h1 className="page-name">Les catégories de produits</h1>
       <div className="container">
+
         {categoriesList.map((categorie) => (
           <div key={categorie.id}>
-            <Link to={`/category/${categorie.id}`} className="category">
-              <Products
-                products={getProductsByCategory(productsList, categorie.title)}
-                {...productsList}
-              />
+            <Link to={`/products/${categorie.slug}`} className="category">
+             
               <div className="categories p-2">
                 <div className="categories-title">
                   <h2 className="category-name mb-2">
@@ -39,7 +38,8 @@ const Categories = ({
                     alt="categories-thumbnail"
                   />
                 </div>
-              </div>
+              </div> 
+              
             </Link>
 
           </div>

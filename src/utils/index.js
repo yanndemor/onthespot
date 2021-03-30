@@ -13,9 +13,26 @@
  * @returns the products for the category
  */
 export const getProductsByCategory = (productsData, categoryName) => {
-  let result = productsData;
   // récuperer les produits qui correspondent à la catégorie
-  result = productsData.filter((product) => product.category === categoryName);
+  const result = productsData.filter((product) => product.category === categoryName);
 
   return result;
+};
+
+/**
+ * Get the recipe having a given slug
+ * @param {String} slug The slug to look for
+ * @param {Array} productsList The recipes into which searching
+ * @return {Object} The recipe which has been found (or undefined)
+ */
+ export const getRecipeBySlug = (slug, productsList) => {
+  const productCat = productsList.find((product) => {
+    // on calcule le slug de la recette courante
+    const products = slugifyTitle(item.title);
+
+    // on compare le slug de la recette avec celui obtenu dans l'URL
+    return currentRecipeSlug === slug;
+  });
+
+  return recipe;
 };
