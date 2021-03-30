@@ -1,11 +1,39 @@
+@use 'src/styles/vars';
 .page-name{
-  text-align:center;
+  display:block;
 
+  text-align:center;
+  font-family: vars.$title-font;
+  margin:10% 0;
+  font-size:2rem;
+  border-bottom: 4px solid black;
+ 
+  padding: 0 5% 5% 5%;
 }
 .categories{
   display:flex;
-  
+  justify-content:space-around;
+  border: 0px solid black;
+    border-radius: 30px;
+    background-color: coral;
+    box-shadow:  2px 2px 3px rgba(255, 255, 255, .6),
+       -2px -2px 3px rgba(0, 0, 0, .6);
+    margin-bottom:10%;
   .categories-title{
     align-self:center;
+    font-family: vars.$title-font;
+    font-size:2rem;
+    line-height:2.5;
+  }
+  img {
+    height:100%;
+    width:100%;
+    margin: 0 auto;
+    border: 0;
+    border-radius:55%;
+    background-color: vars.$yellow-color;
+    box-shadow:  2px 2px 3px rgba(255, 255, 255, .6),
+   -2px -2px 3px rgba(0, 0, 0, .6);
+    
   }
 }

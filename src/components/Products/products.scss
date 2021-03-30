@@ -123,16 +123,10 @@
 .products{
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   overflow: auto;
 
-  .scroller {
-  width: 300px;
-  height: 100px;
-  overflow-y: scroll;
-  scrollbar-color: rebeccapurple green;
-  scrollbar-width: thin;
-}
+
 }
 
 @media (max-width: 576px) {
