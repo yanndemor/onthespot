@@ -27,16 +27,16 @@ const Categories = ({
             <Link to={`/products/${categorie.slug}`} className="category">
              
               <div className="categories p-2">
-                <div className="categories-title">
-                  <h2 className="category-name mb-2">
-                    {categorie.title}
-                  </h2>
-                </div>
                 <div className="categories-thumbnail">
                   <img
                     src={`https://onthespot.apotheoz.tech/back/public/${categorie.thumbnail}`}
                     alt="categories-thumbnail"
                   />
+                </div>
+                <div className="categories-title">
+                  <h2 className="category-name ">
+                    {categorie.title}
+                  </h2>
                 </div>
               </div> 
               

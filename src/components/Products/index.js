@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 /* import Product from 'src/components/Product'; */
-
+import { home } from 'react-feather';
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
 import LoadingSpinner from 'src/components/LoadingSpinner';
@@ -26,7 +26,7 @@ const Products = ({ productsList, categoriesList, loading }) => {
   console.log('the singleproducts in products', products);
   return (
     <div className="products">
-      <div className="container">
+      <div className="container-fluid">
         {loading && <LoadingSpinner />}
         {!loading && (
         <>
@@ -57,6 +57,15 @@ const Products = ({ productsList, categoriesList, loading }) => {
                 <div className="button-minus ">
                   <ButtonUp />
                 </div>
+              </div>
+              <div className="button-home">
+                <Link to="/categorie">
+                  <input
+                    className="favorite styled"
+                    type="button"
+                    value="Home"
+                  />
+                </Link>
               </div>
 
             </div>

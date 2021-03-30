@@ -26,7 +26,7 @@ const Page = ({ isLogged, loading }) => (
     <div className="page-content">
       <Switch>
 
-        <Route path="/products">
+        <Route path="/products/:slug" exact>
           <div className="row mx-0 position-relative">
             <div className="col-sm-8  ">
               <Products />

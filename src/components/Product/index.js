@@ -57,8 +57,9 @@ const Product = ({ productsList, categoriesList }) => {
               </div>
             </div>
             <div>
-              <Link to="/products">
-                <p className="button-return">Retour Liste de produits</p>
+              <Link to="/categories">
+                <p className="button-return">Retour Liste des categories
+                </p>
               </Link>
             </div>
 
