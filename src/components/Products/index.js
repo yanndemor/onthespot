@@ -26,7 +26,7 @@ const Products = ({ productsList, categoriesList, loading }) => {
   console.log('the singleproducts in products', products);
   return (
     <div className="products">
-      <div className="container-fluid">
+      <div className="container-fluid px-0">
         {loading && <LoadingSpinner />}
         {!loading && (
         <>

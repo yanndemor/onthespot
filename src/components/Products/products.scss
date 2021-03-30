@@ -77,7 +77,11 @@
       
     display:flex;
     align-items:center;
-
+    z-index: 1;
+    
+    .quantity{
+      z-index: 0;
+    }
     .button-home{
       text-align:center;
     }
@@ -115,6 +119,7 @@
       width:2em;
       
       bottom: 12px;
+      z-index: 0;
     }
 
 
