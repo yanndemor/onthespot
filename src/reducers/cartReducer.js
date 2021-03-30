@@ -1,4 +1,4 @@
-import { ADD_CART, UPDATE_QUANTITY } from 'src/actions/cart';
+import { ADD_CART, UPDATE_QUANTITY, QUANTITY_UP } from 'src/actions/cart';
 
 const initialState = {
   orderProducts: [],
@@ -21,6 +21,18 @@ function cartReducer(state = initialState, action) {
           return {
             ...orderproduct,
             quantity: action.data,
+          };
+        }
+
+        return orderproduct;
+      });
+    }
+    case QUANTITY_UP: {
+      return state.orderProducts.map((orderproduct) => {
+        if (orderproduct.id === action.id) {
+          return {
+            ...orderproduct,
+            quantity: orderproduct.quantity + 1,
           };
         }
 

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 /* import { $ } from 'src/assets/images/products/can-coca.png'; */
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './cartProduct.scss';
+import { Template } from 'webpack';
 const CartProduct = ({ productItems,
   value,
   placeholder,
@@ -34,6 +35,7 @@ const CartProduct = ({ productItems,
             <div>
               {item.quantity}
             </div>
+            <ButtonUp name={item.name} />
             <div className="total">
               <p>total prix</p>
               <p>42€</p>

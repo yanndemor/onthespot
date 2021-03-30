@@ -3,10 +3,11 @@ import React from 'react';
 
 import './buttonUp.scss';
 
-const ButtonUp = () => (
+const ButtonUp = ({ handleQuantityUp, name }) => (
   <button
     className="button-up"
     type="button"
+    onClick={handleQuantityUp}
   >
     +
   </button>
