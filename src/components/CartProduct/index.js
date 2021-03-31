@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 /* import Product from 'src/components/Product'; */
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
+import ButtonPlus from 'src/containers/ButtonPlus';
 import { Link } from 'react-router-dom';
 /* import { $ } from 'src/assets/images/products/can-coca.png'; */
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './cartProduct.scss';
-const CartProduct = ({ productItems,
-  value,
-  placeholder,
-  changeField,
- }) => {
+const CartProduct = ({ productItems }) => {
   console.log('products-items', productItems);
   return (
     <div className="products">
@@ -34,6 +31,7 @@ const CartProduct = ({ productItems,
             <div>
               {item.quantity}
             </div>
+            <ButtonPlus id={item.id} />
             <div className="total">
               <p>total prix</p>
               <p>42€</p>
@@ -52,8 +50,5 @@ CartProduct.propTypes = {
       price: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  value: PropTypes.number.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  changeField: PropTypes.func.isRequired,
 };
 export default CartProduct;
