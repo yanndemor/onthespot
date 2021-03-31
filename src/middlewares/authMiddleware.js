@@ -18,12 +18,17 @@ const authMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
           store.dispatch(saveUser(response.data.token));
+          // on prévient axuios que l'on a maintenant un header
+          // par default sur toutes nos futures requetes
+          // axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
+          // Sotcke le token dans le localStorage
           if (response.data.token) {
             localStorage.setItem('user', JSON.stringify(response.data.token));
           }
+          const user = JSON.parse(localStorage.getItem('user'));
+          axios.defaults.headers.Authorization = `Bearer ${user}`;
           return response.data;
         })
-        // Sotcke le token dans le localStorage
 
         .catch((error) => {
           console.log(error);
