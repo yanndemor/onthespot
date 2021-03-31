@@ -26,7 +26,7 @@ const Product = ({ productsList, categoriesList }) => {
 
               <div className="product-image">
                 <div className=" rounded-picture">
-                  <img src={`https://onthespot.apotheoz.tech/back/public/${theProduct.thumbnail}`} alt="product" />
+                  <img src={`https://www.onthespot.link/back/public/${theProduct.thumbnail}`} alt="product" />
                 </div>
                 <div className=" px-0 align-self-start price">
                   <p className="">{theProduct.price}</p>

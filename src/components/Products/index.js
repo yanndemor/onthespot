@@ -34,7 +34,7 @@ const Products = ({ productsList, categoriesList, loading }) => {
             <div key={item.id} className="product-listElements ">
               <div className="products-items">
                 <div className="rounded-picture">
-                  <img src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`} alt="product" />
+                  <img src={`https://www.onthespot.link/back/public/${item.thumbnail}`} alt="product" />
                 </div>
                 <div className="price">
                   <p>{item.price}</p>

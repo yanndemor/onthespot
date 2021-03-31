@@ -29,7 +29,7 @@ const Categories = ({
               <div className="categories p-2">
                 <div className="categories-thumbnail">
                   <img
-                    src={`https://onthespot.apotheoz.tech/back/public/${categorie.thumbnail}`}
+                    src={`https://www.onthespot.link/back/public/${categorie.thumbnail}`}
                     alt="categories-thumbnail"
                   />
                 </div>
