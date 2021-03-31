@@ -34,23 +34,6 @@ const Contact = () => (
       {/* <div className="form-detail">
         <h3>Contactez nous par mail :</h3>
       </div>
-      <form>
-           <div>
-          <label htmlFor="name">Nom :</label>
-          <input type="text" id="name" name="user_name" />
-        </div>
-        <div>
-          <label htmlFor="telephone">N°tel: </label>
-          <input type="text" id="telephone" name="user_telephone" />
-        </div>
-        <div>
-          <label htmlFor="mail">e-mail:</label>
-          <input type="username" id="mail" name="user_mail" />
-        </div>
-        <div>
-          <label htmlFor="msg">Message :</label>
-          <textarea id="msg" name="user_message" />
-        </div>
         <div className="form-detail">
           <h3>Contactez nous par mail:</h3>
         </div>
@@ -112,3 +95,19 @@ export default Contact;
         OK
       </button>
     </form> */ 
+    /*       <div>
+          <label htmlFor="name">Nom :</label>
+          <input type="text" id="name" name="user_name" />
+        </div>
+        <div>
+          <label htmlFor="telephone">N°tel: </label>
+          <input type="text" id="telephone" name="user_telephone" />
+        </div>
+        <div>
+          <label htmlFor="mail">e-mail:</label>
+          <input type="username" id="mail" name="user_mail" />
+        </div>
+        <div>
+          <label htmlFor="msg">Message :</label>
+          <textarea id="msg" name="user_message" />
+        </div>  */
