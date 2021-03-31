@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Switch,
   Route,
@@ -25,7 +26,7 @@ const Page = ({ isLogged, loading }) => (
     <div className="page-content">
       <Switch>
 
-        <Route path="/products">
+        <Route path="/products/:slug" exact>
           <div className="row mx-0 position-relative">
             <div className="col-sm-8  ">
               <Products />
@@ -51,13 +52,13 @@ const Page = ({ isLogged, loading }) => (
             </div>
           </div>
         </Route>
-        <Route path="/orders">
+        <Route path="/commandes">
           <Orders />
         </Route>
-        <Route path="/order/{id}">
+        <Route path="/commande/{id}">
           <Order />
         </Route>
-        <Route path="/cart/">
+        <Route path="/panier/">
           <Cart />
         </Route>
         <Route path="/contact">
@@ -70,8 +71,16 @@ const Page = ({ isLogged, loading }) => (
           {isLogged ? <Redirect to="/products" /> : <div><LoginForm /><RegistrationForm /></div>}
           {/* <Redirect to="/products" /> */}
         </Route>
-        <Route path="/category/">
+        <Route path="/categorie/:slug" exact>
           <div>Ici bientôt une category</div>
+        </Route>
+        <Route path="/categories">
+          {loading && <LoadingSpinner />}
+          {!loading && (
+          <div>
+            <Categories />
+          </div>
+          )}
         </Route>
         <Route path="/">
           {loading && <LoadingSpinner />}

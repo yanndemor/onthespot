@@ -1,19 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Products from 'src/containers/Products';
 
 const Category = ({
-  title, slug, picture, thumbnail,
+  /*  title,
+  slug,
+  picture,
+  thumbnail, */
+  productsList,
+  categoriesList,
+
 }) => (
 
-  const categoryItem = categoryDetails.find((singleProduct) => singleProduct.slug === slug);
-  <Link to={`/category/${slug}`} className="category">
-    <article>
-      <h2 className="category-title">{title}</h2>
-      <div className="category-picture">{picture}</div>
-      <div className="category-thumbnail">{thumbnail}</div>
-    </article>
-  </Link>
+  {/* <div>
+    {productsList.map((singlesProduct) => (
+      <Products key={singlesproduct.id} {...productsList} />
+    ))};
+  </div> */}
+
 );
 
 Category.propTypes = {
