@@ -17,7 +17,7 @@ const Categories = ({ categoryItems }) => {
             <img
               width="20%"
               height="20%"
-              src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`}
+              src={`https://www.onthespot.link/back/public/${item.thumbnail}`}
               alt="categories-thumbnail"
             />
           </div>
