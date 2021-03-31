@@ -1,4 +1,6 @@
-import { ADD_CART, UPDATE_QUANTITY, QUANTITY_PLUS, QUANTITY_LESS } from 'src/actions/cart';
+import {
+  ADD_CART, UPDATE_QUANTITY, QUANTITY_PLUS, QUANTITY_LESS,
+} from 'src/actions/cart';
 
 const initialState = {
   orderProducts: [],
@@ -9,11 +11,12 @@ function cartReducer(state = initialState, action) {
     case ADD_CART:
       // console.log("state.orderProducts", state.orderProducts);
       // console.log("action.name.id", action.name.id);
-      if (!state.orderProducts.includes(action.name)) {
+      if (!state.orderProducts.some((orderProduct) => orderProduct.id === action.name.id)) {
+        console.log('ok');
         return {
           ...state,
           orderProducts:
-           [...state.orderProducts, { ...action.name, quantity: 0 }],
+           [...state.orderProducts, { ...action.name, quantity: 1 }],
         };
       }
       return state;

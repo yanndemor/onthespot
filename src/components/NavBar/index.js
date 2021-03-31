@@ -21,7 +21,7 @@ const NavBar = () => {
       <Navbar className="navbar1" collapseOnSelect expand="sm" variant="dark">
 
         {/* <Navbar.Brand href="."> <img src={reactLogo} /></Navbar.Brand> */}
-        <NavLink to="/cart" activeClassName="selected">
+        <NavLink to="/panier" activeClassName="selected">
           <img src={logoIconeBeach} alt="" />
           <ShoppingCart size={40} />
           <User size={40} />

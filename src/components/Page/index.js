@@ -17,7 +17,7 @@ import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
 import Orders from 'src/containers/Orders';
 import Order from 'src/components/Orders/Order';
-import Cart from 'src/components/Cart';
+import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import RegistrationForm from '../../containers/RegistrationForm';
 
@@ -45,6 +45,19 @@ const Page = ({ isLogged, loading }) => (
             {!loading && (
             <div className="col-sm-8  ">
               <Product className="" />
+            </div>
+            )}
+            <div className="col-sm-4 ">
+              <Cart />
+            </div>
+          </div>
+        </Route>
+        <Route path="/panier" exact>
+          <div className="row position-relative">
+            {loading && <LoadingSpinner />}
+            {!loading && (
+            <div className="col-sm-8  ">
+              <CartProduct />
             </div>
             )}
             <div className="col-sm-4 ">

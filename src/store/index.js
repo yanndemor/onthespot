@@ -3,6 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import authMiddleware from 'src/middlewares/authMiddleware';
 import productsMiddleware from 'src/middlewares/productsMiddleware';
 import categoriesMiddleware from 'src/middlewares/categoriesMiddleware';
+import cartMiddleware from 'src/middlewares/cartMiddleware';
 import reducer from 'src/reducers';
 
 // on combine devTools avec les middlewares
@@ -11,6 +12,7 @@ const enhancers = composeWithDevTools(
     authMiddleware,
     productsMiddleware,
     categoriesMiddleware,
+    cartMiddleware,
     // ... d'autres middlewares
   ),
 );
