@@ -13,17 +13,17 @@ const Footer = () => {
       <div className="footer-mobile d-sm-none">
         <div className="social-network col-3 col-sm-1">
           <a href="https://oclock.io/">
-            <Facebook color="blue" />
+            <Facebook color="blue" size="2em"/>
           </a>
         </div>
         <div className="social-network col-3 col-sm-1">
           <a href="https://oclock.io/">
-            <Instagram color="#f0f" />
+            <Instagram color="#f0f" size="2em"/>
           </a>
         </div>
         <div className="social-network col-3 col-sm-2">
           <a href="https://oclock.io/">
-            <Mail />
+            <Mail size="2em"/>
           </a>
         </div>
         <div className="social-network text col-3 col-sm-8">
@@ -36,12 +36,12 @@ const Footer = () => {
         <div className="footer-desktop-social">
           <div className="social-network">
             <a href="https://oclock.io/">
-              <Facebook color="blue" />
+              <Facebook color="blue" size="2em"/>
             </a>
           </div>
           <div className="social-network">
             <a href="https://oclock.io/">
-              <Instagram color="#f0f" />
+              <Instagram color="#f0f" size="2em"/>
             </a>
           </div>
           <ul className="list">
