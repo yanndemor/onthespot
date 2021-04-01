@@ -28,7 +28,7 @@ const authMiddleware = (store) => (next) => (action) => {
           const user = JSON.parse(localStorage.getItem('user'));
           axios.defaults.headers.Authorization = `Bearer ${user}`;
 
-          store.dispatch(saveUser(response.data.token));
+          store.dispatch(saveUser(response.data.token, response.data.user));
         })
 
         .catch((error) => {

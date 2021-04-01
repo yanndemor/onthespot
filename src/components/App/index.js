@@ -15,10 +15,11 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct, isLogged, loadCategories }) => {
+const App = ({ loadProduct, isLogged, loadCategories, loadOrders }) => {
   useEffect(() => {
     loadProduct();
     loadCategories();
+    loadOrders();
   }, []);
 
   return (

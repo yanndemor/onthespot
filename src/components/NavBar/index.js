@@ -36,7 +36,7 @@ const NavBar = () => {
             <NavLink to="/contact" className="navlink" activeClassName="selected">
               Contact
             </NavLink>
-            <NavLink to="/orders" className="navlink" activeClassName="selected">
+            <NavLink to="/commandes" className="navlink" activeClassName="selected">
               Commandes
             </NavLink>
             <NavLink to="/connexion" className="navlink" activeClassName="selected">

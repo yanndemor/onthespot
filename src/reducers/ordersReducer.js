@@ -8,7 +8,6 @@ const initialState = {
   price: '',
   availability: '', */
   ordersList: [],
-  loading: true,
 
 };
 
@@ -18,10 +17,6 @@ function ordersReducer(state = initialState, action) {
       return {
         ...state,
         ordersList: action.loadedOrders,
-        loading: false,
-        token: action.token,
-        user: action.user,
-
       };
 
     default:
