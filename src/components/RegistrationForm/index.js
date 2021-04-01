@@ -23,9 +23,9 @@ const RegistrationForm = ({
   };
   console.log(firstname);
   return (
-    <div className="login-form">
+    <div className="form" id="inscription">
       <h2>Inscription</h2>
-      <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit}>
         <Field
           name="firstname"
           placeholder="Prenom"
@@ -65,12 +65,8 @@ const RegistrationForm = ({
           manageChange={changeField}
           value={phoneNumber}
         />
-        <button
-          type="submit"
-          className="login-form-button"
-        >
-          Valider
-        </button>
+        <button>login</button>
+        <p className="message">Déja inscrit? <a className="toggle-form" href="#">Connectez vous</a></p>
       </form>
     </div>
   );
