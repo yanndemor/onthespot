@@ -19,16 +19,14 @@ const authMiddleware = (store) => (next) => (action) => {
       axios.post(`${API_URL}/login`, {
         username: username,
         password: password,
+
       })
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
           // Sotcke le token dans le localStorage
           localStorage.setItem('user', JSON.stringify(response.data.token));
 
-          const user = JSON.parse(localStorage.getItem('user'));
-          axios.defaults.headers.Authorization = `Bearer ${user}`;
-
-          store.dispatch(saveUser(response.data.token, response.data.user));
+          store.dispatch(saveUser(response.data.logged, response.data.token));
         })
 
         .catch((error) => {

@@ -7,8 +7,7 @@ import './orders.scss';
 
 const Orders = ({ ordersList }) => {
   console.log('orderList', ordersList);
-  return(
-
+  return (
     <main className="orders">
       <h1 className="title">Commandes</h1>
       <div className="orders-container">
@@ -26,6 +25,18 @@ const Orders = ({ ordersList }) => {
       </div>
     </main>
   );
+};
+
+Orders.propTypes = {
+  ordersList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default Orders;

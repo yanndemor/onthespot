@@ -24,7 +24,7 @@ const Categories = ({
 
         {categoriesList.map((categorie) => (
           <div key={categorie.id}>
-            <Link to={`/products/${categorie.slug}`} className="category">
+            <Link to={`/produits/${categorie.slug}`} className="category">
 
               <div className="categories p-2">
                 <div className="categories-thumbnail">

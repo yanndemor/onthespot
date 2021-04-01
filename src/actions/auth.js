@@ -20,6 +20,7 @@ export const saveUser = (isLogged, token) => ({
   type: SAVE_USER,
   isLogged,
   token,
+  
 });
 
 export const logOut = () => ({
