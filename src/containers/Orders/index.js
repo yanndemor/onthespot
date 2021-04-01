@@ -7,7 +7,9 @@ import Orders from 'src/components/Orders';
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  ordersList: state.cart.ordersList,
+  ordersList: state.orders.ordersList,
+  productsList: state.products.productsList,
+  categoriesList: state.categories.categoriesList,
 });
 
 // === mapDispatchToProps
