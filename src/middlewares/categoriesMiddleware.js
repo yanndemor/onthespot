@@ -5,12 +5,12 @@ import { FETCH_CATEGORIES, saveCategories } from 'src/actions/categories';
 const API_URL = 'https://api.onthespot.link/api';
 
 const categoriesMiddleware = (store) => (next) => (action) => {
-  console.log('on a intercepté une action dans le middleware: ', action);
+  // console.log('on a intercepté une action dans le middleware: ', action);
   switch (action.type) {
     case FETCH_CATEGORIES:
       axios.get(`${API_URL}/categories`)
         .then((response) => {
-          console.log('response: ', response);
+          // console.log('response: ', response);
           store.dispatch(saveCategories(response.data));
         })
         .catch((error) => {

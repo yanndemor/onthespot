@@ -10,7 +10,7 @@ const productsMiddleware = (store) => (next) => (action) => {
     case FETCH_PRODUCTS:
       axios.get(`${API_URL}/products`)
         .then((response) => {
-          console.log('response: ', response);
+          // console.log('response: ', response);
           store.dispatch(saveProducts(response.data));
         })
         .catch((error) => {

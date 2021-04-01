@@ -11,23 +11,24 @@ const authMiddleware = (store) => (next) => (action) => {
     case LOG_IN: {
       const { username, password } = store.getState().auth;
 
+      // let webApiUrl = 'example.com/abc';
+      // let token = localStorage.getItem('token');
+      // let headers={headers: {"Authorization" : `Bearer ${token}`} }
+      // axios.get(webApiUrl,headers);
+
       axios.post(`${API_URL}/login`, {
         username: username,
         password: password,
       })
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
-          store.dispatch(saveUser(response.data.token));
-          // on prévient axuios que l'on a maintenant un header
-          // par default sur toutes nos futures requetes
-          // axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
           // Sotcke le token dans le localStorage
-          if (response.data.token) {
-            localStorage.setItem('user', JSON.stringify(response.data.token));
-          }
+          localStorage.setItem('user', JSON.stringify(response.data.token));
+
           const user = JSON.parse(localStorage.getItem('user'));
           axios.defaults.headers.Authorization = `Bearer ${user}`;
-          return response.data;
+
+          store.dispatch(saveUser(response.data.token));
         })
 
         .catch((error) => {
