@@ -14,6 +14,7 @@ const ButtonLogout = ({ isLogged, handleLogout }) => (
       <NavLink to="/connexion" className="navlink" activeClassName="active">
         Connexion
       </NavLink>
+      <div className="dropdown-divider" />
       <NavLink to="/connexion" className="navlink" activeClassName="active">
         Inscription
       </NavLink>
