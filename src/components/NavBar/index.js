@@ -41,7 +41,7 @@ const NavBar = ({ isLogged }) => {
             <User size={30} />
           </NavLink>
         ) : (
-          <div></div>
+          <div />
         )}
 
         <Navbar.Toggle className="ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@ const NavBar = ({ isLogged }) => {
             {isLogged && (
               <NavLink to="/commandes" className="navlink" activeClassName="active">
                 Commandes
-            </NavLink>
+              </NavLink>
             )}
             <NavLink to="/qui-sommes-nous" className="navlink" activeClassName="active">
               Qui sommes nous ?
