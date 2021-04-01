@@ -37,7 +37,7 @@ const Cart = ({
         </div>
         <div className="listDelevery">
           <label htmlFor="delevery-point ">Choisir un point de retrait:</label>
-          <select onChange={handleChangePoint}>
+          <select onChange={handleChangePoint} required>
             <option value="">--Choisir un point de retrait--</option>
             {deliveryPoint.map((point) => <option value={point.id}>{point.name}</option>)}
           </select>

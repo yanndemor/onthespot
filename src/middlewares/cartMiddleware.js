@@ -19,7 +19,7 @@ const cartMiddleware = (store) => (next) => (action) => {
 
       axios.post(`${API_URL}/orders`, {
         orderProducts: orders,
-        deliveryPoint: 154,
+        deliveryPoint: store.getState().cart.deliveryPointToOrder,
         deliveryTime: '2021-03-22T18:10:07+01:00',
       }, {
         headers: {
