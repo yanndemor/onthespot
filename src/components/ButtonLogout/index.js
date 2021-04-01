@@ -17,7 +17,7 @@ const ButtonLogout = ({ isLogged, handleLogout }) => (
       <NavLink to="/connexion" className="navlink" activeClassName="active">
         Inscription
       </NavLink>
-    < />
+    </>
   )
 );
 

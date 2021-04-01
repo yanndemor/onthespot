@@ -61,6 +61,11 @@ const NavBar = ({ isLogged }) => {
             <NavLink to="/products" className="navlink" activeClassName="active">
               Accueil
             </NavLink>
+            {isLogged && (
+              <NavLink to="/commandes" className="navlink" activeClassName="active">
+                Commandes
+            </NavLink>
+            )}
             <NavLink to="/qui-sommes-nous" className="navlink" activeClassName="active">
               Qui sommes nous ?
             </NavLink>
