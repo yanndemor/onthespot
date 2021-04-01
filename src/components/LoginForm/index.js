@@ -18,10 +18,10 @@ const LoginForm = ({
     evt.preventDefault();
     handleLogin();
   };
+
   console.log(username);
   return (
-    <div className="login-form">
-      <h2>Connexion</h2>
+    <div>
       {logged && (
         <div className="login-form-logged">
           <p className="login-form-message">
@@ -37,27 +37,26 @@ const LoginForm = ({
         </div>
       )}
       {!logged && (
-        <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
-          <Field
-            name="username"
-            placeholder="Adresse Email"
-            manageChange={changeField}
-            value={username}
-          />
-          <Field
-            name="password"
-            type="password"
-            placeholder="Mot de passe"
-            manageChange={changeField}
-            value={password}
-          />
-          <button
-            type="submit"
-            className="login-form-button"
-          >
-            Valider
-          </button>
-        </form>
+        <div className="form" id="connexion">
+          <h2>Connexion</h2>
+          <form className="login-form" onSubmit={handleSubmit}>
+            <Field
+              name="username"
+              placeholder="Adresse Email"
+              manageChange={changeField}
+              value={username}
+            />
+            <Field
+              name="password"
+              type="password"
+              placeholder="Mot de passe"
+              manageChange={changeField}
+              value={password}
+            />
+            <button>login</button>
+            <p className="message">Pas encore de compte? <a className="toggle-form" href="#inscription">Inscrivez vous</a></p>
+          </form>
+        </div>
       )}
     </div>
   );

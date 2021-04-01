@@ -12,12 +12,13 @@ import PropTypes from 'prop-types';
 
 import CGU from 'src/components/CGU';
 import Product from 'src/containers/Product';
+import CartProduct from 'src/containers/CartProduct';
 import LoginForm from 'src/containers/LoginForm';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
-import Orders from 'src/components/Orders';
+import Orders from 'src/containers/Orders';
 import Order from 'src/components/Orders/Order';
-import Cart from 'src/components/Cart';
+import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import RegistrationForm from '../../containers/RegistrationForm';
 
@@ -26,7 +27,7 @@ const Page = ({ isLogged, loading }) => (
     <div className="page-content">
       <Switch>
 
-        <Route path="/products/:slug" exact>
+        <Route path="/produits/:slug" exact>
           <div className="row mx-0 position-relative">
             <div className="col-sm-8  ">
               <Products />
@@ -36,10 +37,7 @@ const Page = ({ isLogged, loading }) => (
             </div>
           </div>
         </Route>
-        <Route path="/cgu">
-          <CGU />
-        </Route>
-        <Route path="/product/:slug" exact>
+        <Route path="/produit/:slug" exact>
           <div className="row position-relative">
             {loading && <LoadingSpinner />}
             {!loading && (
@@ -52,14 +50,28 @@ const Page = ({ isLogged, loading }) => (
             </div>
           </div>
         </Route>
+        <Route path="/cgu">
+          <CGU />
+        </Route>
+        <Route path="/panier" exact>
+          <div className="row position-relative">
+            {loading && <LoadingSpinner />}
+            {!loading && (
+            <div className="col-sm-8  ">
+              <CartProduct />
+            </div>
+            )}
+            <div className="col-sm-4 ">
+              <Cart />
+            </div>
+          </div>
+        </Route>
         <Route path="/commandes">
           <Orders />
         </Route>
+
         <Route path="/commande/{id}">
           <Order />
-        </Route>
-        <Route path="/panier/">
-          <Cart />
         </Route>
         <Route path="/contact">
           <Contact />

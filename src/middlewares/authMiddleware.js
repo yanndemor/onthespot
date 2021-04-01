@@ -11,14 +11,24 @@ const authMiddleware = (store) => (next) => (action) => {
     case LOG_IN: {
       const { username, password } = store.getState().auth;
 
+      // let webApiUrl = 'example.com/abc';
+      // let token = localStorage.getItem('token');
+      // let headers={headers: {"Authorization" : `Bearer ${token}`} }
+      // axios.get(webApiUrl,headers);
+
       axios.post(`${API_URL}/login`, {
         username: username,
         password: password,
+
       })
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
+          // Sotcke le token dans le localStorage
+          localStorage.setItem('user', JSON.stringify(response.data.token));
+
           store.dispatch(saveUser(response.data.logged, response.data.token));
         })
+
         .catch((error) => {
           console.log(error);
         });

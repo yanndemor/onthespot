@@ -5,6 +5,7 @@ import { home } from 'react-feather';
 import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
 import LoadingSpinner from 'src/components/LoadingSpinner';
+import ButtonAddCart from 'src/containers/ButtonAddCart';
 
 import { Link, useParams } from 'react-router-dom';
 /* import { $ } from 'src/assets/images/products/can-coca.png'; */
@@ -13,16 +14,13 @@ import { Link, useParams } from 'react-router-dom';
 import './products.scss';
 import Cart from 'src/components/Cart';
 
-const Products = ({ productsList, categoriesList, loading }) => {
-  console.log('the categories in products', categoriesList);
+const Products = ({ productsList, loading }) => {
   console.log('the products in products', productsList);
 
   const { slug } = useParams();
 
-  /*  const categoryName = categoriesList.filter((categorie) => categorie.id
-  === productsList.category.id); */
   const products = productsList.filter((product) => product.category.slug === slug);
-  console.log(slug);
+
   console.log('the singleproducts in products', products);
   return (
     <div className="products">
@@ -31,21 +29,24 @@ const Products = ({ productsList, categoriesList, loading }) => {
         {!loading && (
         <>
           {products.map((item) => (
-            <div key={item.id} className="product-listElements ">
-              <div className="products-items">
-                <div className="rounded-picture">
-                  <img src={`https://www.onthespot.link/back/public/${item.thumbnail}`} alt="product" />
-                </div>
-                <div className="price">
-                  <p>{item.price}</p>
+            <>
+              <div key={item.id} className="product-listElements ">
+                <div className="products-items">
+                  <div className="rounded-picture">
+                    <img src={`https://www.onthespot.link/back/public/${item.thumbnail}`} alt="product" />
+                  </div>
+                  <div className="price">
+                    <p>{item.price}</p>
+                  </div>
                 </div>
               </div>
 
               <div className="text product-name ">
-                <Link to={`/product/${item.slug}`}>
+                <Link to={`/produit/${item.slug}`}>
                   {item.name}
                 </Link>
               </div>
+              <ButtonAddCart name={item} />
 
               <div className="product-quantity">
                 <div className="button-plus ">
@@ -67,8 +68,7 @@ const Products = ({ productsList, categoriesList, loading }) => {
                   />
                 </Link>
               </div>
-
-            </div>
+            </>
           ))}
         </>
         )}
@@ -87,14 +87,6 @@ Products.propTypes = {
       name: PropTypes.string.isRequired,
       picture: PropTypes.string.isRequired,
       price: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
-  categoriesList: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      picture: PropTypes.string.isRequired,
-
     }).isRequired,
   ).isRequired,
 };

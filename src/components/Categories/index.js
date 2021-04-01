@@ -14,7 +14,6 @@ const Categories = ({
   productsList,
   loading,
 }) => {
-  
   console.log('categoriesList', categoriesList);
   console.log('productsList', productsList);
   return (
@@ -25,8 +24,8 @@ const Categories = ({
 
         {categoriesList.map((categorie) => (
           <div key={categorie.id}>
-            <Link to={`/products/${categorie.slug}`} className="category">
-             
+            <Link to={`/produits/${categorie.slug}`} className="category">
+
               <div className="categories p-2">
                 <div className="categories-thumbnail">
                   <img
@@ -39,8 +38,8 @@ const Categories = ({
                     {categorie.title}
                   </h2>
                 </div>
-              </div> 
-              
+              </div>
+
             </Link>
 
           </div>

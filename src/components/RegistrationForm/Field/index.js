@@ -10,6 +10,7 @@ const Field = ({
   value,
   type,
   name,
+  helpText,
   placeholder,
   manageChange,
 }) => {
@@ -32,6 +33,7 @@ const Field = ({
         placeholder={placeholder}
         name={name}
       />
+      <small id="help" className="form-text text-muted message">{helpText}</small>
 
       <label
         htmlFor={inputId}
@@ -48,6 +50,7 @@ Field.propTypes = {
   value: PropTypes.string,
   /** type of the input */
   type: PropTypes.string,
+  helpText: PropTypes.string,
   /** text used as name for the input (and also used as id, with a prefix) */
   name: PropTypes.string.isRequired,
   /** text used as placeholder and label */
@@ -63,6 +66,7 @@ Field.propTypes = {
 Field.defaultProps = {
   value: '',
   type: 'text',
+  helpText: '',
 };
 
 // == Export
