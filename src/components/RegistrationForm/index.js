@@ -51,11 +51,12 @@ const RegistrationForm = ({
           placeholder="Mot de passe"
           manageChange={changeField}
           value={passwordRegister}
+          helpText="Necessite minimum 8 caracteres, dont au moins 1 majuscule, 1 minuscule, 1 chiffre et 1 caractere spécial parmi : _.!?-@~$€£µ,;:+/"
         />
         <Field
           name="passwordRegisterCheck"
           type="password"
-          placeholder="Mot de passe"
+          placeholder="Confirmation Mot de passe"
           manageChange={changeField}
           value={passwordRegisterCheck}
         />
