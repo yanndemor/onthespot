@@ -6,10 +6,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './cart.scss';
 
-const Cart = ({ handleCart }) => {
+const Cart = ({ handleCart, handleChangeTime, timeSelect }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleCart();
+  };
+  const handleChange = (evt) => {
+    handleChangeTime(evt.target.value);
   };
   return (
     <div className="cart">
@@ -33,20 +36,25 @@ const Cart = ({ handleCart }) => {
         </div>
 
         <div className="listDelevery">
-          <label htmlFor="delevry-time">Choisir une heure de retrait:</label>
-          <select name="pets" id="delevry-time">
-            <option value="">--Choisir une heure de retrait--</option>
-            <option value="test">test</option>
-            <option value="test2">test2</option>
-          </select>
+          <label>
+            Choisir une heure de retrait:
+            <select value={timeSelect} onChange={handleChange}>
+              <option value="">--Choisir une heure de retrait--</option>
+              <option value="test">test</option>
+              <option value="test2">test2</option>
+            </select>
+          </label>
         </div>
-
         <button
           type="submit"
           className="login-form-button"
         >
           Valider
         </button>
+        <div>
+          <input type="datetime-local" value="2012-03-23T23:00" />
+
+        </div>
       </form>
     </div>
   );
@@ -54,5 +62,7 @@ const Cart = ({ handleCart }) => {
 
 Cart.propTypes = {
   handleCart: PropTypes.func.isRequired,
+  handleChangeTime: PropTypes.func.isRequired,
+  timeSelect: PropTypes.string.isRequired,
 };
 export default Cart;

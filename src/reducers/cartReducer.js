@@ -1,5 +1,5 @@
 import {
-  ADD_CART, UPDATE_QUANTITY, QUANTITY_PLUS, QUANTITY_LESS,
+  ADD_CART, UPDATE_QUANTITY, QUANTITY_PLUS, QUANTITY_LESS, TIME_SELECT,
 } from 'src/actions/cart';
 
 const initialState = {
@@ -19,7 +19,13 @@ function cartReducer(state = initialState, action) {
            [...state.orderProducts, { ...action.name, quantity: 1 }],
         };
       }
-      return state;
+    // eslint-disable-next-line no-fallthrough
+    case TIME_SELECT:
+      return {
+        ...state,
+        deliveryTime: action.time,
+      };
+
     case UPDATE_QUANTITY: {
       return state.orderProducts.map((orderproduct) => {
         if (orderproduct.id === action.id) {

@@ -48,7 +48,7 @@ const Products = ({ productsList, loading }) => {
               </div>
               <ButtonAddCart name={item} />
 
-              <div className="product-quantity">
+              {/* <div className="product-quantity">
                 <div className="button-plus ">
                   <ButtonDown />
                 </div>
@@ -58,7 +58,7 @@ const Products = ({ productsList, loading }) => {
                 <div className="button-minus ">
                   <ButtonUp />
                 </div>
-              </div>
+              </div> */}
               <div className="button-home">
                 <Link to="/categorie">
                   <input
