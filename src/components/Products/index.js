@@ -58,15 +58,6 @@ const Products = ({ productsList, categoriesList, loading }) => {
                   <ButtonUp />
                 </div>
               </div>
-              <div className="button-home">
-                <Link to="/categorie">
-                  <input
-                    className="favorite styled"
-                    type="button"
-                    value="Home"
-                  />
-                </Link>
-              </div>
 
             </div>
           ))}
