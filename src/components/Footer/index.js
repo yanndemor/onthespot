@@ -48,14 +48,14 @@ const Footer = () => {
             <Link className="link-footer" to="/categories">
               Nos catégories
             </Link>
-            <Link className="link-footer" to="/CGU">
-              Mentions légales
-            </Link>
             <Link className="link-footer" to="/contact">
               Nous contacter
             </Link>
             <Link className="link-footer" to="/qui-sommes-nous">
               Qui sommes nous ?
+            </Link>
+            <Link className="link-footer" to="/CGU">
+              Mentions légales
             </Link>
             <Link className="link-footer" to="/CGV">
               Conditions générales de vente
