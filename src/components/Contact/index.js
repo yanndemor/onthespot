@@ -4,25 +4,36 @@ import Field from './Field';
 import Message from './Message';
 import './contact.scss';
 
+import { Phone } from 'react-feather';
+
 const Contact = () => (
 
   <div className="contact-content">
 
-    <div className="contact-content">
-      <div className="contact-title">
-        <h2>Pour nous contacter!</h2>
-      </div>
+    {/* <div className="contact-content"> */}
+    <Phone size={40} className="contact-img" />
+    <div className="contact-title">
+      <h2>Pour nous contacter!</h2>
+    </div>
+    <div className="contact-body">
       <div className="contact-detail">
-        <h3>Nos Coordonnées</h3>
+        <h2>Nos Coordonnées</h2>
       </div>
       <div className="phone-detail">
-        <p>N° de télephone:0769330566</p>
+        <h3>N° de télephone</h3>
+        <p>(+33) 0769330566</p>
       </div>
-      <div className="form-detail">
-        <h3>Contactez nous par mail en remplissant les informations suivantes:</h3>
+      <div className="phone-detail">
+        <h3>Adresse email</h3>
+        <a href="mailto:customer@onthespot.link">customer@onthespot.link</a>
       </div>
-      
-    
+      <div className="phone-detail">
+        <h3>Rendez nous un petite visite</h3>
+        <p>55b avenue 40230 Capbreton</p>
+      </div>
+      {/* <div className="form-detail">
+        <h3>Contactez nous par mail :</h3>
+      </div>
         <div className="form-detail">
           <h3>Contactez nous par mail:</h3>
         </div>
@@ -36,8 +47,9 @@ const Contact = () => (
           <p>Adresse postale</p>
           <p>55b avenue 40230 Capbreton</p>
         </div>
-      
+      </form> */}
     </div>
+    {/* </div> */}
   </div>
 
 );

@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 // == Import
 import Caroussel from 'src/components/Caroussel';
-import NavBar from 'src/components/NavBar';
+import NavBar from 'src/containers/NavBar';
 // import Orders from 'src/components/Orders';
 import Page from 'src/containers/Page';
 import ButtonLogout from 'src/containers/ButtonLogout';
@@ -26,8 +26,7 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders }) => {
     <div className="app">
       <Router>
         <NavBar />
-        <h1>OnTheSpot</h1>
-        {isLogged && <div> Connecté , <ButtonLogout /></div>}
+        {isLogged && <div> Bon retour parmi nous Gerard</div>}
         {/* <Caroussel /> */}
         <Page />
 
