@@ -6,7 +6,7 @@ import './buttonLogout.scss';
 
 const ButtonLogout = ({ isLogged, handleLogout }) => (
   isLogged ? (
-    <a onClick={handleLogout} className="navlink">
+    <a href="#" onClick={handleLogout} className="navlink">
       Déconnexion
     </a>
   ) : (
