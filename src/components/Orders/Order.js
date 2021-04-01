@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Order = () => (
+const Order = ({ ...order }, productsList) => (
 
   <div className="order-detail row">
-    <div className="col-8">
+    <div key={order.id} className="col-8">
       <div className="order-name text-center ">
-        <p>Commande XXX</p>
+        <p>Commande {order.id}</p>
       </div>
       <div className="order-description ">
         <p className="w-75 text-center">Détail de la commande</p>
@@ -18,17 +18,15 @@ const Order = () => (
     </div>
     <div className="order-state col-4">
       <div className="order-date ">
-        <p>Le 01/01/2021</p>
+        <p>Le {order.deliveryTime}</p>
       </div>
       <div className="order-status ">
-        <p>Status : Delivery</p>
+        <p>Status : {order.status}y</p>
       </div>
       <div className="order-price">
         <p> Montant </p>
       </div>
-
     </div>
-
   </div>
 
 );

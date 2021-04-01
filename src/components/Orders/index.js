@@ -15,11 +15,8 @@ const Orders = ({ ordersList }) => {
           <Order
             key={order.id}
             id={order.id}
-            name={order.name}
-            picture={order.picture}
-            price={order.price}
-            slug={order.slug}
-            thumbnail={order.thumbnail}
+            status={order.status}
+            delivery_time={order.deliveryTime}
           />
         ))}
       </div>
@@ -31,10 +28,8 @@ Orders.propTypes = {
   ordersList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      picture: PropTypes.string.isRequired,
-      price: PropTypes.string.isRequired,
-      thumbnail: PropTypes.string.isRequired,
+      status: PropTypes.number.isRequired,
+      deliveryTime: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };
