@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchProducts } from 'src/actions/products';
 import { fetchCategories } from 'src/actions/categories';
 import { fetchOrders } from 'src/actions/orders';
+import { fetchDeliveryPoint } from 'src/actions/cart';
 // on importe le composant de présentation
 import App from 'src/components/App';
 
@@ -36,6 +37,10 @@ const mapDispatchToProps = (dispatch) => ({
 
     // sans variable intermédiaire :
     // dispatch(fetchRecipes());
+  },
+  loadDeliveryPoints: () => {
+    const action = fetchDeliveryPoint();
+    dispatch(action);
   },
 });
 

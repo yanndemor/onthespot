@@ -4,6 +4,8 @@ export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 export const QUANTITY_PLUS = 'QUANTITY_PLUS';
 export const QUANTITY_LESS = 'QUANTITY_LESS';
 export const SEND_COMMAND = 'SEND_COMMAND';
+export const FECTH_DELIVERY_POINTS = 'FECTH_DELIVERY_POINTS';
+export const SAVE_DELIVERY_POINTS = 'SAVE_DELIVERY_POINTS';
 
 export const addCart = (name) => ({
   type: ADD_CART,
@@ -37,4 +39,13 @@ export const quantityLess = (id) => ({
 
 export const sendCommand = () => ({
   type: SEND_COMMAND,
+});
+
+export const fetchDeliveryPoint = () => ({
+  type: FECTH_DELIVERY_POINTS,
+});
+
+export const saveDeliveryPoint = (data) => ({
+  type: SAVE_DELIVERY_POINTS,
+  data,
 });

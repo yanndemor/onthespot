@@ -1,5 +1,10 @@
 import {
-  ADD_CART, UPDATE_QUANTITY, QUANTITY_PLUS, QUANTITY_LESS, TIME_SELECT,
+  ADD_CART,
+  UPDATE_QUANTITY,
+  QUANTITY_PLUS,
+  QUANTITY_LESS,
+  TIME_SELECT,
+  SAVE_DELIVERY_POINTS,
 } from 'src/actions/cart';
 
 const initialState = {
@@ -24,6 +29,13 @@ function cartReducer(state = initialState, action) {
       return {
         ...state,
         deliveryTime: action.time,
+      };
+
+    // eslint-disable-next-line no-duplicate-case
+    case SAVE_DELIVERY_POINTS:
+      return {
+        ...state,
+        deliveryPoint: action.data,
       };
 
     case UPDATE_QUANTITY: {
