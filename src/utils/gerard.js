@@ -16,8 +16,7 @@ const gerard = (step, endTime) => {
     for (let i = nextTime.getMinutes(); i < 60; i += step) {
       // On definit les minutes du prochain creneau
       nextTime.setMinutes(i);
-      // Definition de sa value convertie en timestamp
-      menVuCa[nextTime.toISOString()] = `${nextTime
+      const lisible = `${nextTime
         // On recupere l'heure
         .getHours()
         // On fait en sorte qu'il y ait au mini 2 chiffres
@@ -29,6 +28,13 @@ const gerard = (step, endTime) => {
           .getMinutes()
         // On fait en sorte qu'il y ait au mini 2 chiffres
           .toLocaleString('fr-FR', { minimumIntegerDigits: 2 })}`;
+
+      const obj = {
+        complete: nextTime.toISOString(),
+        lisible: lisible,
+      };
+
+      menVuCa.push(obj);
     }
     // On est sortit de la boucle for, donc c'est que les minutes ont atteint 60
     // Donc on increment l'heure et on remet a 0 les minutes pour la boucle suivante

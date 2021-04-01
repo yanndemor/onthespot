@@ -51,18 +51,8 @@ const Cart = ({
             Choisir une heure de retrait:
             <select onChange={handleChange}>
               <option value="">--Choisir une heure de retrait--</option>
-              <option value="test">test</option>
-              {console.log('gerard(15, 19)', gerard(15, 19))}
-              {gerard(15, 19).map((heure, index) => (
-                console.log(heure, index)
-              ))}
-              {gerard(15, 19).forEach((heure, item) => console.log('index', item, 'value', heure))}
-              {leopopold.map((heure) => <option value={heure}>test</option>)}
-              {leopopold.map((point) => {
-                console.log('point', point);
-                return (<option value={point}>{point}</option>);
-              })}
-
+              {/* <option value="test">test</option> */}
+              {leopopold.map((option) => <option value={option.complete}>{option.lisible}</option>)}
             </select>
           </label>
         </div>
