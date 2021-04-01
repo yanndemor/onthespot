@@ -6,7 +6,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './cart.scss';
 
-const Cart = ({ handleCart, handleChangeTime, timeSelect }) => {
+const Cart = ({
+  handleCart,
+  handleChangeTime,
+  handleChangeSpot,
+  deliveryPoint,
+}) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleCart();
@@ -14,6 +19,10 @@ const Cart = ({ handleCart, handleChangeTime, timeSelect }) => {
   const handleChange = (evt) => {
     handleChangeTime(evt.target.value);
   };
+  const handleChangePoint = (evt) => {
+    handleChangeSpot(evt.target.value);
+  };
+  console.log('deliverypoint', deliveryPoint);
   return (
     <div className="cart">
       <form onSubmit={handleSubmit}>
@@ -28,17 +37,16 @@ const Cart = ({ handleCart, handleChangeTime, timeSelect }) => {
         </div>
         <div className="listDelevery">
           <label htmlFor="delevery-point ">Choisir un point de retrait:</label>
-          <select name="pets" id="delevry-point">
+          <select onChange={handleChangePoint}>
             <option value="">--Choisir un point de retrait--</option>
-            <option value="test">test</option>
-            <option value="test2">test2</option>
+            {deliveryPoint.map((point) => <option value={point.id}>{point.name}</option>)}
           </select>
         </div>
 
         <div className="listDelevery">
           <label>
             Choisir une heure de retrait:
-            <select value={timeSelect} onChange={handleChange}>
+            <select onChange={handleChange}>
               <option value="">--Choisir une heure de retrait--</option>
               <option value="test">test</option>
               <option value="test2">test2</option>
@@ -63,6 +71,6 @@ const Cart = ({ handleCart, handleChangeTime, timeSelect }) => {
 Cart.propTypes = {
   handleCart: PropTypes.func.isRequired,
   handleChangeTime: PropTypes.func.isRequired,
-  timeSelect: PropTypes.string.isRequired,
+  handleChangeSpot: PropTypes.func.isRequired,
 };
 export default Cart;

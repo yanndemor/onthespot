@@ -9,6 +9,7 @@ import NavBar from 'src/containers/NavBar';
 // import Orders from 'src/components/Orders';
 import Page from 'src/containers/Page';
 import ButtonLogout from 'src/containers/ButtonLogout';
+import LoadingSpinner from 'src/components/LoadingSpinner';
 
 import Footer from 'src/components/Footer';
 
@@ -21,6 +22,7 @@ const App = ({
   loadCategories,
   loadOrders,
   loadDeliveryPoints,
+  loading,
 }) => {
   useEffect(() => {
     loadProduct();
@@ -35,8 +37,8 @@ const App = ({
         <NavBar />
         {isLogged && <div> Bon retour parmi nous Gerard</div>}
         {/* <Caroussel /> */}
-        <Page />
-
+        {loading && <LoadingSpinner />}
+        {!loading && <Page />}
         {/* <Orders /> */}
         <Footer />
 
@@ -50,6 +52,7 @@ App.propTypes = {
 //   // pas de paramètre
   loadProduct: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
   loadCategories: PropTypes.func.isRequired,
   loadOrders: PropTypes.func.isRequired,
   loadDeliveryPoints: PropTypes.func.isRequired,

@@ -1,5 +1,6 @@
 export const ADD_CART = 'ADD_CART';
 export const TIME_SELECT = 'TIME_SELECT';
+export const SPOT_SELECT = 'SPOT_SELECT';
 export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 export const QUANTITY_PLUS = 'QUANTITY_PLUS';
 export const QUANTITY_LESS = 'QUANTITY_LESS';
@@ -19,6 +20,13 @@ export const timeSelect = (time) => ({
   // newValue: newValue
   // shorthand property (ES6)
   time,
+});
+
+export const spotSelect = (spot) => ({
+  type: SPOT_SELECT,
+  // newValue: newValue
+  // shorthand property (ES6)
+  spot,
 });
 
 export const updateQuantity = (id, data) => ({

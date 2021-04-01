@@ -5,10 +5,12 @@ import {
   QUANTITY_LESS,
   TIME_SELECT,
   SAVE_DELIVERY_POINTS,
+  SPOT_SELECT,
 } from 'src/actions/cart';
 
 const initialState = {
   orderProducts: [],
+  deliveryPointToOrder: '', 
 };
 
 function cartReducer(state = initialState, action) {
@@ -29,6 +31,11 @@ function cartReducer(state = initialState, action) {
       return {
         ...state,
         deliveryTime: action.time,
+      };
+    case SPOT_SELECT:
+      return {
+        ...state,
+        deliveryPointToOrder: action.spot,
       };
 
     // eslint-disable-next-line no-duplicate-case
