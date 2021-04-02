@@ -8,6 +8,7 @@ import Cart from 'src/components/Cart';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   deliveryPoint: state.cart.deliveryPoint,
+  totalCart: state.cart.totalCart,
 });
 
 // === mapDispatchToProps

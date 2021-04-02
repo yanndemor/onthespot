@@ -12,6 +12,7 @@ const Cart = ({
   handleChangeTime,
   handleChangeSpot,
   deliveryPoint,
+  totalCart,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -33,9 +34,9 @@ const Cart = ({
           <h2>Panier</h2>
           <ul className="item-group">
             <li className="">Total</li>
-            <li className="text-center">Total (ht) : 126€</li>
-            <li className="text-center">TVA (5%) : 7.05€</li>
-            <li className="text-center">Total (ttc) 132€</li>
+            <li className="text-center">{`Total (ht) : ${(totalCart * 0.95).toFixed(2)} €`}</li>
+            <li className="text-center">{`TVA (5%) :  ${(totalCart * 0.05).toFixed(2)} €`}</li>
+            <li className="text-center">{`Total (ttc) : ${totalCart} €`}</li>
           </ul>
         </div>
         <div className="listDelevery">
@@ -74,5 +75,6 @@ Cart.propTypes = {
   handleCart: PropTypes.func.isRequired,
   handleChangeTime: PropTypes.func.isRequired,
   handleChangeSpot: PropTypes.func.isRequired,
+  totalCart: PropTypes.number.isRequired,
 };
 export default Cart;

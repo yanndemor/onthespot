@@ -7,11 +7,13 @@ import {
   SAVE_DELIVERY_POINTS,
   SPOT_SELECT,
   REMOVE_CART,
+  TOTAL_CART,
 } from 'src/actions/cart';
 
 const initialState = {
   orderProducts: [],
-  deliveryPointToOrder: '', 
+  deliveryPointToOrder: '',
+  totalCart: 0,
 };
 
 function cartReducer(state = initialState, action) {
@@ -32,6 +34,11 @@ function cartReducer(state = initialState, action) {
       return {
         ...state,
         deliveryTime: action.time,
+      };
+    case TOTAL_CART:
+      return {
+        ...state,
+        totalCart: action.total,
       };
     case SPOT_SELECT:
       return {
