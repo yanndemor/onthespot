@@ -20,6 +20,7 @@ import Orders from 'src/containers/Orders';
 import Order from 'src/components/Orders/Order';
 import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
+import Account from 'src/containers/Account';
 import RegistrationForm from '../../containers/RegistrationForm';
 
 const Page = ({ isLogged, loading }) => (
@@ -93,6 +94,9 @@ const Page = ({ isLogged, loading }) => (
             <Categories />
           </div>
           )}
+        </Route>
+        <Route path="/compte">
+          {!isLogged ? <Redirect to="/" /> : <div><Account /></div>}
         </Route>
         <Route path="/">
           {loading && <LoadingSpinner />}

@@ -16,11 +16,12 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct, isLogged, loadCategories, loadOrders }) => {
+const App = ({ loadProduct, isLogged, loadCategories, loadOrders, }) => {
   useEffect(() => {
     loadProduct();
     loadCategories();
     loadOrders();
+    /* loadUsers(); */
   }, []);
 
   return (
@@ -46,6 +47,8 @@ App.propTypes = {
   loadProduct: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
   loadCategories: PropTypes.func.isRequired,
+
+  loadOrders: PropTypes.func.isRequired,
 
 };
 // == Export
