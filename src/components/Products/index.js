@@ -44,12 +44,12 @@ const Products = ({ productsList, loading, orderProducts }) => {
           {products.map((item) => (
             <>
               <div key={item.id} className="productsList-product">
-                <Link to={`/product/${item.slug}`} className="productsList-product-picture">
+                <Link to={`/produit/${item.slug}`} className="productsList-product-picture">
                   <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt={item.name} />
                   <div className="productsList-product-price">{item.price} €</div>
                 </Link>
                 <div className="productsList-product-name">
-                  <Link to={`/product/${item.slug}`}>
+                  <Link to={`/produit/${item.slug}`}>
                     {item.name}
                   </Link>
                 </div>
