@@ -1,4 +1,5 @@
 export const ADD_CART = 'ADD_CART';
+export const REMOVE_CART = 'REMOVE_CART';
 export const TIME_SELECT = 'TIME_SELECT';
 export const SPOT_SELECT = 'SPOT_SELECT';
 export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
@@ -13,6 +14,10 @@ export const addCart = (name) => ({
   // newValue: newValue
   // shorthand property (ES6)
   name,
+});
+
+export const removeCart = () => ({
+  type: REMOVE_CART,
 });
 
 export const timeSelect = (time) => ({

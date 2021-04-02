@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { SEND_COMMAND, FECTH_DELIVERY_POINTS, saveDeliveryPoint } from 'src/actions/cart';
+import { SEND_COMMAND, FECTH_DELIVERY_POINTS, saveDeliveryPoint, removeCart } from 'src/actions/cart';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
@@ -29,6 +29,7 @@ const cartMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log('middleware auth : on dispatch les actions');
           // TODO vider le panier
+          store.dispatch(removeCart());
         })
         .catch((error) => {
           console.log(error);
