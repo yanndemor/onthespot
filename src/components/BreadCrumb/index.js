@@ -34,9 +34,10 @@ const BreadCrumb = () => {
       topbar: () => <h5>Produits Boissons</h5>,
       main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/boissons" style={{ color: 'blue', textDecoration: 'underline' }}> Produits Boissons</Link></>,
     },
+    // ---------------------glaces--------------------------------
     {
       path: '/produit/magnum-vanille',
-      main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/glaces"> Produits Glaces /</Link><p > magnum vanille</p></>,
+      main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/glaces"> Produits Glaces /</Link><p> magnum vanille</p></>,
     },
     {
       path: '/produit/magnum-chocolat',
@@ -80,7 +81,7 @@ const BreadCrumb = () => {
       path: '/produit/chouchou-pralines',
       main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/snack"> Produits Snack /</Link> <p> chouchou/pralines</p></>,
     },
-  
+
     // --------------------------boissons-----------------
     {
       path: '/produit/coca-cola-33cl',
@@ -110,6 +111,7 @@ const BreadCrumb = () => {
       path: '/produit/vittel-50cl',
       main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/boissons"> Produits Boissons</Link> <p> bouteille vittel 50cl</p></>,
     },
+    // -------------------------------autre--------------------------
     {
       path: '/panier',
       topbar: () => <h5>Panier</h5>,
@@ -129,6 +131,11 @@ const BreadCrumb = () => {
       path: '/commandes',
       topbar: () => <h5>Commandes</h5>,
       main: () => <><Link to="/">Accueil / </Link> <p> connexion</p></>,
+    },
+    {
+      path: '/commandes',
+      topbar: () => <h5>Commandes</h5>,
+
     },
   ];
   return (
