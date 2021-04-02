@@ -13,10 +13,7 @@ const Orders = ({ ordersList }) => {
       <div className="orders-container">
         {ordersList.map((order) => (
           <Order
-            key={order.id}
-            id={order.id}
-            status={order.status}
-            delivery_time={order.deliveryTime}
+            {...order}
           />
         ))}
       </div>
@@ -26,11 +23,6 @@ const Orders = ({ ordersList }) => {
 
 Orders.propTypes = {
   ordersList: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      status: PropTypes.number.isRequired,
-      deliveryTime: PropTypes.string.isRequired,
-    }).isRequired,
   ).isRequired,
 };
 
