@@ -20,9 +20,8 @@ const Orders = ({ ordersList }) => {
 
         <div className="text order-id ">
           {ordersList.map((orderItem) => (
-            <Link to={`/commande/${orderItem.id}`}>
+            <Link key={orderItem.id} to={`/commande/${orderItem.id}`}>
               <Order
-                key={orderItem.id}
                 {...orderItem}
               />
             </Link>
@@ -38,7 +37,7 @@ Orders.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       status: PropTypes.number.isRequired,
-      deliveTime: PropTypes.string.isRequired,
+      deliveryTime: PropTypes.string.isRequired,
       createdAt: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,

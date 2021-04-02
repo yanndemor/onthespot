@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 const Order = ({
   id, status, deliveryTime, orderProducts,
 }) => {
-  console.log(deliveryTime);
-
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const totalCart = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
+  const newDate = new Date(deliveryTime);
+  const dateFr = newDate.toLocaleDateString('fr-FR');
+  // newDate.split("heure normale d’Europe centrale)");
+  console.log(dateFr);
 
+ 
   return (
     <div className="order-detail row">
       <div className="order-name text-center ">
@@ -19,18 +22,20 @@ const Order = ({
           <p className="w-75 text-center">Détail de la commande</p>
           <div className="mx-2">
             {orderProducts.map((productItem) => (
-              <>
-                <li key={productItem.id}>
+              <div key={productItem.id} className="product-item">
+                <li>
                   {productItem.product.name}
                   quantité : {productItem.quantity}
                   prix : {productItem.product.price}
                 </li>
-              </>
+              </div>
             ))}
           </div>
         </div>
         <div className="order-date ">
-          <p>Le {deliveryTime}</p>
+          <p>
+            Le {`${dateFr}`}
+          </p>
         </div>
         <div className="order-status ">
           <div>
@@ -61,9 +66,8 @@ Order.propTypes = {
   deliveryTime: PropTypes.string.isRequired,
   orderProducts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      status: PropTypes.number.isRequired,
-      deliveTime: PropTypes.string.isRequired,
+      product: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       createdAt: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
