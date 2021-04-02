@@ -23,60 +23,69 @@ const Products = ({ productsList, loading }) => {
 
   console.log('the singleproducts in products', products);
   return (
-    <div className="products">
-      <div className="container-fluid px-0">
-        {loading && <LoadingSpinner />}
-        {!loading && (
-        <>
+    <main>
+      {loading && <LoadingSpinner />}
+      {!loading && (
+      <>
+        <div className="productsList">
           {products.map((item) => (
             <>
-              <div key={item.id} className="product-listElements ">
-                <div className="products-items">
-                  <div className="rounded-picture">
-                    <img src={`https://www.onthespot.link/back/public/${item.thumbnail}`} alt="product" />
-                  </div>
-                  <div className="price">
-                    <p>{item.price}</p>
-                  </div>
+              <div key={item.id} className="productsList-product">
+                <div className="productsList-product-picture">
+                  <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt={item.name} />
+                  <div className="productsList-product-price">{item.price} €</div>
                 </div>
-              </div>
-
-              <div className="text product-name ">
-                <Link to={`/produit/${item.slug}`}>
-                  {item.name}
-                </Link>
-              </div>
-              <ButtonAddCart name={item} />
-
-              <div className="product-quantity">
-                <div className="button-plus ">
-                  <ButtonDown />
-                </div>
-                <div className="quantity ">
-                  <input placeholder="0" />
-                </div>
-                <div className="button-minus ">
-                  <ButtonUp />
-                </div>
-              </div>
-              <div className="button-home">
-                <Link to="/categorie">
-                  <input
-                    className="favorite styled"
-                    type="button"
-                    value="Home"
-                  />
-                </Link>
+                <div className="productsList-product-name">{item.name}</div>
+                <ButtonAddCart name={item} />
               </div>
             </>
           ))}
-        </>
-        )}
-        {/* <div className="">
-          <Cart />
-        </div> */}
-      </div>
-    </div>
+        </div>
+
+        <div className="productsList-cart">
+          <div className="productsList-cart-recap">
+            <div className="productsList-cart-number">
+              Panier <span className="badge badge-light">4</span>
+            </div>
+            <div className="productsList-cart-total"><span>total : </span>2235.45€</div>
+          </div>
+          <div className="productsList-cart-details">
+            <div className="productsList-cart-item">
+              <div className="item-picture">
+                <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
+              </div>
+              <div className="item-details">
+                <div className="item-name">Magnum racing</div>
+                <div className="item-price float-left">526.21 € <span className="item-quantity text-muted mr-0 float-right">Qtt: 05</span></div>
+              </div>
+            </div>
+
+            <div className="productsList-cart-item">
+              <div className="item-picture">
+                <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
+              </div>
+              <div className="item-details">
+                <div className="item-name">Magnum racing</div>
+                <div className="item-price float-left">526.21 € <span className="item-quantity text-muted mr-0 float-right">Qtt: 05</span></div>
+              </div>
+            </div>
+
+            <div className="productsList-cart-item">
+              <div className="item-picture">
+                <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
+              </div>
+              <div className="item-details">
+                <div className="item-name">Magnum racing</div>
+                <div className="item-price float-left">526.21 € <span className="item-quantity text-muted mr-0 float-right">Qtt: 05</span></div>
+              </div>
+            </div>
+          </div>
+          <a href="#" className="btn btn-primary w-100">Voir le panier</a>
+        </div>
+      </>
+      )}
+    </main>
+
   );
 };
 
