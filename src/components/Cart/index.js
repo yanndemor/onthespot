@@ -5,7 +5,7 @@ import React from 'react';
 // import Product from 'src/components/Product';
 import PropTypes from 'prop-types';
 import './cart.scss';
-import gerard from 'src/utils/gerard';
+import getStepTime from 'src/utils/getStepTime';
 
 const Cart = ({
   handleCart,
@@ -23,8 +23,8 @@ const Cart = ({
   const handleChangePoint = (evt) => {
     handleChangeSpot(evt.target.value);
   };
-  const leopopold = gerard(15, 19);
-  console.log('leopopold', leopopold);
+  const stepTime = getStepTime(15, 8, 19);
+  console.log('leopopold', stepTime);
   console.log('deliverypoint', deliveryPoint);
   return (
     <div className="cart">
@@ -51,18 +51,8 @@ const Cart = ({
             Choisir une heure de retrait:
             <select onChange={handleChange}>
               <option value="">--Choisir une heure de retrait--</option>
-              <option value="test">test</option>
-              {console.log('gerard(15, 19)', gerard(15, 19))}
-              {gerard(15, 19).map((heure, index) => (
-                console.log(heure, index)
-              ))}
-              {gerard(15, 19).forEach((heure, item) => console.log('index', item, 'value', heure))}
-              {leopopold.map((heure) => <option value={heure}>test</option>)}
-              {leopopold.map((point) => {
-                console.log('point', point);
-                return (<option value={point}>{point}</option>);
-              })}
-
+              {/* <option value="test">test</option> */}
+              {stepTime.map((option) => <option value={option.deliveryTime}>{option.deliveryTime}</option>)}
             </select>
           </label>
         </div>
