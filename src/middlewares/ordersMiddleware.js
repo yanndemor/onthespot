@@ -22,7 +22,7 @@ const ordersMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveOrders(response.data));
         })
         .catch((error) => {
-          console.log('error:', error);
+          console.log(error.response);
         });
 
       next(action);
