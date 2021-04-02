@@ -16,10 +16,11 @@ export const logIn = () => ({
   type: LOG_IN,
 });
 
-export const saveUser = (isLogged, token) => ({
+export const saveUser = (isLogged, token, user) => ({
   type: SAVE_USER,
   isLogged,
   token,
+  user,
 });
 
 export const logOut = () => ({
