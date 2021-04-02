@@ -49,7 +49,7 @@ const Cart = ({
         <div className="listDelevery">
           <label>
             Choisir une heure de retrait:
-            <select onChange={handleChange}>
+            <select onChange={handleChange} required>
               <option value="">--Choisir une heure de retrait--</option>
               {/* <option value="test">test</option> */}
               {stepTime.map((option) => <option value={option.deliveryTime}>{option.deliveryTime}</option>)}
