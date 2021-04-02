@@ -23,9 +23,7 @@ const Orders = ({ ordersList }) => {
             <Link to={`/commande/${orderItem.id}`}>
               <Order
                 key={orderItem.id}
-                id={orderItem.id}
-                status={orderItem.status}
-                delivey_time={orderItem.delivey_time}
+                {...orderItem}
               />
             </Link>
           ))}
@@ -38,9 +36,10 @@ const Orders = ({ ordersList }) => {
 Orders.propTypes = {
   ordersList: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
-      delivey_time: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      status: PropTypes.number.isRequired,
+      deliveTime: PropTypes.string.isRequired,
+      createdAt: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };
