@@ -50,15 +50,6 @@ const Products = ({ productsList, loading }) => {
             <div className="productsList-cart-total"><span>total : </span>2235.45€</div>
           </div>
           <div className="productsList-cart-details">
-            <div className="productsList-cart-item">
-              <div className="item-picture">
-                <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
-              </div>
-              <div className="item-details">
-                <div className="item-name">Magnum racing</div>
-                <div className="item-price float-left">526.21 € <span className="item-quantity text-muted mr-0 float-right">Qtt: 05</span></div>
-              </div>
-            </div>
 
             <div className="productsList-cart-item">
               <div className="item-picture">
@@ -79,6 +70,7 @@ const Products = ({ productsList, loading }) => {
                 <div className="item-price float-left">526.21 € <span className="item-quantity text-muted mr-0 float-right">Qtt: 05</span></div>
               </div>
             </div>
+
           </div>
           <a href="#" className="btn btn-primary w-100">Voir le panier</a>
         </div>
