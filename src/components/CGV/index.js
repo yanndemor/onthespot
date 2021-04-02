@@ -5,7 +5,7 @@ import './cgv.scss';
 const CGV = () => (
   <div className="cgv-content">
     <div className="cgv-title">
-      <h2>Conditions Générale de ventes</h2>
+      <h2>Conditions générales de ventes</h2>
     </div>
    
     <div className="cgv-text">

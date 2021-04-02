@@ -5,7 +5,7 @@ import './cgu.scss';
 const CGU = () => (
   <div className="cgu-content">
     <div className="cgu-title">
-      <h2>Conditions Générale d'utilisation</h2>
+      <h2>Conditions générales d'utilisation</h2>
     </div>
 
     <div className="cgu-text">
