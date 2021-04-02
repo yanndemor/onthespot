@@ -14,7 +14,7 @@ import { Link, useParams } from 'react-router-dom';
 import './products.scss';
 import Cart from 'src/components/Cart';
 
-const Products = ({ productsList, loading }) => {
+const Products = ({ productsList, loading, orderProducts }) => {
   console.log('the products in products', productsList);
 
   const { slug } = useParams();
@@ -22,6 +22,18 @@ const Products = ({ productsList, loading }) => {
   const products = productsList.filter((product) => product.category.slug === slug);
 
   console.log('the singleproducts in products', products);
+
+  let cart;
+  if (orderProducts.length === 0) {
+    cart = (
+      <div className="productsList-cart-item">
+        <div className="item-details">
+          <div className="item-name">Votre panier est vide</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <main>
       {loading && <LoadingSpinner />}
@@ -31,11 +43,15 @@ const Products = ({ productsList, loading }) => {
           {products.map((item) => (
             <>
               <div key={item.id} className="productsList-product">
-                <div className="productsList-product-picture">
+                <Link to={`/product/${item.slug}`} className="productsList-product-picture">
                   <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt={item.name} />
                   <div className="productsList-product-price">{item.price} €</div>
+                </Link>
+                <div className="productsList-product-name">
+                  <Link to={`/product/${item.slug}`}>
+                    {item.name}
+                  </Link>
                 </div>
-                <div className="productsList-product-name">{item.name}</div>
                 <ButtonAddCart name={item} />
               </div>
             </>
@@ -50,8 +66,21 @@ const Products = ({ productsList, loading }) => {
             <div className="productsList-cart-total"><span>total : </span>2235.45€</div>
           </div>
           <div className="productsList-cart-details">
+            {cart}
 
-            <div className="productsList-cart-item">
+            {orderProducts.map((item) => (
+              <div className="productsList-cart-item">
+                <div className="item-picture">
+                  <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
+                </div>
+                <div className="item-details">
+                  <div className="item-name">{item.name}</div>
+                  <div className="item-price float-left">{item.price} € <span className="item-quantity text-muted mr-0 float-right">Qtt: {item.quantity}</span></div>
+                </div>
+              </div>
+            ))}
+
+            {/* <div className="productsList-cart-item">
               <div className="item-picture">
                 <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
               </div>
@@ -59,17 +88,7 @@ const Products = ({ productsList, loading }) => {
                 <div className="item-name">Magnum racing</div>
                 <div className="item-price float-left">526.21 € <span className="item-quantity text-muted mr-0 float-right">Qtt: 05</span></div>
               </div>
-            </div>
-
-            <div className="productsList-cart-item">
-              <div className="item-picture">
-                <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
-              </div>
-              <div className="item-details">
-                <div className="item-name">Magnum racing</div>
-                <div className="item-price float-left">526.21 € <span className="item-quantity text-muted mr-0 float-right">Qtt: 05</span></div>
-              </div>
-            </div>
+            </div> */}
 
           </div>
           <a href="#" className="btn btn-primary w-100">Voir le panier</a>
@@ -83,6 +102,14 @@ const Products = ({ productsList, loading }) => {
 
 Products.propTypes = {
   productsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  orderProducts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
