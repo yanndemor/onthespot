@@ -19,7 +19,13 @@ function cartReducer(state = initialState, action) {
            [...state.orderProducts, { ...action.name, quantity: 1 }],
         };
       }
-      return state;
+
+      return {
+        ...state,
+        orderProducts: state.orderProducts.map((product) => (product.id === action.name.id
+          ? { ...product, quantity: product.quantity + 1 }
+          : product)),
+      };
     case UPDATE_QUANTITY: {
       return state.orderProducts.map((orderproduct) => {
         if (orderproduct.id === action.id) {
