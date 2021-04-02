@@ -5,7 +5,7 @@ import React from 'react';
 // import Product from 'src/components/Product';
 import PropTypes from 'prop-types';
 import './cart.scss';
-import gerard from 'src/utils/gerard';
+import getStepTime from 'src/utils/getStepTime';
 
 const Cart = ({
   handleCart,
@@ -23,8 +23,8 @@ const Cart = ({
   const handleChangePoint = (evt) => {
     handleChangeSpot(evt.target.value);
   };
-  const leopopold = gerard(15, 19);
-  console.log('leopopold', leopopold);
+  const stepTime = getStepTime(15, 8, 19);
+  console.log('leopopold', stepTime);
   console.log('deliverypoint', deliveryPoint);
   return (
     <div className="cart">
@@ -52,7 +52,7 @@ const Cart = ({
             <select onChange={handleChange}>
               <option value="">--Choisir une heure de retrait--</option>
               {/* <option value="test">test</option> */}
-              {leopopold.map((option) => <option value={option.complete}>{option.lisible}</option>)}
+              {stepTime.map((option) => <option value={option.deliveryTime}>{option.deliveryTime}</option>)}
             </select>
           </label>
         </div>
