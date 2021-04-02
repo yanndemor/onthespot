@@ -130,13 +130,19 @@ const BreadCrumb = () => {
     {
       path: '/commandes',
       topbar: () => <h5>Commandes</h5>,
-      main: () => <><Link to="/">Accueil / </Link> <p> connexion</p></>,
+      main: () => <><Link to="/">Accueil / </Link> <p> commandes</p></>,
     },
     {
-      path: '/commandes',
-      topbar: () => <h5>Commandes</h5>,
-
+      path: '/CGU',
+      topbar: () => <h5>Conditions Générales d'Utilisations</h5>,
+      main: () => <><Link to="/">Accueil / </Link> <p> Conditions Générales d'Utilisations</p></>,
     },
+    {
+      path: '/CGV',
+      topbar: () => <h5>Conditions Générales de ventes</h5>,
+      main: () => <><Link to="/">Accueil / </Link> <p> Conditions Générales de Ventes</p></>,
+    },
+  
   ];
   return (
 
