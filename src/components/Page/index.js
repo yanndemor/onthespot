@@ -71,7 +71,7 @@ const Page = ({ isLogged, loading }) => (
           <Orders />
         </Route>
 
-        <Route path="/commande/{id}">
+        <Route path="/commande/:id" exact>
           <Order />
         </Route>
         <Route path="/contact">
