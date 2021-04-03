@@ -46,6 +46,13 @@ function cartReducer(state = initialState, action) {
       };
     }
     case QUANTITY_LESS: {
+      if (state.orderProducts.find((product) => product.id === action.id).quantity <= 1) {
+        return {
+          ...state,
+          orderProducts: state.orderProducts.filter((product) => product.id !== action.id),
+        };
+      }
+
       return {
         ...state,
         orderProducts: state.orderProducts.map((product) => (product.id === action.id
