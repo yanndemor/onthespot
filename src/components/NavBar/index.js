@@ -71,7 +71,7 @@ const NavBar = ({ isLogged }) => {
                   Commandes
                 </NavLink>
                 <div className="dropdown-divider" />
-                </>
+              </>
             )}
             <NavLink to="/qui-sommes-nous" className="navlink" activeClassName="active">
               Qui sommes nous ?
