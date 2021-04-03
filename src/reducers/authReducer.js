@@ -73,6 +73,7 @@ function authReducer(state = initialState, action) {
         ...state,
         isLogged: true,
         token: action.token,
+        user: action.user,
         // on en profite pour vider les champs
         username: '',
         password: '',
