@@ -15,7 +15,7 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct, isLogged, loadCategories, loadOrders }) => {
+const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
   useEffect(() => {
     loadProduct();
     loadCategories();
@@ -26,7 +26,7 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders }) => {
     <div className="app">
       <Router>
         <NavBar />
-        {isLogged && <div> Bon retour parmi nous Gerard</div>}
+        {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
         {/* <Caroussel /> */}
         <Page />
 
@@ -44,6 +44,7 @@ App.propTypes = {
   loadProduct: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
   loadCategories: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
 
 };
 // == Export
