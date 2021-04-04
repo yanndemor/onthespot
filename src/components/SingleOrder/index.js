@@ -1,36 +1,24 @@
-/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import SingleOrder from 'src/components/SingleOrder';
 
-const Order = ({
-  id, status, createdAt, orderProducts,
-}) => {
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  const totalCart = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
-  const newDate = new Date(createdAt);
-  const dateFr = newDate.toLocaleDateString('fr-FR');
-  console.log(dateFr);
-  console.log('orderProducts: ------', orderProducts);
+const SingleOrder = (id, status, dateFr, orderProducts, productItem, totalCart) => {
+  console.log('productItem: ----', productItem);
 
   return (
     <div className="order-detail row">
       <div className="order-name text-center ">
-        <p>Commande {id}</p>
+        <p>Commande</p>
       </div>
       <div className="col-8">
         <div className="order-description ">
           <p className="w-75 text-center">Détail de la commande</p>
           <div className="mx-2">
-            {orderProducts.map((productItem) => (
-              <div key={productItem.id} className="product-item">
-                <li>
-                  {productItem.product.name}
-                  quantité : {productItem.quantity}
-                  prix : {productItem.product.price}
-                </li>
-              </div>
-            ))}
+            <div key={id} className="product-item">
+              <li>
+                quantité :
+                prix :
+              </li>
+            </div>
           </div>
         </div>
         <div className="order-date ">
@@ -39,14 +27,7 @@ const Order = ({
           </p>
         </div>
         <div className="order-status ">
-          <div>
-            {
-              status === 0 && <div>Status : En attente </div>
-              || status === 1 && <div>Status : En préparation</div>
-              || status === 2 && <div>Status : En livraison </div>
-              || status === 3 && <div>Status : Livrée </div>
-            }
-          </div>
+          cdc
         </div>
       </div>
 
@@ -61,7 +42,7 @@ const Order = ({
   );
 };
 /* {`${productItem.product.price * productItem.quantity} €`} */
-Order.propTypes = {
+SingleOrder.propTypes = {
   id: PropTypes.number.isRequired,
   status: PropTypes.number.isRequired,
   deliveryTime: PropTypes.string.isRequired,
@@ -74,7 +55,7 @@ Order.propTypes = {
   ).isRequired,
 }.isRequired;
 
-export default Order;
+export default SingleOrder;
 
 // const testSum = (accumulator, currentValue) => accumulator + currentValue;
 //   const totalCart = productItems.map((product) => product.price * product.quantity);

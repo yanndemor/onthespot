@@ -17,7 +17,8 @@ import LoginForm from 'src/containers/LoginForm';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
 import Orders from 'src/containers/Orders';
-import Order from 'src/components/Orders/Order';
+// import Order from 'src/components/Orders/Order';
+import SingleOrder from 'src/components/SingleOrder';
 import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import Account from 'src/containers/Account';
@@ -68,11 +69,18 @@ const Page = ({ isLogged, loading }) => (
           </div>
         </Route>
         <Route path="/commandes">
-          <Orders />
+          {loading && <LoadingSpinner />}
+          {!loading && (
+            <Orders />
+          )}
         </Route>
 
         <Route path="/commande/:id" exact>
-          <Order />
+          <div>Ici bientôt une commande</div>
+          {loading && <LoadingSpinner />}
+          {!loading && (
+          <SingleOrder />
+          )}
         </Route>
         <Route path="/contact">
           <Contact />

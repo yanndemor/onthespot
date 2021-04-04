@@ -17,6 +17,7 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
+<<<<<<< HEAD
 
 const App = ({
   loadProduct,
@@ -28,6 +29,9 @@ const App = ({
   user,
 }) => {
 
+=======
+const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user}) => {
+>>>>>>> b895a58 (linking the 3 comonents)
   useEffect(() => {
     loadProduct();
     loadCategories();
@@ -63,6 +67,7 @@ App.propTypes = {
   loadOrders: PropTypes.func.isRequired,
   loadDeliveryPoints: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
+  loadOrders: PropTypes.func.isRequired,
 
 };
 // == Export
