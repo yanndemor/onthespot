@@ -36,7 +36,7 @@ function cartReducer(state = initialState, action) {
       //   }
       //   return orderproduct;
       // });
-      if (action.qty <= 0) {
+      if (action.qty <= 0 || !Number.isInteger(parseInt(action.qty, 10))) {
         return {
           ...state,
           orderProducts: state.orderProducts.filter((product) => product.id !== action.product.id),
