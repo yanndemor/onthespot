@@ -5,11 +5,11 @@ const SingleOrder = (id, status, dateFr, orderProducts, productItem, totalCart) 
   console.log('productItem: ----', productItem);
 
   return (
-    <div className="order-detail row">
+    <div className="order-detail">
       <div className="order-name text-center ">
         <p>Commande</p>
       </div>
-      <div className="col-8">
+      <div>
         <div className="order-description ">
           <p className="w-75 text-center">Détail de la commande</p>
           <div className="mx-2">
@@ -31,7 +31,7 @@ const SingleOrder = (id, status, dateFr, orderProducts, productItem, totalCart) 
         </div>
       </div>
 
-      <div className="order-state col-4">
+      <div className="order-state">
         <div className="order-price">
           <p>
             Montant Total :{`${totalCart} €`}

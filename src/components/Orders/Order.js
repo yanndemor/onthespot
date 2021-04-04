@@ -14,47 +14,53 @@ const Order = ({
   console.log('orderProducts: ------', orderProducts);
 
   return (
-    <div className="order-detail row">
-      <div className="order-name text-center ">
+    <div className="order-detail">
+      <div className="order-name text-center">
         <p>Commande {id}</p>
       </div>
-      <div className="col-8">
-        <div className="order-description ">
-          <p className="w-75 text-center">Détail de la commande</p>
-          <div className="mx-2">
+
+      <div className="order">
+        <div className="order-description">
+          <p className="text-center">Détail de la commande</p>
+          <div className="">
             {orderProducts.map((productItem) => (
               <div key={productItem.id} className="product-item">
-                <li>
-                  {productItem.product.name}
-                  quantité : {productItem.quantity}
-                  prix : {productItem.product.price}
-                </li>
+                <ul className="">
+                  <li className="row">
+                    <div className="col-7">
+                      {productItem.product.name}
+                    </div>
+                    <p className="quantity col-1">x{productItem.quantity}</p>
+                    <p className="price col-4">Prix : {productItem.product.price}€</p>
+                  </li>
+                </ul>
               </div>
             ))}
           </div>
         </div>
-        <div className="order-date ">
-          <p>
-            Le {`${dateFr}`}
-          </p>
-        </div>
-        <div className="order-status ">
-          <div>
-            {
+
+        <div className="order-state">
+          <div className="order-date ">
+            <p>
+              Le {`${dateFr}`}
+            </p>
+          </div>
+          <div className="order-status ">
+            <div>
+              {
               status === 0 && <div>Status : En attente </div>
               || status === 1 && <div>Status : En préparation</div>
               || status === 2 && <div>Status : En livraison </div>
               || status === 3 && <div>Status : Livrée </div>
             }
+            </div>
           </div>
-        </div>
-      </div>
+          <div className="order-price">
+            <p>
+              Total : {`${totalCart}€`}
+            </p>
+          </div>
 
-      <div className="order-state col-4">
-        <div className="order-price">
-          <p>
-            Montant Total :{`${totalCart} €`}
-          </p>
         </div>
       </div>
     </div>

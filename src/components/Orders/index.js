@@ -19,8 +19,7 @@ const Orders = ({ ordersList }) => {
     <main className="orders">
       <h1 className="title">Commandes</h1>
       <div className="orders-container">
-
-        <div className="text order-id ">
+        <>
           {ordersList.map((orderItem) => (
             <Link key={orderItem.id} to={`/commande/${orderItem.id}`}>
               <Order
@@ -28,7 +27,7 @@ const Orders = ({ ordersList }) => {
               />
             </Link>
           ))}
-        </div>
+        </>
       </div>
     </main>
   );

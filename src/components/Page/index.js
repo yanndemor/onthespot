@@ -77,10 +77,7 @@ const Page = ({ isLogged, loading }) => (
 
         <Route path="/commande/:id" exact>
           <div>Ici bientôt une commande</div>
-          {loading && <LoadingSpinner />}
-          {!loading && (
           <SingleOrder />
-          )}
         </Route>
         <Route path="/contact">
           <Contact />
