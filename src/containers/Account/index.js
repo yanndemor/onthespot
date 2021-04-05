@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteUser } from 'src/actions/users';
+import { deleteUser, editRedirect} from 'src/actions/users';
 
 // on importe le composant de présentation
 import Account from 'src/components/Account';
@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch) => ({
   handleDelete: () => {
     // console.log(`newValue '${newValue}' for field '${name}'`);
     dispatch(deleteUser());
+  },
+  handleRedirect:() => {
+    dispatch(editRedirect());
   },
 });
 

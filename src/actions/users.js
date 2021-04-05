@@ -2,6 +2,7 @@ export const FETCH_USER = 'FETCH_USER';
 export const DELETE_USER = 'DELETE_USER';
 export const RETRIEVE_USER = 'RETRIEVE_USER';
 export const EDIT_USER = 'EDIT_USER';
+export const EDIT_REDIRECT = 'EDIT_REDIRECT';
 
 export const fetchUser = () => ({
   type: FETCH_USER,
@@ -18,4 +19,9 @@ export const deleteUser = () => ({
 });
 export const editUser = () => ({
   type: EDIT_USER,
+  
+})
+export const editRedirect = () => ({
+  type: EDIT_REDIRECT,
+ 
 })

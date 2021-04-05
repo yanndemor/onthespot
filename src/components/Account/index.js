@@ -5,15 +5,17 @@ import { Redirect, Link } from 'react-router-dom';
 const Account = ({
   userDetail,
   handleDelete,
-  redirect,
+  editRedirect,
   isLogged,
 }) => {
   const handleAccount = (evt) => {
     evt.preventDefault();
     handleDelete();
   };
-  let toto = {redirect};
-  toto = null;
+  const handleRedirect = (evt) => {
+    evt.preventDefault();
+    editRedirect();
+  };
 
   return (
 
@@ -38,6 +40,9 @@ const Account = ({
           <Link to="/edit-compte">
             <button type="button">modifier vos coordonnées </button>
           </Link>
+        </div>
+        <div className="account-delete">
+          <button type="button" onClick={handleRedirect}>suivant </button>
         </div>
       </div>
 

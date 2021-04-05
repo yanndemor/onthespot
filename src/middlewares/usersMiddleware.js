@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import {
-  FETCH_USER, DELETE_USER, EDIT_USER, deleteUser, retrieveUser, editUser,
+  FETCH_USER, DELETE_USER, EDIT_USER, deleteUser, retrieveUser, editRedirect,
 } from 'src/actions/users';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
@@ -61,7 +61,7 @@ const usersMiddleware = (store) => (next) => (action) => {
           if (res.status === 200) {
             console.log('REDIRECTION avec status => ', res.status);
 
-            // window.location = '/';
+            window.location = '/';
           }
         })
         .catch((error) => {
@@ -74,6 +74,7 @@ const usersMiddleware = (store) => (next) => (action) => {
     case EDIT_USER: {
       const user = JSON.parse(localStorage.getItem('user'));
       const { userList } = store.getState().Users;
+      const { redirect } = store.getState().Users;
       // let webApiUrl = 'example.com/abc';
       // let token = localStorage.getItem('token');
       // let headers={headers: {"Authorization" : `Bearer ${token}`} }
@@ -85,14 +86,19 @@ const usersMiddleware = (store) => (next) => (action) => {
         },
 
       })
+
         .then((res) => {
           if (res.status === 200) {
             /*  console.log('REDIRECTION avec status => ', res.status); */
             console.log('REDIRECTION avec status => ', res.status);
-            store.setState().redirect = '/compte';
+            /*    store.setState().redirect = '/compte'; */
           /*   window.location = '/'; */
           }
         })
+       /*  .then((response) => {
+          console.log('middleware auth : on dispatch les actions', response);
+          store.dispatch(editRedirect({ redirect }));
+        }) */
         .catch((error) => {
           console.log(error);
         });
