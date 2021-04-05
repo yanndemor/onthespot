@@ -27,6 +27,12 @@ const authMiddleware = (store) => (next) => (action) => {
           // Sotcke le token dans le localStorage
           localStorage.setItem('user', JSON.stringify(response.data.token));
 
+          console.log(response.data);
+
+          store.dispatch(saveUser(
+            response.data.logged,
+            response.data.token,
+            response.data.user));
           store.dispatch(saveUser(response.data.logged, response.data.token));
           store.dispatch(fetchUser());
         })
