@@ -1,0 +1,164 @@
+@media screen and (max-width: 640px) {
+
+
+}
+
+  .product-listElements {
+  border: 2px solid black;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 2%;
+  margin-top: 2%;
+  border-radius: 30px;
+  
+  // height: 60px;
+  
+  
+  // margin: 20% 0;
+  // position: relative;
+ 
+   background-color: coral;
+    .products-items{
+      position: relative;
+      max-width: 15%;
+      // border: solid 1px #f0f;
+      img{
+        height:100%;
+        width:100%;
+        margin: 0 auto;
+      }
+      .price {
+        position: absolute;
+        display: flex;
+        border: 2px solid black;
+        border-radius: 55%;
+        height: 30px;
+        width: 30px;
+        font-size:1em;
+        align-items:center;
+        
+        top:-10px;
+        right:-10px;
+    
+        z-index:1;
+        background-color:white;
+        p{
+          text-align:center;
+        }
+        
+      }
+    }
+
+    .product-name {
+      border: 1px solid black;
+      background-color: white;
+      border-radius: 10px;
+      font-size:15px;
+      margin:5px 5px;
+      font-weight:900;
+      padding: 2%;
+      width: 40%;
+      // padding-right: 64px;
+    }
+
+    .product-quantity{
+      width: 45%;
+    display:flex;
+    align-items:center;
+  }
+  
+  input {
+      
+      border: 1px solid black;
+      width:2em;
+      
+      bottom: 12px;
+    }
+  }
+
+ /* 
+ .quantity {
+
+    input{
+      width:40px;
+      text-align:center;
+    }
+    
+  }
+
+
+
+
+
+  .button-plus {
+    position: absolute;
+    top: 3px;
+    right:5px;
+  }
+  .button-minus{
+    position:absolute;
+    top: 3px;
+    right:20%;
+  }
+  .product-name {
+
+    border: 1px solid black;
+    width: 30%;
+    height: 50%;
+    margin-left: 30%;
+    margin-top: 3.25%;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 0.5%;
+    font-weight: 900;
+
+  }
+ }
+
+
+  .price {
+    
+    border: 2px solid black;
+    border-radius: 55%;
+    height: 50px;
+    width: 50px;
+    font-size:1.5em;
+    padding-top:10px;
+    position: absolute;
+    left:80px;
+    z-index:1;
+    background-color:white;
+
+  }
+
+
+
+
+/* .rounded-picture {
+  
+  border: 2px solid black;
+  border-radius: 55%;
+  height:70px;
+  width: 50px;
+  
+  padding-top: 10px;
+  margin-right: -7px;
+  background-color: yellow;
+  left:10px;
+
+  img{
+    height:50px;
+    width:30px;
+    margin: 0 auto;
+
+  }
+} */
+.products{
+  position: relative;
+  width: auto;
+  height: 100vh;
+  overflow: auto;
+}
+
+
