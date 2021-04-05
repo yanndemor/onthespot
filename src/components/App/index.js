@@ -16,20 +16,20 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
+const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user, redirect }) => {
   useEffect(() => {
     loadProduct();
     loadCategories();
     loadOrders();
     /* loadUsers(); */
   }, []);
-
   return (
     <div className="app">
       <Router>
         <NavBar />
         {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
         {/* <Caroussel /> */}
+        <BreadCrumb />
         <Page />
 
         {/* <Orders /> */}
@@ -39,7 +39,6 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
     </div>
   );
 };
-
 App.propTypes = {
 //   // fonction qui permet de charger les recettes
 //   // pas de paramètre
