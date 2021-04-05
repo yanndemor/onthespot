@@ -11,7 +11,7 @@ const CartOverview = ({ orderProducts }) => {
   let cart;
   if (orderProducts.length === 0) {
     cart = (
-      <div className="productsList-cart-item">
+      <div className="cartOverview-cart-item">
         <div className="item-details">
           <div className="item-name">Votre panier est vide</div>
         </div>
