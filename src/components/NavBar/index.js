@@ -61,7 +61,7 @@ const NavBar = ({ isLogged }) => {
                 <div className="dropdown-divider" />
               </>
             )}
-            <NavLink to="/products" className="navlink" activeClassName="active">
+            <NavLink to="/" className="navlink" activeClassName="active">
               Accueil
             </NavLink>
             <div className="dropdown-divider" />
@@ -71,7 +71,7 @@ const NavBar = ({ isLogged }) => {
                   Commandes
                 </NavLink>
                 <div className="dropdown-divider" />
-                </>
+              </>
             )}
             <NavLink to="/qui-sommes-nous" className="navlink" activeClassName="active">
               Qui sommes nous ?
