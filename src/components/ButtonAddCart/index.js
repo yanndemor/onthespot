@@ -64,7 +64,7 @@ ButtonAddCart.propTypes = {
       name: PropTypes.string.isRequired,
       picture: PropTypes.string.isRequired,
       price: PropTypes.string.isRequired,
-    }).isRequired,
+    }),
   ).isRequired,
 };
 
