@@ -28,7 +28,6 @@ const Page = ({ isLogged, loading }) => (
   <div className="page">
     <div className="page-content">
       <Switch>
-
         <Route path="/produits/:slug" exact>
           {/* <div className="row mx-0 position-relative">
             <div className="col-sm-8  "> */}
@@ -74,11 +73,11 @@ const Page = ({ isLogged, loading }) => (
             <Orders />
           )}
         </Route>
-
-        <Route path="/commande/:id">
-          <SingleOrder />
-          <div>Ici bientôt une commande</div>
-          <SingleOrder />
+        <Route path="/commande/:id" exact>
+          {loading && <LoadingSpinner />}
+          {!loading && (
+            <SingleOrder />
+          )}
         </Route>
         <Route path="/contact">
           <Contact />
