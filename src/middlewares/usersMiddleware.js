@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import {
-  FETCH_USER, DELETE_USER, deleteUser, saveUser,
+  FETCH_USER, DELETE_USER, deleteUser, retrieveUser,
 } from 'src/actions/users';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
@@ -27,7 +27,7 @@ const usersMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
 
-          store.dispatch(saveUser(response.data));
+          store.dispatch(retrieveUser(response.data));
           console.log('reponse du users', response.data);
         })
 

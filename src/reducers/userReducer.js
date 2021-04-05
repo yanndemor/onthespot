@@ -1,4 +1,4 @@
-import { SAVE_USER, DELETE_USER } from 'src/actions/users';
+import { RETRIEVE_USER, DELETE_USER } from 'src/actions/users';
 
 const initialState = {
   /*  id: '',
@@ -13,7 +13,7 @@ const initialState = {
 
 function userReducer(state = initialState, action) {
   switch (action.type) {
-    case SAVE_USER:
+    case RETRIEVE_USER:
       return {
         ...state,
         userList: action.loadedUsers,

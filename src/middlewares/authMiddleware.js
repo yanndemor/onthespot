@@ -33,7 +33,6 @@ const authMiddleware = (store) => (next) => (action) => {
             response.data.logged,
             response.data.token,
             response.data.user));
-          store.dispatch(saveUser(response.data.logged, response.data.token));
           store.dispatch(fetchUser());
         })
 
