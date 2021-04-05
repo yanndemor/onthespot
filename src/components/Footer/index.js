@@ -22,9 +22,9 @@ const Footer = () => {
           </a>
         </div>
         <div className="social-network col-3 col-sm-2">
-          <a href="https://oclock.io/">
+          <Link to="/contact">
             <Mail size="2em"/>
-          </a>
+          </Link>
         </div>
         <div className="social-network text col-3 col-sm-8">
           <Link to="/CGU">

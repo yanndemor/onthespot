@@ -29,14 +29,14 @@ const Page = ({ isLogged, loading }) => (
       <Switch>
 
         <Route path="/produits/:slug" exact>
-          <div className="row mx-0 position-relative">
-            <div className="col-sm-8  ">
+          {/* <div className="row mx-0 position-relative">
+            <div className="col-sm-8  "> */}
               <Products />
-            </div>
-            <div className="col-sm-4 position-relative">
+            {/* </div> */}
+            {/* <div className="col-sm-4 position-relative">
               <Cart />
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </Route>
         <Route path="/produit/:slug" exact>
           <div className="row position-relative">
