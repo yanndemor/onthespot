@@ -22,9 +22,9 @@ const Footer = () => {
           </a>
         </div>
         <div className="social-network col-3 col-sm-2">
-          <a href="https://oclock.io/">
+          <Link to="/contact">
             <Mail size="2em"/>
-          </a>
+          </Link>
         </div>
         <div className="social-network text col-3 col-sm-8">
           <Link to="/CGU">
@@ -48,14 +48,14 @@ const Footer = () => {
             <Link className="link-footer" to="/categories">
               Nos catégories
             </Link>
-            <Link className="link-footer" to="/CGU">
-              Mentions légales
-            </Link>
             <Link className="link-footer" to="/contact">
               Nous contacter
             </Link>
             <Link className="link-footer" to="/qui-sommes-nous">
               Qui sommes nous ?
+            </Link>
+            <Link className="link-footer" to="/CGU">
+              Mentions légales
             </Link>
             <Link className="link-footer" to="/CGV">
               Conditions générales de vente

@@ -3,7 +3,7 @@ import ButtonUp from 'src/components/ButtonUp';
 import ButtonDown from 'src/components/ButtonDown';
 // import product from 'src/assets/images/products/can-coca.png';
 import PropTypes from 'prop-types';
-
+import ButtonAddCart from 'src/containers/ButtonAddCart';
 import { useParams, Link } from 'react-router-dom';
 
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
@@ -46,20 +46,14 @@ const Product = ({ productsList, categoriesList }) => {
             </div>
 
             <div className="d-flex  my-4 align-items-center justify-content-center text-center">
-              <div className="button-minus ">
-                <ButtonDown />
-              </div>
-              <div className="  px-4 quantity ">
-                <input placeholder="quantité" />
-              </div>
-              <div className="button-plus ">
-                <ButtonUp />
+              <div className="add-cart-button">
+                <ButtonAddCart />              
               </div>
             </div>
-            <div>
+            <div className="div-button">
               <Link to="/categories">
-                <p className="button-return">Retour Liste des categories
-                </p>
+                <button type="button" className="button-return">Retour Liste des categories
+                </button>
               </Link>
             </div>
 
