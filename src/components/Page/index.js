@@ -21,6 +21,7 @@ import Order from 'src/components/Orders/Order';
 import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import Account from 'src/containers/Account';
+import EditAccount from 'src/containers/EditAccount';
 import RegistrationForm from '../../containers/RegistrationForm';
 
 const Page = ({ isLogged, loading }) => (
@@ -81,7 +82,7 @@ const Page = ({ isLogged, loading }) => (
           <CGV />
         </Route>
         <Route path="/connexion">
-          {isLogged ? <Redirect to="/products" /> : <div><LoginForm /><RegistrationForm /></div>}
+          {isLogged ? <Redirect to="/" /> : <div><LoginForm /><RegistrationForm /></div>}
           {/* <Redirect to="/products" /> */}
         </Route>
         <Route path="/categorie/:slug" exact>
@@ -97,6 +98,9 @@ const Page = ({ isLogged, loading }) => (
         </Route>
         <Route path="/compte">
           {!isLogged ? <Redirect to="/" /> : <div><Account /></div>}
+        </Route>
+        <Route path="/edit-compte">
+          {!isLogged ? <Redirect to="/" /> : <div><EditAccount /></div>}
         </Route>
         <Route path="/">
           {loading && <LoadingSpinner />}
