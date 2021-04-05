@@ -21,6 +21,7 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
     loadProduct();
     loadCategories();
     loadOrders();
+    /* loadUsers(); */
   }, []);
 
   return (
@@ -46,6 +47,8 @@ App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   loadCategories: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
+
+  loadOrders: PropTypes.func.isRequired,
 
 };
 // == Export
