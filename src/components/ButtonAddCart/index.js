@@ -39,8 +39,8 @@ const ButtonAddCart = ({
     : 0;
 
   const divClass = productQty > 0
-    ? 'button button--added'
-    : 'button';
+    ? 'buttonAddCart buttonAddCart--added'
+    : 'buttonAddCart';
 
   return (
     <div className={divClass}>
