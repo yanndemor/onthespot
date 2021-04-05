@@ -4,17 +4,17 @@ export const QUANTITY_PLUS = 'QUANTITY_PLUS';
 export const QUANTITY_LESS = 'QUANTITY_LESS';
 export const SEND_COMMAND = 'SEND_COMMAND';
 
-export const addCart = (name) => ({
+export const addCart = (product) => ({
   type: ADD_CART,
   // newValue: newValue
   // shorthand property (ES6)
-  name,
+  product,
 });
 
-export const updateQuantity = (id, data) => ({
+export const updateQuantity = (product, qty) => ({
   type: UPDATE_QUANTITY,
-  id,
-  data,
+  product,
+  qty,
 });
 
 export const quantityPlus = (id) => ({
@@ -22,9 +22,9 @@ export const quantityPlus = (id) => ({
   id,
 });
 
-export const quantityLess = (id) => ({
+export const quantityLess = (product) => ({
   type: QUANTITY_LESS,
-  id,
+  product,
 });
 
 export const sendCommand = () => ({

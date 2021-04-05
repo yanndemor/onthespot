@@ -53,7 +53,7 @@ const Products = ({ productsList, loading, orderProducts }) => {
                     {item.name}
                   </Link>
                 </div>
-                <ButtonAddCart name={item} />
+                <ButtonAddCart product={item} />
               </div>
             </>
           ))}
