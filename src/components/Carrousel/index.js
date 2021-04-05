@@ -5,23 +5,24 @@ import Carousel from 'react-bootstrap/Carousel';
 import './carrousel.scss';
 
 // == Composant
-const Carrousel = () => {
+const Carrousel = ({ productsList }) => {
   console.log('carrousel');
   return (
     <div className="carrousel">
       <Carousel>
-        <Carousel.Item interval={1000}>
-          <img
-            className="w-100"
-            src="https://media.istockphoto.com/photos/colored-powder-explosion-on-black-background-picture-id1057506940?k=6&m=1057506940&s=612x612&w=0&h=C11yA-ESqeuCX63QkRpPyWmAMXJJvZw0niQluGnATlI="
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={500}>
+        {productsList.map((product) => (
+          <Carousel.Item interval={1500}>
+            <img
+              className="image"
+              src={`https://www.onthespot.link/back/public/${product.picture}`}
+              alt="First slide"
+            />
+           
+          </Carousel.Item>
+
+        ))}
+
+        {/*      <Carousel.Item interval={500}>
           <img
             className=" w-100"
             src="https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg"
@@ -42,7 +43,7 @@ const Carrousel = () => {
             <h3>Third slide label</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
     </div>
   );

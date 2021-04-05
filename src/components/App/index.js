@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // == Import
-import Caroussel from 'src/components/Caroussel';
+import Carrousel from 'src/containers/Carrousel';
 import NavBar from 'src/containers/NavBar';
 import BreadCrumb from 'src/components/BreadCrumb';
 // import Orders from 'src/components/Orders';
@@ -28,7 +28,7 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user, redirect
       <Router>
         <NavBar />
         {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
-        {/* <Caroussel /> */}
+        <Carrousel />
         <BreadCrumb />
         <Page />
 

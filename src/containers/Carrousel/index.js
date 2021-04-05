@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 
 // on importe le composant de présentation
-import Caroussel from 'src/components/Caroussel';
+import Carrousel from 'src/components/Carrousel';
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Caroussel);
+export default connect(mapStateToProps, mapDispatchToProps)(Carrousel);
