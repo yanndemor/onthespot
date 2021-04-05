@@ -29,6 +29,7 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
       <Router>
         <NavBar />
         {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
+        <BreadCrumb />
         {/* <Caroussel /> */}
         <Page />
 
