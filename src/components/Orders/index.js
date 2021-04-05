@@ -7,13 +7,13 @@ import Order from './Order';
 import './orders.scss';
 
 const Orders = ({ ordersList }) => {
-  console.log('orderList', ordersList);
+  // console.log('orderList', ordersList);
   // useParams() retourne un objet qui contient tous les paramètres qu'on a
   // capturés dans l'URL (avec ":") => on décompose pour récupérer les paramètres
   const { theId } = useParams();
   // trouver la commande qui a le l'id indiqué
   const order = ordersList.filter((orderItem) => orderItem.id === theId);
-  console.log('Les commandes', order);
+  // console.log('Les commandes', order);
 
   return (
     <main className="orders">

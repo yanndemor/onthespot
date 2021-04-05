@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 // on importe le composant de présentation
-import SingleOrder from 'src/components/Orders';
+import SingleOrder from 'src/components/SingleOrder';
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({

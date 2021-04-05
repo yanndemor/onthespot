@@ -13,12 +13,12 @@ import PropTypes from 'prop-types';
 import CGU from 'src/components/CGU';
 import Product from 'src/containers/Product';
 import CartProduct from 'src/containers/CartProduct';
+import SingleOrder from 'src/containers/SingleOrder';
 import LoginForm from 'src/containers/LoginForm';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
 import Orders from 'src/containers/Orders';
 // import Order from 'src/components/Orders/Order';
-import SingleOrder from 'src/components/SingleOrder';
 import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import Account from 'src/containers/Account';
@@ -75,7 +75,8 @@ const Page = ({ isLogged, loading }) => (
           )}
         </Route>
 
-        <Route path="/commande/:id" exact>
+        <Route path="/commande/:id">
+          <SingleOrder />
           <div>Ici bientôt une commande</div>
           <SingleOrder />
         </Route>

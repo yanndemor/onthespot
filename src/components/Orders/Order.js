@@ -1,17 +1,16 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import SingleOrder from 'src/components/SingleOrder';
 
 const Order = ({
   id, status, createdAt, orderProducts,
 }) => {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  const totalCart = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
+  const total = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
   const newDate = new Date(createdAt);
   const dateFr = newDate.toLocaleDateString('fr-FR');
-  console.log(dateFr);
-  console.log('orderProducts: ------', orderProducts);
+  // console.log(dateFr);
+  // console.log('orderProducts:', orderProducts);
 
   return (
     <div className="order-detail">
@@ -21,17 +20,17 @@ const Order = ({
 
       <div className="order">
         <div className="order-description">
-          <p className="text-center">Détail de la commande</p>
+          <p className="text-center mb-2">Détail de la commande</p>
           <div className="">
             {orderProducts.map((productItem) => (
               <div key={productItem.id} className="product-item">
-                <ul className="">
+                <ul className="d-grid container-fluid">
                   <li className="row">
-                    <div className="col-7">
+                    <div className="col-5">
                       {productItem.product.name}
                     </div>
-                    <p className="quantity col-1">x{productItem.quantity}</p>
-                    <p className="price col-4">Prix : {productItem.product.price}€</p>
+                    <p className="quantity col-2">x{productItem.quantity}</p>
+                    <p className="price col-5">Prix : {productItem.product.price}€</p>
                   </li>
                 </ul>
               </div>
@@ -57,7 +56,7 @@ const Order = ({
           </div>
           <div className="order-price">
             <p>
-              Total : {`${totalCart}€`}
+              Total : {`${total}€`}
             </p>
           </div>
 
