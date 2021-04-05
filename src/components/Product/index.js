@@ -1,6 +1,4 @@
 import React from 'react';
-import ButtonUp from 'src/components/ButtonUp';
-import ButtonDown from 'src/components/ButtonDown';
 // import product from 'src/assets/images/products/can-coca.png';
 import PropTypes from 'prop-types';
 import ButtonAddCart from 'src/containers/ButtonAddCart';
@@ -26,7 +24,7 @@ const Product = ({ productsList, categoriesList }) => {
 
               <div className="product-image">
                 <div className=" rounded-picture">
-                  <img src={`https://www.onthespot.link/back/public/${theProduct.thumbnail}`} alt="product" />
+                  <img src={`https://www.onthespot.link/back/public/${theProduct.picture}`} alt="product" />
                 </div>
                 <div className=" px-0 align-self-start price">
                   <p className="">{theProduct.price}</p>
@@ -47,7 +45,7 @@ const Product = ({ productsList, categoriesList }) => {
 
             <div className="d-flex  my-4 align-items-center justify-content-center text-center">
               <div className="add-cart-button">
-                <ButtonAddCart />              
+              <ButtonAddCart product={theProduct} />             
               </div>
             </div>
             <div className="div-button">
