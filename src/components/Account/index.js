@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 const Account = ({
   userDetail,
   handleDelete,
+  redirect,
   isLogged,
 }) => {
   const handleAccount = (evt) => {
     evt.preventDefault();
     handleDelete();
   };
-  if (!isLogged) {
-    return <Redirect to={{ pathname: '/' }} />;
-  }
+  let toto = {redirect};
+  toto = null;
+
   return (
 
     <div className="account-detail row">
@@ -32,6 +33,11 @@ const Account = ({
       <div>
         <div className="account-delete">
           <button type="button" onClick={handleAccount}>Suppression du compte </button>
+        </div>
+        <div className="account-edit">
+          <Link to="/edit-compte">
+            <button type="button">modifier vos coordonnées </button>
+          </Link>
         </div>
       </div>
 
