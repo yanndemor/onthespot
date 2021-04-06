@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 
+import { totalCart } from 'src/actions/cart';
+
 // on importe le composant de présentation
 import CartProduct from 'src/components/CartProduct';
 // === mapStateToProps
@@ -13,6 +15,9 @@ const mapStateToProps = (state) => ({
 // si on a besoin de dispatcher des actions vers le store (mettre à jour le state)
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
+  addTotalCart: (total) => {
+    dispatch(totalCart(total));
+  },
 });
 
 // === création de l'assistant

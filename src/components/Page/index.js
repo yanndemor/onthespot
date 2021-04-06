@@ -40,17 +40,17 @@ const Page = ({ isLogged, loading }) => (
           {/* </div> */}
         </Route>
         <Route path="/produit/:slug" exact>
-          <div className="row position-relative">
+          {/* <div className="row position-relative"> */}
             {loading && <LoadingSpinner />}
             {!loading && (
-            <div className="col-sm-8  ">
+            // <div className="col-sm-8  ">
               <Product className="" />
-            </div>
+            // {/* </div> */}
             )}
-            <div className="col-sm-4 ">
-              <Cart />
-            </div>
-          </div>
+            {/* <div className="col-sm-4 "> */}
+              {/* <CartOverview /> */}
+            {/* </div> */}
+          {/* </div> */}
         </Route>
         <Route path="/cgu">
           <CGU />

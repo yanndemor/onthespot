@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { sendCommand } from 'src/actions/cart';
+import { sendCommand, timeSelect, spotSelect } from 'src/actions/cart';
 
 // on importe le composant de présentation
 import Cart from 'src/components/Cart';
@@ -7,6 +7,8 @@ import Cart from 'src/components/Cart';
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
+  deliveryPoint: state.cart.deliveryPoint,
+  totalCart: state.cart.totalCart,
 });
 
 // === mapDispatchToProps
@@ -15,6 +17,12 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   handleCart: () => {
     dispatch(sendCommand());
+  },
+  handleChangeTime: (time) => {
+    dispatch(timeSelect(time));
+  },
+  handleChangeSpot: (time) => {
+    dispatch(spotSelect(time));
   },
 });
 

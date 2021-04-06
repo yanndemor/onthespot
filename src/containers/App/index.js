@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchProducts } from 'src/actions/products';
 import { fetchCategories } from 'src/actions/categories';
 import { fetchOrders } from 'src/actions/orders';
+import { fetchDeliveryPoint } from 'src/actions/cart';
 import { fetchUser } from 'src/actions/users';
 // on importe le composant de présentation
 import App from 'src/components/App';
@@ -12,6 +13,7 @@ import App from 'src/components/App';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   isLogged: state.auth.isLogged,
+  loading: state.products.loading,
   user: state.auth.user,
   redirect: state.Users.redirect,
 });
@@ -40,13 +42,10 @@ const mapDispatchToProps = (dispatch) => ({
     // sans variable intermédiaire :
     // dispatch(fetchRecipes());
   },
-  /* loadUsers: () => {
-    const action = fetchUser();
+  loadDeliveryPoints: () => {
+    const action = fetchDeliveryPoint();
     dispatch(action);
-
-    // sans variable intermédiaire :
-    // dispatch(fetchRecipes());
-  }, */
+  },
 });
 
 // === création de l'assistant
