@@ -52,25 +52,35 @@ const NavBar = ({ isLogged }) => {
             <NavLink to="/panier" className="navlink d-none d-lg-inline-block" activeClassName="active">
               <ShoppingCart size={20} /> Panier
             </NavLink>
+            <div className="dropdown-divider" />
             {isLogged && (
-              <NavLink to="/" className="navlink d-none d-lg-inline-block" activeClassName="active">
-                <User size={20} /> Mon compte
-              </NavLink>
+              <>
+                <NavLink to="/compte" className="navlink d-none d-lg-inline-block" activeClassName="active">
+                  <User size={20} /> Mon compte
+                </NavLink>
+                <div className="dropdown-divider" />
+              </>
             )}
-            <NavLink to="/products" className="navlink" activeClassName="active">
+            <NavLink to="/" className="navlink" activeClassName="active">
               Accueil
             </NavLink>
+            <div className="dropdown-divider" />
             {isLogged && (
-              <NavLink to="/commandes" className="navlink" activeClassName="active">
-                Commandes
-              </NavLink>
+              <>
+                <NavLink to="/commandes" className="navlink" activeClassName="active">
+                  Commandes
+                </NavLink>
+                <div className="dropdown-divider" />
+              </>
             )}
             <NavLink to="/qui-sommes-nous" className="navlink" activeClassName="active">
               Qui sommes nous ?
             </NavLink>
+            <div className="dropdown-divider" />
             <NavLink to="/contact" className="navlink" activeClassName="active">
               Contact
             </NavLink>
+            <div className="dropdown-divider" />
             <ButtonLogout />
           </Nav>
         </Navbar.Collapse>

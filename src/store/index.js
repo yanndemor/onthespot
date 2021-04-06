@@ -5,6 +5,7 @@ import productsMiddleware from 'src/middlewares/productsMiddleware';
 import categoriesMiddleware from 'src/middlewares/categoriesMiddleware';
 import ordersMiddleware from 'src/middlewares/ordersMiddleware';
 import cartMiddleware from 'src/middlewares/cartMiddleware';
+import usersMiddleware from 'src/middlewares/usersMiddleware';
 import reducer from 'src/reducers';
 
 // on combine devTools avec les middlewares
@@ -15,6 +16,7 @@ const enhancers = composeWithDevTools(
     productsMiddleware,
     categoriesMiddleware,
     ordersMiddleware,
+    usersMiddleware,
     // ... d'autres middlewares
   ),
 );

@@ -19,6 +19,11 @@ const Categories = ({
   return (
 
     <div>
+      <div className="page-intro">
+        <h1>Bonjour à toi ami de la plage !</h1>
+        <p>Et bienvenue sur l'appli qui te permet de régaler tes papilles, d'étancher ta soif et de combler ce p'tit creux sans bouger de ta serviette ! Dégaine ton téléphone, choisis ton bonheur, valide ton panier et un de nos livreurs arrivera avec ta commande dans un temps record !</p>
+        <p>Relax, les doigts de pieds en éventail, profite du spot ...</p>
+      </div>
       <h1 className="page-name">Les catégories de produits</h1>
       <div className="container">
 

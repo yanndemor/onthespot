@@ -10,14 +10,9 @@ const ButtonLogout = ({ isLogged, handleLogout }) => (
       Déconnexion
     </a>
   ) : (
-    <>
-      <NavLink to="/connexion" className="navlink" activeClassName="active">
-        Connexion
-      </NavLink>
-      <NavLink to="/connexion" className="navlink" activeClassName="active">
-        Inscription
-      </NavLink>
-    </>
+    <NavLink to="/connexion" className="navlink" activeClassName="active">
+      Connexion / Inscription
+    </NavLink>
   )
 );
 

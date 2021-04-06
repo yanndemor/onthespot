@@ -10,12 +10,13 @@ export const SEND_COMMAND = 'SEND_COMMAND';
 export const FECTH_DELIVERY_POINTS = 'FECTH_DELIVERY_POINTS';
 export const SAVE_DELIVERY_POINTS = 'SAVE_DELIVERY_POINTS';
 
-export const addCart = (name) => ({
+export const addCart = (product) => ({
   type: ADD_CART,
   // newValue: newValue
   // shorthand property (ES6)
-  name,
+  product,
 });
+
 
 export const totalCart = (total) => ({
   type: TOTAL_CART,
@@ -42,10 +43,11 @@ export const spotSelect = (spot) => ({
   spot,
 });
 
-export const updateQuantity = (id, data) => ({
+export const updateQuantity = (product, qty) => ({
+
   type: UPDATE_QUANTITY,
-  id,
-  data,
+  product,
+  qty,
 });
 
 export const quantityPlus = (id) => ({
@@ -53,9 +55,9 @@ export const quantityPlus = (id) => ({
   id,
 });
 
-export const quantityLess = (id) => ({
+export const quantityLess = (product) => ({
   type: QUANTITY_LESS,
-  id,
+  product,
 });
 
 export const sendCommand = () => ({

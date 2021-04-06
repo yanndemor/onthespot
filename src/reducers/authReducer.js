@@ -1,4 +1,5 @@
 import { UPDATE_USER_FIELD, SAVE_USER, LOG_OUT } from 'src/actions/auth';
+import { DELETE_USER } from 'src/actions/users';
 
 const initialState = {
   username: '',
@@ -73,6 +74,7 @@ function authReducer(state = initialState, action) {
         ...state,
         isLogged: true,
         token: action.token,
+        user: action.user,
         // on en profite pour vider les champs
         user: action.user,
         password: '',
@@ -84,7 +86,12 @@ function authReducer(state = initialState, action) {
         isLogged: false,
         token: null,
       };
-
+    case DELETE_USER:
+      return {
+        ...state,
+        isLogged: false,
+        token: null,
+      };
     default:
       return state;
   }
