@@ -8,7 +8,6 @@ const initialState = {
   price: '',
   availability: '', */
   ordersList: [],
-
 };
 
 function ordersReducer(state = initialState, action) {

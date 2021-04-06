@@ -28,7 +28,6 @@ const SingleOrder = ({ ordersList }) => {
   // Conversion de la date en format fr
   const newDate = new Date(createdAt);
   const dateFr = newDate.toLocaleDateString('fr-FR');
-  const newDeliveryTime = new Date(deliveryTime);
 
   return (
     <div className="order-detail">
@@ -45,7 +44,7 @@ const SingleOrder = ({ ordersList }) => {
           }
           </div>
           <div className="delivery-time col-3">
-            Horaire retrait : {}
+            Horaire retrait : {deliveryTime}
           </div>
           <div className="amount col-3">
             Toal : {`${total}€`}
