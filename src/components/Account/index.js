@@ -5,6 +5,7 @@ import { Redirect, Link } from 'react-router-dom';
 const Account = ({
   userDetail,
   handleDelete,
+  resetRedirect,
   redirect,
   isLogged,
 }) => {
@@ -12,8 +13,10 @@ const Account = ({
     evt.preventDefault();
     handleDelete();
   };
-  let toto = {redirect};
-  toto = null;
+
+  if (redirect === '/compte') {
+    resetRedirect();
+  }
 
   return (
 
@@ -56,6 +59,8 @@ Account.propTypes = {
     }).isRequired,
   ).isRequired,
   handleDelete: PropTypes.func.isRequired,
+  resetRedirect: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  redirect: PropTypes.string,
 };
 export default Account;
