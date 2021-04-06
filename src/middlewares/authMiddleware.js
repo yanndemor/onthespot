@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { LOG_IN, REGISTRATION, saveUser} from 'src/actions/auth';
 import { fetchUser } from 'src/actions/users';
+import { fetchOrders } from 'src/actions/orders';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
@@ -26,6 +27,7 @@ const authMiddleware = (store) => (next) => (action) => {
           // console.log('middleware auth : on dispatch les actions');
           // Sotcke le token dans le localStorage
           localStorage.setItem('user', JSON.stringify(response.data.token));
+          store.dispatch(fetchOrders());
 
 
           console.log(response.data);

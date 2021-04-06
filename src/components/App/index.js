@@ -22,7 +22,6 @@ const App = ({
   loadProduct,
   isLogged,
   loadCategories,
-  loadOrders,
   loadDeliveryPoints,
   loading,
   user,
@@ -30,7 +29,6 @@ const App = ({
   useEffect(() => {
     loadProduct();
     loadCategories();
-    loadOrders();
     loadDeliveryPoints();
     /* loadUsers(); */
   }, []);

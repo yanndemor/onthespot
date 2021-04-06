@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
   ordersList: state.orders.ordersList,
   productsList: state.products.productsList,
   categoriesList: state.categories.categoriesList,
-  orderProducts: state.cart.orderProducts,
 });
 
 // === mapDispatchToProps
