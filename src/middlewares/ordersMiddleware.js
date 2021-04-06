@@ -5,7 +5,7 @@ import { FETCH_ORDERS, saveOrders } from 'src/actions/orders';
 const API_URL = 'https://api.onthespot.link/api';
 
 const ordersMiddleware = (store) => (next) => (action) => {
-  console.log('on a intercepté une action dans le middleware: orders ', action);
+  // console.log('on a intercepté une action dans le middleware: orders ', action);
   switch (action.type) {
     case FETCH_ORDERS: {
       const user = JSON.parse(localStorage.getItem('user'));
@@ -18,12 +18,11 @@ const ordersMiddleware = (store) => (next) => (action) => {
         })
 
         .then((response) => {
-          console.log('response fetch order: ', response);
-         /*  store.dispatch(saveOrders(response.data)); */
-         
+          // console.log('response fetch order: ', response);
+          store.dispatch(saveOrders(response.data));
         })
         .catch((error) => {
-          console.log('error:', error);
+          console.log(error.response);
         });
 
       next(action);

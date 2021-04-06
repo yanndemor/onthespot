@@ -10,21 +10,22 @@
     color: vars.$dark-color;
     font-size: 3em;
     font-weight: 500;
-    margin-bottom: vars.$gutter;
+    margin-bottom: 2%;;
     text-align: center;
     text-transform: uppercase;
   }
 
   .orders-container {
+    display: flex;
+    flex-direction: column-reverse;
     
-
     .order-detail {
       border: 2px solid black;
       border-radius:30px;
       background-color: coral;
       margin:2%;
-      padding: 1.5%;
-    
+      padding: 2%;
+          
       .order-name {
         border: 1px solid black;
         border-radius: 10px;
@@ -37,43 +38,49 @@
         font-weight: vars.$title-font-weight;
         text-transform: uppercase;
         width: 45%;
-
       }
-      .order-description {
-        width : 90%;
-        border: 1px solid black;
-        background-color: white;
-        border-radius: 10px;
-        padding: 0.5% 0%;
 
-      }
-    
-      .order-state {
+      .order {
         display: flex;
-        width: 30%;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 1.5% 0%;
+        flex-direction: row;
+
+        .order-description {
+          width : 70%;
+          border: 1px solid black;
+          background-color: white;
+          border-radius: 12px;
+          padding: 0.5%;
+        }
+
+        .order-state {
+          width: 30%;
+          padding: 1%;
+          border-radius: 10px;
+            
+          .order-date {
+            padding: 0.2em;
+            margin: 0.1em 0;
+            // text-transform: uppercase;
+          }
     
-        .order-date {
-          // padding: 0.2em;
-          // margin: 0.1em 0;
-          // text-transform: uppercase;
-        }
+          .order-status {
+          
+          }
+    
+          .order-amount{
+            // color: vars.$order-text-color;
+            // margin-top: vars.$gutter / 2;
+          }
+    
+          &:hover {
+            background-color: vars.$order-hover-color;
+          }
+      }
+
+      }
+      
+    
   
-        .order-status {
-        
-        }
-  
-        .order-amount{
-          // color: vars.$order-text-color;
-          // margin-top: vars.$gutter / 2;
-        }
-  
-        &:hover {
-          background-color: vars.$order-hover-color;
-        }
-    }
   }
 }
 }
