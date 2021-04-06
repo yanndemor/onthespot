@@ -22,26 +22,33 @@ const CartProduct = ({ productItems, addTotalCart }) => {
     <div className="products">
       <div className="container">
         {productItems.map((item) => (
-          <div key={item.id} className="product-listElements ">
+          <div key={item.id} className="product-listElements">
             <div className="products-items">
-              <div className="rounded-picture">
-                <img src={`https://onthespot.apotheoz.tech/back/public/${item.thumbnail}`} alt="product" />
-                <div className="price">
-                  <p>{item.price}</p>
+
+              <div className="product-image">
+                <div className="rounded-picture">
+                  <img src={`https://onthespot.apotheoz.tech/back/public/${item.picture}`} alt="product" />                  
+                </div>
+                <div className="px-0 align-self-start price">
+                    <p>{item.price}</p>
                 </div>
               </div>
+
+              <div className="product-name ">
+                <Link to={`/product/${item.slug}`}>
+                  {item.name}
+                </Link>
+              </div>
             </div>
-            <div className="product-name ">
-              <Link to={`/product/${item.slug}`}>
-                {item.name}
-              </Link>
-            </div>
-            <div className="button-cart">
-              <ButtonAddCart product={item} />
-            </div>
-            <div className="total">
-              <p>total prix</p>
-              <p>{`${item.price * item.quantity} €`} </p>
+
+            <div className="cart-button-and-total">
+              <div className="button-cart">
+                <ButtonAddCart product={item} />
+              </div>
+              <div className="total">
+                <p>Prix total :</p>
+                <p>{`${item.price * item.quantity} €`} </p>
+              </div>
             </div>
           </div>
         ))}
