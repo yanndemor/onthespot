@@ -1,4 +1,4 @@
-import { RETRIEVE_USER, DELETE_USER } from 'src/actions/users';
+import { RETRIEVE_USER, DELETE_USER, FLASH } from 'src/actions/users';
 
 const initialState = {
   /*  id: '',
@@ -8,6 +8,10 @@ const initialState = {
   price: '',
   availability: '', */
   userList: [],
+  flashMessage: {
+    type: '',
+    message: '',
+  },
 
 };
 
@@ -25,6 +29,11 @@ function userReducer(state = initialState, action) {
         token: '',
         isLogged: false,
 
+      };
+    case FLASH:
+      return {
+        ...state,
+        flashMessage: { ...state.flashMessage, type: action.flashType, message: action.message },
       };
 
     default:
