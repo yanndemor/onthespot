@@ -17,6 +17,7 @@ function ordersReducer(state = initialState, action) {
       return {
         ...state,
         ordersList: action.loadedOrders,
+        orderProducts: action.loadedorderProducts,
         user: action.user,
       };
 

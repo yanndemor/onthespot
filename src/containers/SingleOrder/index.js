@@ -7,6 +7,7 @@ import SingleOrder from 'src/components/SingleOrder';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   ordersList: state.orders.ordersList,
+  orderProducts: state.orders.ordersList.orderProducts,
 });
 
 // === mapDispatchToProps
