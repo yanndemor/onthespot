@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
