@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Link } from 'react-router-dom';
+import './account.scss';
 
 const Account = ({
   userDetail,
   handleDelete,
-  redirect,
+  editRedirect,
   isLogged,
 }) => {
   const handleAccount = (evt) => {
     evt.preventDefault();
     handleDelete();
   };
-  let toto = {redirect};
-  toto = null;
+  const handleRedirect = (evt) => {
+    evt.preventDefault();
+    editRedirect();
+  };
 
   return (
 
     <div className="account-detail row">
-      <div className="col-8">
+      <div className="account-info col-8">
         <div className="account-description ">
-          <p className="w-75 text-center">Détail du compte</p>
-          <div className="mx-2">
+          <h2 className="account-title">Détail du compte</h2>
+          <div className="detail mx-2">
             <li>nom : {userDetail.lastname}</li>
             <li>prénom : {userDetail.firstname}</li>
             <li>tel: {userDetail.telNumber}</li>
@@ -30,7 +33,7 @@ const Account = ({
         </div>
       </div>
 
-      <div>
+      <div className="button-edit-sup">
         <div className="account-delete">
           <button type="button" onClick={handleAccount}>Suppression du compte </button>
         </div>
@@ -39,6 +42,9 @@ const Account = ({
             <button type="button">modifier vos coordonnées </button>
           </Link>
         </div>
+      {/*   <div className="account-delete">
+          <button type="button" onClick={handleRedirect}>suivant</button>
+        </div> */}
       </div>
 
     </div>
