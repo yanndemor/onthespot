@@ -1,15 +1,12 @@
 import { connect } from 'react-redux';
 
 // on importe le composant de présentation
-import Order from 'src/components/Orders';
+import SingleOrder from 'src/components/SingleOrder';
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   ordersList: state.orders.ordersList,
-  productsList: state.products.productsList,
-  categoriesList: state.categories.categoriesList,
-  orderProducts: state.cart.orderProducts,
 });
 
 // === mapDispatchToProps
@@ -19,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Order);
+export default connect(mapStateToProps, mapDispatchToProps)(SingleOrder);

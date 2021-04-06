@@ -27,7 +27,6 @@ const App = ({
   loading,
   user,
 }) => {
-
   useEffect(() => {
     loadProduct();
     loadCategories();
@@ -63,6 +62,7 @@ App.propTypes = {
   loadOrders: PropTypes.func.isRequired,
   loadDeliveryPoints: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
+  loadOrders: PropTypes.func.isRequired,
 
 };
 // == Export

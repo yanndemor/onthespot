@@ -10,4 +10,5 @@ export const fetchOrders = () => ({
 export const saveOrders = (orders) => ({
   type: SAVE_ORDERS,
   loadedOrders: orders,
+  loadedorderProducts: orders,
 });
