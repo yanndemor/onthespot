@@ -20,6 +20,7 @@ import Orders from 'src/containers/Orders';
 import Order from 'src/components/Orders/Order';
 import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
+import Account from 'src/containers/Account';
 import RegistrationForm from '../../containers/RegistrationForm';
 
 const Page = ({ isLogged, loading }) => (
@@ -38,17 +39,17 @@ const Page = ({ isLogged, loading }) => (
           {/* </div> */}
         </Route>
         <Route path="/produit/:slug" exact>
-          <div className="row position-relative">
+          {/* <div className="row position-relative"> */}
             {loading && <LoadingSpinner />}
             {!loading && (
-            <div className="col-sm-8  ">
+            // <div className="col-sm-8  ">
               <Product className="" />
-            </div>
+            // {/* </div> */}
             )}
-            <div className="col-sm-4 ">
-              <Cart />
-            </div>
-          </div>
+            {/* <div className="col-sm-4 "> */}
+              {/* <CartOverview /> */}
+            {/* </div> */}
+          {/* </div> */}
         </Route>
         <Route path="/cgu">
           <CGU />
@@ -93,6 +94,9 @@ const Page = ({ isLogged, loading }) => (
             <Categories />
           </div>
           )}
+        </Route>
+        <Route path="/compte">
+          {!isLogged ? <Redirect to="/" /> : <div><Account /></div>}
         </Route>
         <Route path="/">
           {loading && <LoadingSpinner />}

@@ -39,8 +39,8 @@ const ButtonAddCart = ({
     : 0;
 
   const divClass = productQty > 0
-    ? 'button button--added'
-    : 'button';
+    ? 'buttonAddCart buttonAddCart--added'
+    : 'buttonAddCart';
 
   return (
     <div className={divClass}>
@@ -64,7 +64,7 @@ ButtonAddCart.propTypes = {
       name: PropTypes.string.isRequired,
       picture: PropTypes.string.isRequired,
       price: PropTypes.string.isRequired,
-    }).isRequired,
+    }),
   ).isRequired,
 };
 

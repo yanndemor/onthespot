@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-import { LOG_IN, REGISTRATION, saveUser } from 'src/actions/auth';
+import { LOG_IN, REGISTRATION, saveUser} from 'src/actions/auth';
+import { fetchUser } from 'src/actions/users';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
@@ -26,7 +27,13 @@ const authMiddleware = (store) => (next) => (action) => {
           // Sotcke le token dans le localStorage
           localStorage.setItem('user', JSON.stringify(response.data.token));
 
-          store.dispatch(saveUser(response.data.logged, response.data.token));
+          console.log(response.data);
+
+          store.dispatch(saveUser(
+            response.data.logged,
+            response.data.token,
+            response.data.user));
+          store.dispatch(fetchUser());
         })
 
         .catch((error) => {
@@ -65,7 +72,6 @@ const authMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-
     default:
       // on passe l'action au suivant (middleware suivant ou reducer)
       next(action);

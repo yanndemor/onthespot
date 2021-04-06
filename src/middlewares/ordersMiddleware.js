@@ -19,7 +19,8 @@ const ordersMiddleware = (store) => (next) => (action) => {
 
         .then((response) => {
           console.log('response fetch order: ', response);
-          store.dispatch(saveOrders(response.data));
+         /*  store.dispatch(saveOrders(response.data)); */
+         
         })
         .catch((error) => {
           console.log('error:', error);

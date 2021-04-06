@@ -55,13 +55,13 @@ const NavBar = ({ isLogged }) => {
             <div className="dropdown-divider" />
             {isLogged && (
               <>
-                <NavLink to="/" className="navlink d-none d-lg-inline-block" activeClassName="active">
+                <NavLink to="/compte" className="navlink d-none d-lg-inline-block" activeClassName="active">
                   <User size={20} /> Mon compte
                 </NavLink>
                 <div className="dropdown-divider" />
               </>
             )}
-            <NavLink to="/products" className="navlink" activeClassName="active">
+            <NavLink to="/" className="navlink" activeClassName="active">
               Accueil
             </NavLink>
             <div className="dropdown-divider" />
