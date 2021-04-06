@@ -88,7 +88,7 @@ function cartReducer(state = initialState, action) {
       return {
         ...state,
         orderProducts: state.orderProducts.map((product) => (product.id === action.product.id
-          ? { ...product, quantity: action.qty }
+          ? { ...product, quantity: parseInt(action.qty, 10) }
           : product)),
       };
     }
