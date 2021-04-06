@@ -47,12 +47,12 @@ const Product = ({ productsList, categoriesList }) => {
 
           <div className="d-flex  my-4 align-items-center justify-content-center text-center">
             <div className="add-cart-button">
-            <ButtonAddCart product={theProduct} />             
+            <ButtonAddCart product={theProduct} />
             </div>
           </div>
           <div className="div-button">
-            <Link to="/categories">
-              <button type="button" className="button-return">Retour Liste des categories
+            <Link to={`/produits/${theProduct.category.slug}`}>
+              <button type="button" className="button-return">Retour à la catégorie {`${theProduct.category.title}`}
               </button>
             </Link>
           </div>
