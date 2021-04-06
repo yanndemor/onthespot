@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-import {
-  LOG_IN, REGISTRATION, LOG_OUT, saveUser, CHECK_LOG_IN, forceLog,
-} from 'src/actions/auth';
-import { fetchUser } from 'src/actions/users';
+import { LOG_IN, REGISTRATION, LOG_OUT, saveUser, CHECK_LOG_IN, forceLog, notWaiting } from 'src/actions/auth';
+import { fetchUser, flash } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
@@ -68,10 +66,14 @@ const authMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
-          alert('Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes');
+          // alert('Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes');
+          store.dispatch(notWaiting());
+          store.dispatch(flash('success', 'Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes'));
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error.response.data.detail);
+          store.dispatch(flash('danger', error.response.data.detail));
+          store.dispatch(notWaiting());
         });
 
       next(action);

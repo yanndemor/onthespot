@@ -3,6 +3,7 @@ export const LOG_IN = 'LOG_IN';
 export const SAVE_USER = 'SAVE_USER';
 export const LOG_OUT = 'LOG_OUT';
 export const REGISTRATION = 'REGISTRATION';
+export const NOT_WAITING = 'NOT_WAITING';
 export const CHECK_LOG_IN = 'CHECK_LOG_IN';
 export const FORCE_LOG = 'FORCE_LOG';
 
@@ -31,6 +32,10 @@ export const logOut = () => ({
 
 export const registration = () => ({
   type: REGISTRATION,
+});
+
+export const notWaiting = () => ({
+  type: NOT_WAITING,
 });
 
 export const checkLogin = () => ({

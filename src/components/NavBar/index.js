@@ -36,7 +36,7 @@ const NavBar = ({ isLogged }) => {
         <div className="header-title d-lg-none">On The Spot !!!</div>
 
         {isLogged ? (
-          <NavLink to="/" className="navlink-user mr-auto d-lg-none">
+          <NavLink to="/compte" className="navlink-user mr-auto d-lg-none">
             <User size={30} />
           </NavLink>
         ) : (
