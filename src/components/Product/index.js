@@ -1,10 +1,9 @@
 import React from 'react';
-import ButtonUp from 'src/components/ButtonUp';
-import ButtonDown from 'src/components/ButtonDown';
 // import product from 'src/assets/images/products/can-coca.png';
 import PropTypes from 'prop-types';
-
+import ButtonAddCart from 'src/containers/ButtonAddCart';
 import { useParams, Link } from 'react-router-dom';
+import CartOverview from 'src/containers/CartOverview';
 
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './product.scss';
@@ -16,58 +15,55 @@ const Product = ({ productsList, categoriesList }) => {
   const theProduct = productsList.find((product) => product.slug === slug);
 
   console.log('the product', theProduct);
+
+  
   return (
-    <>
-      <div key={theProduct.slug} className="product">
+    <main>
 
-        <div className="container mb-1">
-          <div className="container  product-detail ">
-            <div className="d-flex align-items-center product-header ">
+      <div key={theProduct.slug} className="product">        
+        <div className="container  product-detail ">
+          <div className="d-flex align-items-center product-header ">
 
-              <div className="product-image">
-                <div className=" rounded-picture">
-                  <img src={`https://www.onthespot.link/back/public/${theProduct.thumbnail}`} alt="product" />
-                </div>
-                <div className=" px-0 align-self-start price">
-                  <p className="">{theProduct.price}</p>
-                </div>
+            <div className="product-image">
+              <div className=" rounded-picture">
+                <img src={`https://www.onthespot.link/back/public/${theProduct.picture}`} alt="product" />
               </div>
-
-              <div className="col-6 ml-5 text-center product-name ">
-                <p className="">{theProduct.name}</p>
-              </div>
-
-            </div>
-            <div className="col my-2 py-4 product-description">
-              <p className=" text-center  my-2">Détail du produit</p>
-              <div className="mx-2">
-                <p>{theProduct.description}</p>
+              <div className=" px-0 align-self-start price">
+                <p className="">{theProduct.price}</p>
               </div>
             </div>
 
-            <div className="d-flex  my-4 align-items-center justify-content-center text-center">
-              <div className="button-minus ">
-                <ButtonDown />
-              </div>
-              <div className="  px-4 quantity ">
-                <input placeholder="quantité" />
-              </div>
-              <div className="button-plus ">
-                <ButtonUp />
-              </div>
-            </div>
-            <div>
-              <Link to="/categories">
-                <p className="button-return">Retour Liste des categories
-                </p>
-              </Link>
+            <div className="col-6 ml-5 text-center product-name ">
+              <p className="">{theProduct.name}</p>
             </div>
 
           </div>
+          <div className="col my-2 py-4 product-description">
+            <p className=" text-center  my-2">Détail du produit</p>
+            <div className="mx-2">
+              <p>{theProduct.description}</p>
+            </div>
+          </div>
+
+          <div className="d-flex  my-4 align-items-center justify-content-center text-center">
+            <div className="add-cart-button">
+            <ButtonAddCart product={theProduct} />             
+            </div>
+          </div>
+          <div className="div-button">
+            <Link to="/categories">
+              <button type="button" className="button-return">Retour Liste des categories
+              </button>
+            </Link>
+          </div>
+
         </div>
 
       </div>
-    </>
+
+      
+      <CartOverview />
+    </main>
   );
 };
 
