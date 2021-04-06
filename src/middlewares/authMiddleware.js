@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-import { LOG_IN, REGISTRATION, LOG_OUT, saveUser} from 'src/actions/auth';
+import {
+  LOG_IN, REGISTRATION, LOG_OUT, saveUser, CHECK_LOG_IN, forceLog,
+} from 'src/actions/auth';
 import { fetchUser } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 
@@ -29,13 +31,13 @@ const authMiddleware = (store) => (next) => (action) => {
           localStorage.setItem('user', JSON.stringify(response.data.token));
           store.dispatch(fetchOrders());
 
-
           console.log(response.data);
 
           store.dispatch(saveUser(
             response.data.logged,
             response.data.token,
-            response.data.user));
+            response.data.user,
+          ));
           store.dispatch(fetchUser());
         })
 
@@ -71,6 +73,17 @@ const authMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.log(error);
         });
+
+      next(action);
+      break;
+    }
+
+    case CHECK_LOG_IN: {
+      if (localStorage.getItem('user') != null) {
+        store.dispatch(fetchUser());
+        store.dispatch(fetchOrders());
+        store.dispatch(forceLog());
+      }
 
       next(action);
       break;

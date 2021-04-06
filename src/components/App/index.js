@@ -9,7 +9,7 @@ import NavBar from 'src/containers/NavBar';
 import BreadCrumb from 'src/components/BreadCrumb';
 // import Orders from 'src/components/Orders';
 import Page from 'src/containers/Page';
-import ButtonLogout from 'src/containers/ButtonLogout';
+// import ButtonLogout from 'src/containers/ButtonLogout';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 
 import Footer from 'src/components/Footer';
@@ -25,19 +25,20 @@ const App = ({
   loadDeliveryPoints,
   loading,
   user,
+  checklogin,
 }) => {
   useEffect(() => {
     loadProduct();
     loadCategories();
     loadDeliveryPoints();
-    /* loadUsers(); */
+    checklogin();
   }, []);
 
   return (
     <div className="app">
       <Router>
         <NavBar />
-        {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
+        {/* {isLogged && <div> Bon retour parmi nous {user.firstname}</div>} */}
         <BreadCrumb />
         {/* <Caroussel /> */}
         {loading && <LoadingSpinner />}
@@ -57,10 +58,10 @@ App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,
   loadCategories: PropTypes.func.isRequired,
-  loadOrders: PropTypes.func.isRequired,
+  // loadOrders: PropTypes.func.isRequired,
   loadDeliveryPoints: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-  loadOrders: PropTypes.func.isRequired,
+  // user: PropTypes.string.isRequired,
+  checklogin: PropTypes.func.isRequired,
 
 };
 // == Export
