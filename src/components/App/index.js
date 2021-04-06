@@ -17,7 +17,6 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-<<<<<<< HEAD
 
 const App = ({
   loadProduct,
@@ -28,10 +27,6 @@ const App = ({
   loading,
   user,
 }) => {
-
-=======
-const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user}) => {
->>>>>>> b895a58 (linking the 3 comonents)
   useEffect(() => {
     loadProduct();
     loadCategories();
