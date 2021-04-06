@@ -15,6 +15,8 @@ const mapStateToProps = (state) => ({
   passwordRegister: state.auth.passwordRegister,
   passwordRegisterCheck: state.auth.passwordRegisterCheck,
   phoneNumber: state.auth.phoneNumber,
+  isWaiting: state.auth.isWaiting,
+  flashMessage: state.Users.flashMessage,
 });
 
 // === mapDispatchToProps

@@ -69,9 +69,7 @@ const Page = ({ isLogged, loading }) => (
         </Route>
         <Route path="/commandes">
           {loading && <LoadingSpinner />}
-          {!loading && (
-            <Orders />
-          )}
+          {!loading && isLogged ? <Orders /> : <Redirect to="/connexion" />}
         </Route>
         <Route path="/commande/:id">
           {loading && <LoadingSpinner />}

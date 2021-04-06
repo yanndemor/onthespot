@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MiniSpinner from 'src/components/MiniSpinner';
 
 import Field from './Field';
 
@@ -14,17 +15,31 @@ const RegistrationForm = ({
   phoneNumber,
   changeField,
   handleRegister,
+  isWaiting,
+  flashMessage,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (passwordRegister === passwordRegisterCheck) {
+    if (!isWaiting && passwordRegister === passwordRegisterCheck) {
       handleRegister();
     }
   };
+
+  let flash = null;
+  if (flashMessage.type !== "") {
+    console.log('il y a un flash message');
+    flash = (
+      <div className={`alert alert-${flashMessage.type}`} role="alert">
+        {flashMessage.message}
+      </div>
+    );
+  }
+
   console.log(firstname);
   return (
     <div className="form" id="inscription">
       <h2>Inscription</h2>
+      {flash}
       <form className="register-form" onSubmit={handleSubmit}>
         <Field
           name="firstname"
@@ -66,7 +81,7 @@ const RegistrationForm = ({
           manageChange={changeField}
           value={phoneNumber}
         />
-        <button type="submit">login</button>
+        <button type="submit">{isWaiting ? <MiniSpinner /> : 'login'}</button>
         <p className="message">Déja inscrit? <a className="toggle-form" href="#">Connectez vous</a></p>
       </form>
     </div>
@@ -93,7 +108,10 @@ RegistrationForm.propTypes = {
   phoneNumber: PropTypes.string.isRequired,
   /** called when the form is submitted */
   handleRegister: PropTypes.func.isRequired,
+  isWaiting: PropTypes.bool.isRequired,
 
 };
+
+
 
 export default RegistrationForm;
