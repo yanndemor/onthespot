@@ -26,13 +26,13 @@ const Order = ({
             {orderProducts.map((productItem) => (
               <div key={productItem.id} className="product-item">
                 <ul className="d-grid container-fluid">
-                  <li className="row">
-                    <div className="col-5">
+                  <div className="row">
+                    <div className="col-7">
                       {productItem.product.name}
                     </div>
                     <p className="quantity col-2">x{productItem.quantity}</p>
-                    <p className="price col-5">Prix : {productItem.product.price}€</p>
-                  </li>
+                    <p className="price col-4"> {productItem.product.price}€</p>
+                  </div>
                 </ul>
               </div>
             ))}

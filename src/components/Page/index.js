@@ -73,7 +73,7 @@ const Page = ({ isLogged, loading }) => (
             <Orders />
           )}
         </Route>
-        <Route path="/commande/:id" exact>
+        <Route path="/commande/:id">
           {loading && <LoadingSpinner />}
           {!loading && (
             <SingleOrder />
