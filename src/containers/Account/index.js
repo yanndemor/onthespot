@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteUser, editRedirect} from 'src/actions/users';
+import { deleteUser, redirectToNull } from 'src/actions/users';
 
 // on importe le composant de présentation
 import Account from 'src/components/Account';
@@ -20,9 +20,10 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log(`newValue '${newValue}' for field '${name}'`);
     dispatch(deleteUser());
   },
-  handleRedirect:() => {
-    dispatch(editRedirect());
-  },
+ 
+  resetRedirect: () => {
+    dispatch(redirectToNull());
+  }
 });
 
 // === création de l'assistant

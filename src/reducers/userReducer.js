@@ -1,4 +1,4 @@
-import { RETRIEVE_USER, DELETE_USER, EDIT_USER, EDIT_REDIRECT} from 'src/actions/users';
+import { RETRIEVE_USER, DELETE_USER, EDIT_USER, REDIRECT_TO_NULL } from 'src/actions/users';
 import { UPDATE_USER_FIELD } from 'src/actions/auth';
 import { useState } from 'react';
 
@@ -63,9 +63,9 @@ function userReducer(state = initialState, action) {
     case EDIT_USER:
       return {
         ...state,
-        redirect: '/',
+        redirect: '/compte',
       };
-    case EDIT_REDIRECT:
+    case REDIRECT_TO_NULL:
       return {
         ...state,
         redirect: null,

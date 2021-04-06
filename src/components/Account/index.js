@@ -6,17 +6,18 @@ import './account.scss';
 const Account = ({
   userDetail,
   handleDelete,
-  editRedirect,
   isLogged,
+  redirect,
+  resetRedirect,
 }) => {
   const handleAccount = (evt) => {
     evt.preventDefault();
     handleDelete();
   };
-  const handleRedirect = (evt) => {
-    evt.preventDefault();
-    editRedirect();
-  };
+
+  if (redirect === '/compte') {
+    resetRedirect();
+  }
 
   return (
 
@@ -24,7 +25,7 @@ const Account = ({
       <div className="account-info col-8">
         <div className="account-description ">
           <h2 className="account-title">Détail du compte</h2>
-          <div className="detail mx-2">
+          <div className="detail">
             <li>nom : {userDetail.lastname}</li>
             <li>prénom : {userDetail.firstname}</li>
             <li>tel: {userDetail.telNumber}</li>
@@ -42,9 +43,7 @@ const Account = ({
             <button type="button">modifier vos coordonnées </button>
           </Link>
         </div>
-      {/*   <div className="account-delete">
-          <button type="button" onClick={handleRedirect}>suivant</button>
-        </div> */}
+
       </div>
 
     </div>
@@ -63,5 +62,11 @@ Account.propTypes = {
   ).isRequired,
   handleDelete: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  redirect: PropTypes.string,
 };
+
+Account.defaultProps = {
+  redirect: null,
+};
+
 export default Account;

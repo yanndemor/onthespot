@@ -28,10 +28,8 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user, redirect
     <div className="app">
       <Router>
         <NavBar />
+        <BreadCrumb />
         {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
-        <BreadCrumb />
-        {/* <Caroussel /> */}
-        <BreadCrumb />
         <Page />
 
         {/* <Orders /> */}

@@ -13,10 +13,6 @@ const usersMiddleware = (store) => (next) => (action) => {
     case FETCH_USER: {
       const { isLogged } = store.getState().auth;
       const user = JSON.parse(localStorage.getItem('user'));
-      // let webApiUrl = 'example.com/abc';
-      // let token = localStorage.getItem('token');
-      // let headers={headers: {"Authorization" : `Bearer ${token}`} }
-      // axios.get(webApiUrl,headers);
 
       axios.get(`${API_URL}/users`, {
         headers: {
@@ -74,11 +70,6 @@ const usersMiddleware = (store) => (next) => (action) => {
     case EDIT_USER: {
       const user = JSON.parse(localStorage.getItem('user'));
       const { userList } = store.getState().Users;
-      const { redirect } = store.getState().Users;
-      // let webApiUrl = 'example.com/abc';
-      // let token = localStorage.getItem('token');
-      // let headers={headers: {"Authorization" : `Bearer ${token}`} }
-      // axios.get(webApiUrl,headers);
 
       axios.put(`${API_URL}/users`, { ...userList }, {
         headers: {
@@ -89,16 +80,10 @@ const usersMiddleware = (store) => (next) => (action) => {
 
         .then((res) => {
           if (res.status === 200) {
-            /*  console.log('REDIRECTION avec status => ', res.status); */
             console.log('REDIRECTION avec status => ', res.status);
-            /*    store.setState().redirect = '/compte'; */
-          /*   window.location = '/'; */
           }
         })
-       /*  .then((response) => {
-          console.log('middleware auth : on dispatch les actions', response);
-          store.dispatch(editRedirect({ redirect }));
-        }) */
+
         .catch((error) => {
           console.log(error);
         });
