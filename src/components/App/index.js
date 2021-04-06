@@ -10,17 +10,29 @@ import BreadCrumb from 'src/components/BreadCrumb';
 // import Orders from 'src/components/Orders';
 import Page from 'src/containers/Page';
 import ButtonLogout from 'src/containers/ButtonLogout';
+import LoadingSpinner from 'src/components/LoadingSpinner';
 
 import Footer from 'src/components/Footer';
 
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
+
+const App = ({
+  loadProduct,
+  isLogged,
+  loadCategories,
+  loadOrders,
+  loadDeliveryPoints,
+  loading,
+  user,
+}) => {
+
   useEffect(() => {
     loadProduct();
     loadCategories();
     loadOrders();
+    loadDeliveryPoints();
     /* loadUsers(); */
   }, []);
 
@@ -31,8 +43,8 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
         {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
         <BreadCrumb />
         {/* <Caroussel /> */}
-        <Page />
-
+        {loading && <LoadingSpinner />}
+        {!loading && <Page />}
         {/* <Orders /> */}
         <Footer />
 
@@ -46,10 +58,11 @@ App.propTypes = {
 //   // pas de paramètre
   loadProduct: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
   loadCategories: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-
   loadOrders: PropTypes.func.isRequired,
+  loadDeliveryPoints: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
 
 };
 // == Export

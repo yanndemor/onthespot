@@ -76,7 +76,7 @@ function authReducer(state = initialState, action) {
         token: action.token,
         user: action.user,
         // on en profite pour vider les champs
-        username: '',
+        user: action.user,
         password: '',
       };
 

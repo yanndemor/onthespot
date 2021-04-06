@@ -1,9 +1,19 @@
 import {
-  ADD_CART, UPDATE_QUANTITY, QUANTITY_PLUS, QUANTITY_LESS,
+  ADD_CART,
+  UPDATE_QUANTITY,
+  QUANTITY_PLUS,
+  QUANTITY_LESS,
+  TIME_SELECT,
+  SAVE_DELIVERY_POINTS,
+  SPOT_SELECT,
+  REMOVE_CART,
+  TOTAL_CART,
 } from 'src/actions/cart';
 
 const initialState = {
   orderProducts: [],
+  deliveryPointToOrder: '',
+  totalCart: 0,
 };
 
 function cartReducer(state = initialState, action) {
@@ -18,14 +28,46 @@ function cartReducer(state = initialState, action) {
           orderProducts:
            [...state.orderProducts, { ...action.product, quantity: 1 }],
         };
-      }
-
+      } 
       return {
         ...state,
         orderProducts: state.orderProducts.map((product) => (product.id === action.product.id
           ? { ...product, quantity: product.quantity + 1 }
           : product)),
       };
+      
+    // eslint-disable-next-line no-fallthrough
+    case TIME_SELECT:
+      return {
+        ...state,
+        deliveryTime: action.time,
+      };
+    case TOTAL_CART:
+      return {
+        ...state,
+        totalCart: action.total,
+      };
+    case SPOT_SELECT:
+      return {
+        ...state,
+        deliveryPointToOrder: action.spot,
+      };
+
+    // eslint-disable-next-line no-duplicate-case
+    case SAVE_DELIVERY_POINTS:
+      return {
+        ...state,
+        deliveryPoint: action.data,
+      };
+    case REMOVE_CART:
+      return {
+        ...state,
+        orderProducts: [],
+      };
+
+
+
+
     case UPDATE_QUANTITY: {
       // return state.orderProducts.map((orderproduct) => {
       //   if (orderproduct.id === action.id) {

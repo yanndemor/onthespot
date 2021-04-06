@@ -11,11 +11,11 @@ import reducer from 'src/reducers';
 // on combine devTools avec les middlewares
 const enhancers = composeWithDevTools(
   applyMiddleware(
+    cartMiddleware,
     authMiddleware,
     productsMiddleware,
     categoriesMiddleware,
     ordersMiddleware,
-    cartMiddleware,
     usersMiddleware,
     // ... d'autres middlewares
   ),

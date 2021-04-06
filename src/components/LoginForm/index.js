@@ -53,7 +53,7 @@ const LoginForm = ({
               manageChange={changeField}
               value={password}
             />
-            <button>login</button>
+            <button type="submit">login</button>
             <p className="message">Pas encore de compte? <a className="toggle-form" href="#inscription">Inscrivez vous</a></p>
           </form>
         </div>

@@ -9,8 +9,17 @@ import { Link } from 'react-router-dom';
 /* import { $ } from 'src/assets/images/products/can-coca.png'; */
 /* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './cartProduct.scss';
-const CartProduct = ({ productItems }) => {
+
+const CartProduct = ({ productItems, addTotalCart }) => {
   console.log('products-items', productItems);
+  const testSum = (accumulator, currentValue) => accumulator + currentValue;
+  const totalCart = productItems.map((product) => product.price * product.quantity);
+  if (totalCart.length !== 0) {
+    const total = totalCart.reduce(testSum);
+    addTotalCart(total);
+  }
+  // alert(total);
+
   return (
     <div className="products">
       <div className="container">
@@ -52,5 +61,6 @@ CartProduct.propTypes = {
       price: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  addTotalCart: PropTypes.func.isRequired,
 };
 export default CartProduct;

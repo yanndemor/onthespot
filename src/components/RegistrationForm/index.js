@@ -66,7 +66,7 @@ const RegistrationForm = ({
           manageChange={changeField}
           value={phoneNumber}
         />
-        <button>login</button>
+        <button type="submit">login</button>
         <p className="message">Déja inscrit? <a className="toggle-form" href="#">Connectez vous</a></p>
       </form>
     </div>
