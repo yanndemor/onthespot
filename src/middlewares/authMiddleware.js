@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { LOG_IN, REGISTRATION, saveUser} from 'src/actions/auth';
+import { LOG_IN, REGISTRATION, LOG_OUT, saveUser} from 'src/actions/auth';
 import { fetchUser } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 
@@ -71,6 +71,13 @@ const authMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.log(error);
         });
+
+      next(action);
+      break;
+    }
+
+    case LOG_OUT: {
+      localStorage.removeItem('user');
 
       next(action);
       break;
