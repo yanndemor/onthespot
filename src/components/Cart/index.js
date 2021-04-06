@@ -29,9 +29,9 @@ const Cart = ({
   console.log('deliverypoint', deliveryPoint);
   return (
     <div className="cart">
+      <h2>Panier</h2>
       <form onSubmit={handleSubmit}>
         <div className="listDelevery">
-          <h2>Panier</h2>
           <ul className="item-group">
             <li className="">Total</li>
             <li className="text-center">{`Total (ht) : ${(totalCart * 0.95).toFixed(2)} €`}</li>
@@ -48,14 +48,13 @@ const Cart = ({
         </div>
 
         <div className="listDelevery">
-          <label>
-            Choisir une heure de retrait:
-            <select onChange={handleChange} required>
-              <option value="">--Choisir une heure de retrait--</option>
-              {/* <option value="test">test</option> */}
-              {stepTime.map((option) => <option value={option.deliveryTime}>{option.deliveryTime}</option>)}
-            </select>
-          </label>
+          <label htmlFor="delevery-point ">Choisir une heure de retrait : </label>
+          <select onChange={handleChange} required>
+            <option value="">--Choisir une heure de retrait--</option>
+            {/* <option value="test">test</option> */}
+            {stepTime.map((option) => <option value={option.deliveryTime}>{option.deliveryTime}</option>)}
+          </select>
+
         </div>
         <button
           type="submit"
@@ -63,9 +62,6 @@ const Cart = ({
         >
           Valider
         </button>
-        {/* <div>
-          {leopopold.map((point) => <option value="test" />)}
-        </div> */}
       </form>
     </div>
   );

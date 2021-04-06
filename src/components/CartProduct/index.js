@@ -36,7 +36,9 @@ const CartProduct = ({ productItems, addTotalCart }) => {
                 {item.name}
               </Link>
             </div>
-            <ButtonAddCart product={item} />
+            <div className="button-cart">
+              <ButtonAddCart product={item} />
+            </div>
             <div className="total">
               <p>total prix</p>
               <p>{`${item.price * item.quantity} €`} </p>
