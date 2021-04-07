@@ -46,7 +46,6 @@
   }
 
   .description-container {
-    display: flex;
     border: 2px solid black;
     border-radius:30px;
     background-color: coral;
@@ -54,17 +53,21 @@
     padding: 2%;
 
     .products-description {
+      display: grid;
 
-      .product-items {
-        img{
-          height:50px;
-          width:40px;
-          margin: 0 auto;
-          border: 0;
-          border-radius:55%;
-          background-color: vars.$yellow-color;
-          box-shadow:  2px 2px 3px rgba(255, 255, 255, .6),
-        -2px -2px 3px rgba(0, 0, 0, .6);
+      .product-details {
+
+        .product-picture {
+          img{
+            height:50px;
+            width:40px;
+            margin: 0 auto;
+            border: 0;
+            border-radius:55%;
+            background-color: vars.$yellow-color;
+            box-shadow:  2px 2px 3px rgba(255, 255, 255, .6),
+          -2px -2px 3px rgba(0, 0, 0, .6);
+          }
         }
       }
     }
