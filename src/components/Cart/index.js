@@ -3,6 +3,8 @@
 // == Import npm
 import React from 'react';
 // import Product from 'src/components/Product';
+import MiniSpinner from 'src/components/MiniSpinner';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './cart.scss';
 import getStepTime from 'src/utils/getStepTime';
@@ -13,10 +15,16 @@ const Cart = ({
   handleChangeSpot,
   deliveryPoint,
   totalCart,
+  isWaiting,
+  redirect,
+  ordersList,
+  flashMessage,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    handleCart();
+    if (!isWaiting) {
+      handleCart();
+    }
   };
   const handleChange = (evt) => {
     handleChangeTime(evt.target.value);
@@ -24,12 +32,28 @@ const Cart = ({
   const handleChangePoint = (evt) => {
     handleChangeSpot(evt.target.value);
   };
+  
+  if (redirect !== null && ordersList.some((order) => redirect === order.id)) {
+    return <Redirect to={`/commande/${redirect}`} />;
+  }
+
+  let flash = null;
+  if (flashMessage.type !== "") {
+    console.log('il y a un flash message');
+    flash = (
+      <div className={`alert alert-${flashMessage.type}`} role="alert">
+        {flashMessage.message}
+      </div>
+    );
+  }
+
   const stepTime = getStepTime(15, 8, 19);
   console.log('leopopold', stepTime);
   console.log('deliverypoint', deliveryPoint);
   return (
     <div className="cart">
       <h2>Panier</h2>
+      {flash}
       <form onSubmit={handleSubmit}>
         <div className="listDelevery">
           <ul className="item-group">
@@ -56,11 +80,8 @@ const Cart = ({
           </select>
 
         </div>
-        <button
-          type="submit"
-          className="login-form-button"
-        >
-          Valider
+        <button type="submit">
+          {isWaiting ? <MiniSpinner /> : 'Valider la commande'}
         </button>
       </form>
     </div>

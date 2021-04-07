@@ -81,7 +81,7 @@ const RegistrationForm = ({
           manageChange={changeField}
           value={phoneNumber}
         />
-        <button type="submit">{isWaiting ? <MiniSpinner /> : 'login'}</button>
+        <button type="submit">{isWaiting ? <MiniSpinner /> : 'valider'}</button>
         <p className="message">Déja inscrit? <a className="toggle-form" href="#">Connectez vous</a></p>
       </form>
     </div>

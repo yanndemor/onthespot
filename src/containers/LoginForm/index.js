@@ -12,6 +12,8 @@ const mapStateToProps = (state) => ({
   username: state.auth.username,
   password: state.auth.password,
   isLogged: state.auth.isLogged,
+  isWaiting: state.auth.isWaiting,
+  flashMessage: state.Users.flashMessage,
 });
 
 // === mapDispatchToProps

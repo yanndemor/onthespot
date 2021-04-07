@@ -7,14 +7,21 @@ export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 export const QUANTITY_PLUS = 'QUANTITY_PLUS';
 export const QUANTITY_LESS = 'QUANTITY_LESS';
 export const SEND_COMMAND = 'SEND_COMMAND';
+export const ORDER_WAITING = 'ORDER_WAITING';
 export const FECTH_DELIVERY_POINTS = 'FECTH_DELIVERY_POINTS';
 export const SAVE_DELIVERY_POINTS = 'SAVE_DELIVERY_POINTS';
+export const ORDER_SUBMITTED = 'ORDER_SUBMITTED';
+export const RESET_CART_REDIRECT = 'RESET_CART_REDIRECT';
 
 export const addCart = (product) => ({
   type: ADD_CART,
   // newValue: newValue
   // shorthand property (ES6)
   product,
+});
+
+export const notWaiting = () => ({
+  type: ORDER_WAITING,
 });
 
 
@@ -71,4 +78,13 @@ export const fetchDeliveryPoint = () => ({
 export const saveDeliveryPoint = (data) => ({
   type: SAVE_DELIVERY_POINTS,
   data,
+});
+
+export const orderSubmitted = (id) => ({
+  type: ORDER_SUBMITTED,
+  id,
+});
+
+export const resetCartRedirect = () => ({
+  type: RESET_CART_REDIRECT,
 });
