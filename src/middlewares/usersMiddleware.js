@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { logOut } from 'src/actions/auth';
+
 import {
   FETCH_USER, DELETE_USER, EDIT_USER, deleteUser, retrieveUser, editRedirect,
 } from 'src/actions/users';
@@ -29,6 +31,9 @@ const usersMiddleware = (store) => (next) => (action) => {
 
         .catch((error) => {
           console.log(error);
+          if (error.response.status === 401) {
+            store.dispatch(logOut());
+          }
         });
 
       next(action);

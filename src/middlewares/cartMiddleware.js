@@ -7,6 +7,8 @@ import {
   removeCart,
 } from 'src/actions/cart';
 
+import { logOut } from 'src/actions/auth';
+
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
 const cartMiddleware = (store) => (next) => (action) => {
@@ -43,6 +45,9 @@ const cartMiddleware = (store) => (next) => (action) => {
           console.log(error);
           alert('Vous n\'etes pas connecté');
           // TODO Rediriger vers connexion
+          if (error.response.status === 401) {
+            store.dispatch(logOut());
+          }
         })
         .then(() => {
           // always executed
