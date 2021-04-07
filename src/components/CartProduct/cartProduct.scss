@@ -67,7 +67,7 @@
 .products {
   position: relative;
   width: auto;
-  height: 90vh;
+  height: 75vh;
   overflow: auto;
 }
 
@@ -186,6 +186,10 @@
           top: 39px;
         }
       }
+
+      .product-name {
+        font-size: 1.2em;
+      }
     }
   }
 }
@@ -202,6 +206,10 @@
           font-size: 1.2em;
           top: 67px;
         }
+      }
+
+      .product-name {
+        font-size: 1.5em;
       }
     }
   }
