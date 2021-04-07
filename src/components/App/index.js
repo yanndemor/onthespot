@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // == Import
-import Caroussel from 'src/components/Caroussel';
+import Carrousel from 'src/containers/Carrousel';
 import NavBar from 'src/containers/NavBar';
 import BreadCrumb from 'src/components/BreadCrumb';
 // import Orders from 'src/components/Orders';
@@ -33,7 +33,6 @@ const App = ({
     loadDeliveryPoints();
     checklogin();
   }, []);
-
   return (
     <div className="app">
       <Router>
@@ -50,7 +49,6 @@ const App = ({
     </div>
   );
 };
-
 App.propTypes = {
 //   // fonction qui permet de charger les recettes
 //   // pas de paramètre

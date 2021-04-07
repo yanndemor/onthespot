@@ -31,24 +31,24 @@ const Page = ({ isLogged, loading }) => (
         <Route path="/produits/:slug" exact>
           {/* <div className="row mx-0 position-relative">
             <div className="col-sm-8  "> */}
-              <Products />
-            {/* </div> */}
-            {/* <div className="col-sm-4 position-relative">
+          <Products />
+          {/* </div> */}
+          {/* <div className="col-sm-4 position-relative">
               <Cart />
             </div> */}
           {/* </div> */}
         </Route>
         <Route path="/produit/:slug" exact>
           {/* <div className="row position-relative"> */}
-            {loading && <LoadingSpinner />}
-            {!loading && (
-            // <div className="col-sm-8  ">
-              <Product className="" />
-            // {/* </div> */}
-            )}
-            {/* <div className="col-sm-4 "> */}
-              {/* <CartOverview /> */}
-            {/* </div> */}
+          {loading && <LoadingSpinner />}
+          {!loading && (
+          // <div className="col-sm-8  ">
+          <Product className="" />
+          // {/* </div> */}
+          )}
+          {/* <div className="col-sm-4 "> */}
+          {/* <CartOverview /> */}
+          {/* </div> */}
           {/* </div> */}
         </Route>
         <Route path="/cgu">
