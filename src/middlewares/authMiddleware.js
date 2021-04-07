@@ -37,10 +37,14 @@ const authMiddleware = (store) => (next) => (action) => {
             response.data.user,
           ));
           store.dispatch(fetchUser());
+          store.dispatch(notWaiting());
         })
 
         .catch((error) => {
-          console.log(error);
+          if (error.response.data.code === 401) {
+            store.dispatch(flash('danger', 'Identifiant ou mot de passe invalide'));
+            store.dispatch(notWaiting());
+          }
         });
 
       next(action);

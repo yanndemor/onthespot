@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MiniSpinner from 'src/components/MiniSpinner';
 
 import Field from './Field';
 
@@ -13,11 +14,25 @@ const LoginForm = ({
   handleLogout,
   logged,
   loggedMessage,
+  isWaiting,
+  flashMessage,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    handleLogin();
+    if (!isWaiting) {
+      handleLogin();
+    }
   };
+
+  let flash = null;
+  if (flashMessage.type !== "") {
+    console.log('il y a un flash message');
+    flash = (
+      <div className={`alert alert-${flashMessage.type}`} role="alert">
+        {flashMessage.message}
+      </div>
+    );
+  }
 
   console.log(username);
   return (
@@ -39,6 +54,7 @@ const LoginForm = ({
       {!logged && (
         <div className="form" id="connexion">
           <h2>Connexion</h2>
+          {flash}
           <form className="login-form" onSubmit={handleSubmit}>
             <Field
               name="username"
@@ -53,7 +69,7 @@ const LoginForm = ({
               manageChange={changeField}
               value={password}
             />
-            <button type="submit">login</button>
+            <button type="submit">{isWaiting ? <MiniSpinner /> : 'login'}</button>
             <p className="message">Pas encore de compte? <a className="toggle-form" href="#inscription">Inscrivez vous</a></p>
           </form>
         </div>
@@ -80,6 +96,7 @@ LoginForm.propTypes = {
   logged: PropTypes.bool,
   /** message displayed when "connected" */
   loggedMessage: PropTypes.string,
+  isWaiting: PropTypes.bool.isRequired,
 };
 
 LoginForm.defaultProps = {
