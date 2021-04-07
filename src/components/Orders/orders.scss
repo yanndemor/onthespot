@@ -2,6 +2,7 @@
 
 .orders {
   // margin: vars.$gutter auto;
+  display:block;
 
   .title {
     margin-top: 1%;
@@ -45,6 +46,7 @@
         flex-direction: row;
 
         .order-description {
+          display: grid;
           width : 70%;
           border: 1px solid black;
           background-color: white;
@@ -53,7 +55,6 @@
         }
 
         .order-state {
-          width: 30%;
           padding: 1%;
           border-radius: 10px;
             
