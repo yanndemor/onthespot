@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // == Import
-import Carrousel from 'src/containers/Carrousel';
+import Caroussel from 'src/components/Caroussel';
 import NavBar from 'src/containers/NavBar';
 import BreadCrumb from 'src/components/BreadCrumb';
 // import Orders from 'src/components/Orders';
@@ -16,20 +16,21 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user, redirect }) => {
+const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user }) => {
   useEffect(() => {
     loadProduct();
     loadCategories();
     loadOrders();
     /* loadUsers(); */
   }, []);
+
   return (
     <div className="app">
       <Router>
         <NavBar />
         {isLogged && <div> Bon retour parmi nous {user.firstname}</div>}
-        <Carrousel />
         <BreadCrumb />
+        {/* <Caroussel /> */}
         <Page />
 
         {/* <Orders /> */}
@@ -39,6 +40,7 @@ const App = ({ loadProduct, isLogged, loadCategories, loadOrders, user, redirect
     </div>
   );
 };
+
 App.propTypes = {
 //   // fonction qui permet de charger les recettes
 //   // pas de paramètre

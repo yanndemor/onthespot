@@ -13,12 +13,11 @@ import PropTypes from 'prop-types';
 import CGU from 'src/components/CGU';
 import Product from 'src/containers/Product';
 import CartProduct from 'src/containers/CartProduct';
-/* import SingleOrder from 'src/components/SingleOrder'; */
 import LoginForm from 'src/containers/LoginForm';
 import Contact from 'src/components/Contact';
 import CGV from 'src/components/CGV';
 import Orders from 'src/containers/Orders';
-// import Order from 'src/components/Orders/Order';
+import Order from 'src/components/Orders/Order';
 import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import Account from 'src/containers/Account';
@@ -28,6 +27,7 @@ const Page = ({ isLogged, loading }) => (
   <div className="page">
     <div className="page-content">
       <Switch>
+
         <Route path="/produits/:slug" exact>
           {/* <div className="row mx-0 position-relative">
             <div className="col-sm-8  "> */}
@@ -39,17 +39,17 @@ const Page = ({ isLogged, loading }) => (
           {/* </div> */}
         </Route>
         <Route path="/produit/:slug" exact>
-          {/* <div className="row position-relative"> */}
+          <div className="row position-relative">
             {loading && <LoadingSpinner />}
             {!loading && (
-            // <div className="col-sm-8  ">
+            <div className="col-sm-8  ">
               <Product className="" />
-            // {/* </div> */}
+            </div>
             )}
-            {/* <div className="col-sm-4 "> */}
-              {/* <CartOverview /> */}
-            {/* </div> */}
-          {/* </div> */}
+            <div className="col-sm-4 ">
+              <Cart />
+            </div>
+          </div>
         </Route>
         <Route path="/cgu">
           <CGU />
@@ -68,16 +68,11 @@ const Page = ({ isLogged, loading }) => (
           </div>
         </Route>
         <Route path="/commandes">
-          {loading && <LoadingSpinner />}
-          {!loading && (
-            <Orders />
-          )}
+          <Orders />
         </Route>
-        <Route path="/commande/:id">
-          {loading && <LoadingSpinner />}
-          {!loading && (
-         {/*    <SingleOrder /> */}
-          )}
+
+        <Route path="/commande/{id}">
+          <Order />
         </Route>
         <Route path="/contact">
           <Contact />
