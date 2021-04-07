@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { flash } from 'src/actions/users';
+import { flash, resetFlash } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 import {
   SEND_COMMAND,
@@ -44,6 +44,7 @@ const cartMiddleware = (store) => (next) => (action) => {
           store.dispatch(fetchOrders());
           store.dispatch(orderSubmitted(response.data.id));
           // window.location = `/commande/${response.data.id}`;
+          store.dispatch(resetFlash());
         })
         .catch((error) => {
           if (error.response.data.code === 401) {
