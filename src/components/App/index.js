@@ -17,7 +17,6 @@ import Footer from 'src/components/Footer';
 import './styles.css';
 
 // == Composant
-
 const App = ({
   loadProduct,
   isLogged,
@@ -26,6 +25,7 @@ const App = ({
   loading,
   user,
   checklogin,
+  redirect,
 }) => {
   useEffect(() => {
     loadProduct();
@@ -37,8 +37,8 @@ const App = ({
     <div className="app">
       <Router>
         <NavBar />
-        {/* {isLogged && <div> Bon retour parmi nous {user.firstname}</div>} */}
         <BreadCrumb />
+        {/* {isLogged && <div> Bon retour parmi nous {user.firstname}</div>} */}
         {/* <Caroussel /> */}
         {loading && <LoadingSpinner />}
         {!loading && <Page />}
@@ -60,6 +60,10 @@ App.propTypes = {
   loadDeliveryPoints: PropTypes.func.isRequired,
   // user: PropTypes.string.isRequired,
   checklogin: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  redirect: PropTypes.string,
+  loadOrders: PropTypes.func.isRequired,
+  loadDeliveryPoints: PropTypes.func.isRequired,
 
 };
 // == Export
