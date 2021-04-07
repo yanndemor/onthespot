@@ -39,7 +39,7 @@ const App = ({
         <NavBar />
         <BreadCrumb />
         {/* {isLogged && <div> Bon retour parmi nous {user.firstname}</div>} */}
-        {/* <Caroussel /> */}
+        <Carrousel />
         {loading && <LoadingSpinner />}
         {!loading && <Page />}
         {/* <Orders /> */}
