@@ -16,23 +16,23 @@ const BreadCrumb = () => {
       path: '/',
       exact: true,
       topbar: () => <h5>Accueil des produits</h5>,
-      main: () => <Link to="/" style={{ color: 'blue', textDecoration: 'underline' }}>Accueil / </Link>,
+      main: () => <Link to="/" style={{ color: 'rgba(245,64,64,.78039)', textDecoration: 'underline' }}>Accueil / </Link>,
 
     },
     {
       path: '/produits/glaces',
       topbar: () => <h5>Produits Glaces</h5>,
-      main: () => <><Link to="/">Accueil / </Link><Link to="/produits/glaces" style={{ color: 'blue', textDecoration: 'underline' }}> Produits Glaces</Link></>,
+      main: () => <><Link to="/">Accueil / </Link><Link to="/produits/glaces" style={{ color: 'rgba(245,64,64,.78039)', textDecoration: 'underline' }}> Produits Glaces</Link></>,
     },
     {
       path: '/produits/snack',
       topbar: () => <h5>Produits Snack</h5>,
-      main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/snack" style={{ color: 'blue', textDecoration: 'underline' }}> Produits Snack</Link></>,
+      main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/snack" style={{ color: 'rgba(245,64,64,.78039)', textDecoration: 'underline' }}> Produits Snack</Link></>,
     },
     {
       path: '/produits/boissons',
       topbar: () => <h5>Produits Boissons</h5>,
-      main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/boissons" style={{ color: 'blue', textDecoration: 'underline' }}> Produits Boissons</Link></>,
+      main: () => <><Link to="/">Accueil / </Link> <Link to="/produits/boissons" style={{ color: 'rgba(245,64,64,.78039)', textDecoration: 'underline' }}> Produits Boissons</Link></>,
     },
     // ---------------------glaces--------------------------------
     {

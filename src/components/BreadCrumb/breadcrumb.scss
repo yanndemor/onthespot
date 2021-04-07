@@ -1,17 +1,20 @@
-.top-bar{
-  display:flex;
+.top-bar {
+  display: flex;
   flex-direction: row;
-font-size:small;
-font-style: italic;
-margin:1% 0;
-font-weight: 900;
-a{
-  margin-left: 5px;
-}
-p{
-  margin-left: 5px;
-  color:blue;
-  text-decoration: underline;
-}
+  font-size: 1em;
+  font-style: italic;
+  justify-content: center;
+  margin-top: 2%;
+  font-weight: 900;
+
+  a {
+    margin-left: 5px;
+  }
+
+  p {
+    margin-left: 5px;
+    color: #f54040c7;;
+    text-decoration: underline;
+  }
 
 }

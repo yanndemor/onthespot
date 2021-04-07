@@ -22,6 +22,7 @@ import Orders from 'src/containers/Orders';
 import Cart from 'src/containers/Cart';
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import Account from 'src/containers/Account';
+import EditAccount from 'src/containers/EditAccount';
 import RegistrationForm from '../../containers/RegistrationForm';
 
 const Page = ({ isLogged, loading }) => (
@@ -31,24 +32,24 @@ const Page = ({ isLogged, loading }) => (
         <Route path="/produits/:slug" exact>
           {/* <div className="row mx-0 position-relative">
             <div className="col-sm-8  "> */}
-              <Products />
-            {/* </div> */}
-            {/* <div className="col-sm-4 position-relative">
+          <Products />
+          {/* </div> */}
+          {/* <div className="col-sm-4 position-relative">
               <Cart />
             </div> */}
           {/* </div> */}
         </Route>
         <Route path="/produit/:slug" exact>
           {/* <div className="row position-relative"> */}
-            {loading && <LoadingSpinner />}
-            {!loading && (
-            // <div className="col-sm-8  ">
-              <Product className="" />
-            // {/* </div> */}
-            )}
-            {/* <div className="col-sm-4 "> */}
-              {/* <CartOverview /> */}
-            {/* </div> */}
+          {loading && <LoadingSpinner />}
+          {!loading && (
+          // <div className="col-sm-8  ">
+          <Product className="" />
+          // {/* </div> */}
+          )}
+          {/* <div className="col-sm-4 "> */}
+          {/* <CartOverview /> */}
+          {/* </div> */}
           {/* </div> */}
         </Route>
         <Route path="/cgu">
@@ -69,9 +70,7 @@ const Page = ({ isLogged, loading }) => (
         </Route>
         <Route path="/commandes">
           {loading && <LoadingSpinner />}
-          {!loading && (
-            <Orders />
-          )}
+          {!loading && isLogged ? <Orders /> : <Redirect to="/connexion" />}
         </Route>
         <Route path="/commande/:id">
           {loading && <LoadingSpinner />}
@@ -86,7 +85,7 @@ const Page = ({ isLogged, loading }) => (
           <CGV />
         </Route>
         <Route path="/connexion">
-          {isLogged ? <Redirect to="/products" /> : <div><LoginForm /><RegistrationForm /></div>}
+          {isLogged ? <Redirect to="/" /> : <div><LoginForm /><RegistrationForm /></div>}
           {/* <Redirect to="/products" /> */}
         </Route>
         <Route path="/categorie/:slug" exact>
@@ -102,6 +101,9 @@ const Page = ({ isLogged, loading }) => (
         </Route>
         <Route path="/compte">
           {!isLogged ? <Redirect to="/" /> : <div><Account /></div>}
+        </Route>
+        <Route path="/edit-compte">
+          {!isLogged ? <Redirect to="/" /> : <div><EditAccount /></div>}
         </Route>
         <Route path="/">
           {loading && <LoadingSpinner />}

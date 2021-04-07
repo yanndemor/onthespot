@@ -1,4 +1,4 @@
-import { UPDATE_USER_FIELD, SAVE_USER, LOG_OUT } from 'src/actions/auth';
+import { UPDATE_USER_FIELD, SAVE_USER, LOG_OUT, FORCE_LOG, REGISTRATION, NOT_WAITING } from 'src/actions/auth';
 import { DELETE_USER } from 'src/actions/users';
 
 const initialState = {
@@ -11,6 +11,7 @@ const initialState = {
   passwordRegisterCheck: '',
   phoneNumber: '',
   isLogged: false,
+  isWaiting: false,
 };
 
 function authReducer(state = initialState, action) {
@@ -76,7 +77,6 @@ function authReducer(state = initialState, action) {
         token: action.token,
         user: action.user,
         // on en profite pour vider les champs
-        user: action.user,
         password: '',
       };
 
@@ -86,6 +86,25 @@ function authReducer(state = initialState, action) {
         isLogged: false,
         token: null,
       };
+
+    case NOT_WAITING:
+      return {
+        ...state,
+        isWaiting: false,
+      };
+
+    case REGISTRATION:
+      return {
+        ...state,
+        isWaiting: true,
+      };
+      
+    case FORCE_LOG:
+      return {
+        ...state,
+        isLogged: true,
+      };
+      
     case DELETE_USER:
       return {
         ...state,

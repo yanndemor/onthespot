@@ -5,6 +5,7 @@ import { fetchCategories } from 'src/actions/categories';
 import { fetchOrders } from 'src/actions/orders';
 import { fetchDeliveryPoint } from 'src/actions/cart';
 import { fetchUser } from 'src/actions/users';
+import { checkLogin } from 'src/actions/auth';
 // on importe le composant de présentation
 import App from 'src/components/App';
 
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => ({
   isLogged: state.auth.isLogged,
   loading: state.products.loading,
   user: state.auth.user,
+  redirect: state.Users.redirect,
 });
 
 // === mapDispatchToProps
@@ -43,6 +45,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadDeliveryPoints: () => {
     const action = fetchDeliveryPoint();
+    dispatch(action);
+  },
+
+  checklogin: () => {
+    const action = checkLogin();
     dispatch(action);
   },
 });

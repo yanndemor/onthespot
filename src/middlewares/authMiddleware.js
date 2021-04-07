@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-import { LOG_IN, REGISTRATION, saveUser} from 'src/actions/auth';
-import { fetchUser } from 'src/actions/users';
+import { LOG_IN, REGISTRATION, LOG_OUT, saveUser, CHECK_LOG_IN, forceLog, notWaiting } from 'src/actions/auth';
+import { fetchUser, flash } from 'src/actions/users';
+import { fetchOrders } from 'src/actions/orders';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
@@ -26,14 +27,15 @@ const authMiddleware = (store) => (next) => (action) => {
           // console.log('middleware auth : on dispatch les actions');
           // Sotcke le token dans le localStorage
           localStorage.setItem('user', JSON.stringify(response.data.token));
-
+          store.dispatch(fetchOrders());
 
           console.log(response.data);
 
           store.dispatch(saveUser(
             response.data.logged,
             response.data.token,
-            response.data.user));
+            response.data.user,
+          ));
           store.dispatch(fetchUser());
         })
 
@@ -64,11 +66,33 @@ const authMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           // console.log('middleware auth : on dispatch les actions');
-          alert('Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes');
+          // alert('Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes');
+          store.dispatch(notWaiting());
+          store.dispatch(flash('success', 'Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes'));
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error.response.data.detail);
+          store.dispatch(flash('danger', error.response.data.detail));
+          store.dispatch(notWaiting());
         });
+
+      next(action);
+      break;
+    }
+
+    case CHECK_LOG_IN: {
+      if (localStorage.getItem('user') != null) {
+        store.dispatch(fetchUser());
+        store.dispatch(fetchOrders());
+        store.dispatch(forceLog());
+      }
+
+      next(action);
+      break;
+    }
+
+    case LOG_OUT: {
+      localStorage.removeItem('user');
 
       next(action);
       break;

@@ -19,16 +19,15 @@ const SingleOrder = ({ ordersList }) => {
   const theOrder = ordersList.find((order) => order.id === parseInt(id, 10));
   // Destructuring de theOrder
   const {
-    orderProducts, createdAt, status, deliveryTime,
+    orderProducts, createdAt, status, deliveryTime, deliveryPoint,
   } = theOrder;
-  console.log('theOrder:', theOrder, orderProducts, createdAt, status);
+  console.log('theOrder:', theOrder, orderProducts, createdAt, status, deliveryTime, deliveryPoint);
   // Calcule du montant total de la commande
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const total = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
   // Conversion de la date en format fr
   const newDate = new Date(createdAt);
   const dateFr = newDate.toLocaleDateString('fr-FR');
-  const newDeliveryTime = new Date(deliveryTime);
 
   return (
     <div className="order-detail">
@@ -47,6 +46,9 @@ const SingleOrder = ({ ordersList }) => {
           <div className="delivery-time col-3">
             Horaire retrait : {}
           </div>
+          <div className="delivery-point col-3">
+            Point de retrait : {deliveryPoint.name}
+          </div>
           <div className="amount col-3">
             Toal : {`${total}€`}
           </div>
@@ -54,28 +56,24 @@ const SingleOrder = ({ ordersList }) => {
       </div>
 
       {theOrder.orderProducts.map((productOrder) => (
-        <>
-          <div className="description-container">
-            <div key={id} className="products-description">
-              <div className="mx-2">
-                <div className="product-items">
-                  <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
-                  <div>
-                    <div className="product-name">
-                      {productOrder.product.name}
-                    </div>
-                    <div className="product-quantiy">
-                      quantité : {productOrder.quantity}
-                    </div>
-                    <div className="product-price">
-                      prix :{productOrder.product.price}
-                    </div>
-                  </div>
-                </div>
+        <div className="description-container">
+          <div key={id} className="products-description">
+            <div className="product-details row">
+              <div className="product-picture col-3">
+                <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
+              </div>
+              <div className="product-name col-3">
+                {productOrder.product.name}
+              </div>
+              <div className="product-quantiy col-3">
+                x {productOrder.quantity}
+              </div>
+              <div className="product-price col-3">
+                {productOrder.product.price}€
               </div>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
