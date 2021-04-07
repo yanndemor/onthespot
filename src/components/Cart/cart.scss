@@ -15,10 +15,27 @@
   // width: 20em;
   // margin-top: -2.5em;
   // overflow-y: auto;
+<<<<<<< HEAD
   button {
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd;
+=======
+
+  button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #0d6efd;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+>>>>>>> 7ac53a2caa760e5917bd66529a3a7fa1b0e22c81
   }
 
   h2 {
