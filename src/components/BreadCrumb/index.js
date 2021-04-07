@@ -135,12 +135,32 @@ const BreadCrumb = () => {
     {
       path: '/CGU',
       topbar: () => <h5>Conditions Générales d'Utilisations</h5>,
-      main: () => <><Link to="/">Accueil / </Link> <p> Conditions Générales d'Utilisations</p></>,
+      main: () => <><Link to="/">Accueil / </Link> <p> conditions Générales d'Utilisations</p></>,
     },
     {
       path: '/CGV',
       topbar: () => <h5>Conditions Générales de ventes</h5>,
-      main: () => <><Link to="/">Accueil / </Link> <p> Conditions Générales de Ventes</p></>,
+      main: () => <><Link to="/">Accueil / </Link> <p> conditions Générales de Ventes</p></>,
+    },
+    {
+      path: '/commande',
+      topbar: () => <h5>Commande</h5>,
+      main: () => <><Link to="/">Accueil / </Link><Link to="/commandes">Commandes / </Link><p> Détail de votre commande</p></>,
+    },
+    {
+      path: '/edit-compte',
+      topbar: () => <h5>Edit compte</h5>,
+      main: () => <><Link to="/">Accueil / </Link><p> Edit compte</p></>,
+    },
+    {
+      path: '/compte',
+      topbar: () => <h5>Commande</h5>,
+      main: () => <><Link to="/">Accueil / </Link><p> Compte</p></>,
+    },
+    {
+      path: '/qui-sommes-nous',
+      topbar: () => <h5>About</h5>,
+      main: () => <><Link to="/">Accueil / </Link><p> Qui-sommes-nous</p></>,
     },
   
   ];
