@@ -1,7 +1,16 @@
 .carousel{
  text-align:center;
- 
-  .image{
+
+ .carrousel-line{
+   
+   .item{
+     
+    margin:15px 0;
+    background-color: rgba(232, 216, 216, 0.344);
+   }
+ }
+
+     .image{
     width:150x;
     height:150px;
   
