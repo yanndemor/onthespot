@@ -62,17 +62,17 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
       {theOrder.orderProducts.map((productOrder) => (
         <div className="description-container">
           <div key={id} className="products-description">
-            <div className="product-details row">
-              <div className="product-picture col-3">
+            <div className="product-details">
+              <div className="product-picture">
                 <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
               </div>
-              <div className="product-name col-3">
+              <div className="product-name">
                 {productOrder.product.name}
               </div>
-              <div className="product-quantiy col-3">
-                x {productOrder.quantity}
+              <div className="product-quantity">
+                x{productOrder.quantity}
               </div>
-              <div className="product-price col-3">
+              <div className="product-price">
                 {productOrder.product.price}€
               </div>
             </div>
