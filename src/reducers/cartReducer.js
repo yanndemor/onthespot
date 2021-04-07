@@ -8,12 +8,18 @@ import {
   SPOT_SELECT,
   REMOVE_CART,
   TOTAL_CART,
+  SEND_COMMAND,
+  ORDER_WAITING,
+  ORDER_SUBMITTED,
+  RESET_CART_REDIRECT,
 } from 'src/actions/cart';
 
 const initialState = {
   orderProducts: [],
   deliveryPointToOrder: '',
   totalCart: 0,
+  isWaiting: false,
+  redirect: null,
 };
 
 function cartReducer(state = initialState, action) {
@@ -53,12 +59,37 @@ function cartReducer(state = initialState, action) {
         deliveryPointToOrder: action.spot,
       };
 
+    case ORDER_WAITING:
+      return {
+        ...state,
+        isWaiting: false,
+      };
+
+    case ORDER_SUBMITTED:
+      return {
+        ...state,
+        redirect: action.id,
+      };
+
+    case RESET_CART_REDIRECT:
+      return {
+        ...state,
+        redirect: null,
+      };
+
     // eslint-disable-next-line no-duplicate-case
     case SAVE_DELIVERY_POINTS:
       return {
         ...state,
         deliveryPoint: action.data,
       };
+
+    case SEND_COMMAND:
+      return {
+        ...state,
+        isWaiting: true,
+      };
+
     case REMOVE_CART:
       return {
         ...state,
@@ -116,6 +147,7 @@ function cartReducer(state = initialState, action) {
           : product)),
       };
     }
+
     default:
       return state;
   }

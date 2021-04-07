@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
  
   resetRedirect: () => {
     dispatch(redirectToNull());
-  }
+  },
 });
 
 // === création de l'assistant

@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 import './singleOrder.scss';
 
-const SingleOrder = ({ ordersList }) => {
+const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
   console.log('ordersList: ----------', ordersList);
 
   // useParams() retourne un objet qui contient tous les paramètres qu'on a
@@ -28,6 +28,10 @@ const SingleOrder = ({ ordersList }) => {
   // Conversion de la date en format fr
   const newDate = new Date(createdAt);
   const dateFr = newDate.toLocaleDateString('fr-FR');
+
+  if (redirect !== null) {
+    resetRedirect();
+  }
 
   return (
     <div className="order-detail">
