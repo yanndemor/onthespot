@@ -53,28 +53,24 @@ const SingleOrder = ({ ordersList }) => {
       </div>
 
       {theOrder.orderProducts.map((productOrder) => (
-        <>
-          <div className="description-container">
-            <div key={id} className="products-description">
-              <div className="mx-2">
-                <div className="product-items">
-                  <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
-                  <div>
-                    <div className="product-name">
-                      {productOrder.product.name}
-                    </div>
-                    <div className="product-quantiy">
-                      quantité : {productOrder.quantity}
-                    </div>
-                    <div className="product-price">
-                      prix :{productOrder.product.price}
-                    </div>
-                  </div>
-                </div>
+        <div className="description-container">
+          <div key={id} className="products-description">
+            <div className="product-details row">
+              <div className="product-picture col-3">
+                <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
+              </div>
+              <div className="product-name col-3">
+                {productOrder.product.name}
+              </div>
+              <div className="product-quantiy col-3">
+                {productOrder.quantity}
+              </div>
+              <div className="product-price col-3">
+                {productOrder.product.price}€
               </div>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
