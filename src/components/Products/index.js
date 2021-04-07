@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 /* import Product from 'src/components/Product'; */
 import LoadingSpinner from 'src/components/LoadingSpinner';
 import ButtonAddCart from 'src/containers/ButtonAddCart';
+import CartOverview from 'src/containers/CartOverview';
 
 import { Link, useParams } from 'react-router-dom';
 /* import { $ } from 'src/assets/images/products/can-coca.png'; */
@@ -59,31 +60,7 @@ const Products = ({ productsList, loading, orderProducts }) => {
           ))}
         </div>
 
-        <div className="productsList-cart">
-          <div className="productsList-cart-recap">
-            <div className="productsList-cart-number">
-              Panier <span className="badge badge-light">{orderProducts.length}</span>
-            </div>
-            <div className="productsList-cart-total"><span>total : </span>{total} €</div>
-          </div>
-          <div className="productsList-cart-details">
-            {cart}
-
-            {orderProducts.map((item) => (
-              <div className="productsList-cart-item">
-                <div className="item-picture">
-                  <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
-                </div>
-                <div className="item-details">
-                  <div className="item-name">{item.name}</div>
-                  <div className="item-price float-left">{item.price} € <span className="item-quantity text-muted mr-0 float-right">Qtt: {item.quantity}</span></div>
-                </div>
-              </div>
-            ))}
-
-          </div>
-          <Link to="/panier" className="btn btn-primary w-100">Voir le panier</Link>
-        </div>
+        <CartOverview />
       </>
       )}
     </main>
