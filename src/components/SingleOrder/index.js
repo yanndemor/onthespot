@@ -19,9 +19,9 @@ const SingleOrder = ({ ordersList }) => {
   const theOrder = ordersList.find((order) => order.id === parseInt(id, 10));
   // Destructuring de theOrder
   const {
-    orderProducts, createdAt, status, deliveryTime,
+    orderProducts, createdAt, status, deliveryTime, deliveryPoint,
   } = theOrder;
-  console.log('theOrder:', theOrder, orderProducts, createdAt, status);
+  console.log('theOrder:', theOrder, orderProducts, createdAt, status, deliveryTime, deliveryPoint);
   // Calcule du montant total de la commande
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const total = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
@@ -44,7 +44,10 @@ const SingleOrder = ({ ordersList }) => {
           }
           </div>
           <div className="delivery-time col-3">
-            Horaire retrait : {deliveryTime}
+            Horaire retrait : {}
+          </div>
+          <div className="delivery-point col-3">
+            Point de retrait : {deliveryPoint.name}
           </div>
           <div className="amount col-3">
             Toal : {`${total}€`}
@@ -63,7 +66,7 @@ const SingleOrder = ({ ordersList }) => {
                 {productOrder.product.name}
               </div>
               <div className="product-quantiy col-3">
-                {productOrder.quantity}
+                x {productOrder.quantity}
               </div>
               <div className="product-price col-3">
                 {productOrder.product.price}€
