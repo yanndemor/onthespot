@@ -12,6 +12,7 @@ export const FECTH_DELIVERY_POINTS = 'FECTH_DELIVERY_POINTS';
 export const SAVE_DELIVERY_POINTS = 'SAVE_DELIVERY_POINTS';
 export const ORDER_SUBMITTED = 'ORDER_SUBMITTED';
 export const RESET_CART_REDIRECT = 'RESET_CART_REDIRECT';
+export const REDIRECT_TO = 'REDIRECT_TO';
 
 export const addCart = (product) => ({
   type: ADD_CART,
@@ -87,4 +88,9 @@ export const orderSubmitted = (id) => ({
 
 export const resetCartRedirect = () => ({
   type: RESET_CART_REDIRECT,
+});
+
+export const redirectTo = (url) => ({
+  type: REDIRECT_TO,
+  url,
 });
