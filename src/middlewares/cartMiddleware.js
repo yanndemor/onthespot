@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { flash, resetFlash } from 'src/actions/users';
+import { flash, resetFlash, redirect } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 import {
   SEND_COMMAND,
@@ -9,6 +9,7 @@ import {
   removeCart,
   notWaiting,
   orderSubmitted,
+  redirectTo
 } from 'src/actions/cart';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
@@ -47,13 +48,16 @@ const cartMiddleware = (store) => (next) => (action) => {
           store.dispatch(resetFlash());
         })
         .catch((error) => {
-          if (error.response.data.code === 401) {
+          console.log('erreur d\'envoi de commande', error.response.status);
+          if (error.response.status === 422) {
             store.dispatch(flash('danger', error.response.data.detail));
             store.dispatch(notWaiting());
           }
-          console.log(error);
-          alert('Vous n\'etes pas connecté');
-          // TODO Rediriger vers connexion
+          if (error.response.status === 401) {
+            store.dispatch(redirectTo('/connexion'));
+            store.dispatch(notWaiting());
+          }
+          // alert('Vous n\'etes pas connecté');
         })
         .then(() => {
           // always executed
