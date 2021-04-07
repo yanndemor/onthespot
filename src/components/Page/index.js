@@ -44,7 +44,7 @@ const Page = ({ isLogged, loading }) => (
           {loading && <LoadingSpinner />}
           {!loading && (
           // <div className="col-sm-8  ">
-          <Product className="" />
+          <Product />
           // {/* </div> */}
           )}
           {/* <div className="col-sm-4 "> */}
@@ -56,17 +56,17 @@ const Page = ({ isLogged, loading }) => (
           <CGU />
         </Route>
         <Route path="/panier" exact>
-          <div className="row position-relative">
+          {/* <div className="row position-relative"> */}
             {loading && <LoadingSpinner />}
             {!loading && (
-            <div className="col-sm-8  ">
+            // <div className="col-sm-8  ">
               <CartProduct />
-            </div>
+            // </div>
             )}
-            <div className="col-sm-4 ">
-              <Cart />
-            </div>
-          </div>
+            {/* <div className="col-sm-4 "> */}
+              {/* <Cart /> */}
+            {/* </div> */}
+          {/* </div> */}
         </Route>
         <Route path="/commandes">
           {loading && <LoadingSpinner />}
