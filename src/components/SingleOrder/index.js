@@ -26,8 +26,10 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const total = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
   // Conversion de la date en format fr
-  const newDate = new Date(createdAt);
-  const dateFr = newDate.toLocaleDateString('fr-FR');
+  const newCreatedAt = new Date(createdAt);
+  const newDeliveryTime = new Date(deliveryTime);
+  const dateFrCreatedAt = newCreatedAt.toLocaleDateString('fr-FR');
+  const dateFrDeliveryTime = newDeliveryTime.toLocaleTimeString('fr-FR');
 
   if (redirect !== null) {
     resetRedirect();
@@ -36,7 +38,7 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
   return (
     <div className="order-detail">
       <h1 className="title">Détails</h1>
-      <h2 className="order-name">Commande {id} du {dateFr} </h2>
+      <h2 className="order-name">Commande {id} du {dateFrCreatedAt} </h2>
       <div className="order-state">
         <div className="content row">
           <div className="status col-3">
@@ -48,13 +50,13 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
           }
           </div>
           <div className="delivery-time col-3">
-            Horaire retrait : {}
+            Horaire retrait : {dateFrDeliveryTime}
           </div>
           <div className="delivery-point col-3">
             Point de retrait : {deliveryPoint.name}
           </div>
           <div className="amount col-3">
-            Toal : {`${total}€`}
+            Total : {`${total}€`}
           </div>
         </div>
       </div>
