@@ -20,15 +20,17 @@ const CartOverview = ({ orderProducts }) => {
   }
 
   let total = 0;
+  let totalQty = 0;
   orderProducts.forEach((product) => {
     total += product.price * product.quantity;
+    totalQty += product.quantity;
   });
 
   return (
     <div className="cartOverview-cart">
       <div className="cartOverview-cart-recap">
         <div className="cartOverview-cart-number">
-          Panier <span className="badge badge-light">{orderProducts.length}</span>
+          Panier <span className="badge badge-light">{totalQty} articles</span>
         </div>
         <div className="cartOverview-cart-total"><span>total : </span>{total} €</div>
       </div>
