@@ -36,9 +36,9 @@ const CartOverview = ({ orderProducts }) => {
         {cart}
 
         {orderProducts.map((item) => (
-          <div className="cartOverview-cart-item">
+          <div key={item.id} className="cartOverview-cart-item">
             <div className="item-picture">
-              <img src="https://www.onthespot.link/back/public/assets/images/magnum-vanille_th.png" alt="Magnum cocholat" />
+              <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt="Magnum cocholat" />
             </div>
             <div className="item-details">
               <div className="item-name">{item.name}</div>

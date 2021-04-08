@@ -43,20 +43,20 @@ const Products = ({ productsList, loading, orderProducts }) => {
       <>
         <div className="productsList">
           {products.map((item) => (
-            <>
-              <div key={item.id} className="productsList-product">
-                <Link to={`/produit/${item.slug}`} className="productsList-product-picture">
-                  <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt={item.name} />
-                  <div className="productsList-product-price">{item.price} €</div>
+
+            <div key={item.id} className="productsList-product">
+              <Link to={`/produit/${item.slug}`} className="productsList-product-picture">
+                <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt={item.name} />
+                <div className="productsList-product-price">{item.price} €</div>
+              </Link>
+              <div className="productsList-product-name">
+                <Link to={`/produit/${item.slug}`}>
+                  {item.name}
                 </Link>
-                <div className="productsList-product-name">
-                  <Link to={`/produit/${item.slug}`}>
-                    {item.name}
-                  </Link>
-                </div>
-                <ButtonAddCart product={item} />
               </div>
-            </>
+              <ButtonAddCart product={item} />
+            </div>
+
           ))}
         </div>
 

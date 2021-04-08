@@ -4,7 +4,7 @@
 import React from 'react';
 // import Product from 'src/components/Product';
 import MiniSpinner from 'src/components/MiniSpinner';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './cart.scss';
 import getStepTime from 'src/utils/getStepTime';
@@ -19,6 +19,7 @@ const Cart = ({
   redirect,
   ordersList,
   flashMessage,
+  isLogged,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -41,7 +42,7 @@ const Cart = ({
   }
 
   let flash = null;
-  if (flashMessage.type !== "") {
+  if (flashMessage.type !== '') {
     console.log('il y a un flash message');
     flash = (
       <div className={`alert alert-${flashMessage.type}`} role="alert">
@@ -69,8 +70,8 @@ const Cart = ({
         <div className="listDelevery">
           <label htmlFor="delevery-point ">Choisir un point de retrait:</label>
           <select onChange={handleChangePoint} required>
-            <option value="">--Choisir un point de retrait--</option>
-            {deliveryPoint.map((point) => <option value={point.id}>{point.name}</option>)}
+            <option value="" >--Choisir un point de retrait--</option>
+            {deliveryPoint.map((point) => <option key={point.id} value={point.id}>{point.name}</option>)}
           </select>
         </div>
 
@@ -79,13 +80,24 @@ const Cart = ({
           <select onChange={handleChange} required>
             <option value="">--Choisir une heure de retrait--</option>
             {/* <option value="test">test</option> */}
-            {stepTime.map((option) => <option value={option.deliveryTime}>{option.deliveryTime}</option>)}
+            {stepTime.map((option) => <option key={option.deliveryTime} value={option.deliveryTime}>{option.deliveryTime}</option>)}
           </select>
 
         </div>
-        <button type="submit">
-          {isWaiting ? <MiniSpinner /> : 'Valider la commande'}
-        </button>
+        <div className="buttonContainer">
+          {isLogged ? (
+            <button type="submit">
+              {isWaiting ? <MiniSpinner /> : 'Valider la commande'}
+            </button>
+          )
+            : (
+              <Link to="/connexion">
+                <button type="button">
+                  Valider la commande
+                </button>
+              </Link>
+            )}
+        </div>
       </form>
     </div>
   );

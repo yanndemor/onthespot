@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 import './singleOrder.scss';
 
-const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
+const SingleOrder = ({ ordersList, redirect, resetRedirect }) => {
   console.log('ordersList: ----------', ordersList);
 
   // useParams() retourne un objet qui contient tous les paramètres qu'on a
@@ -62,20 +62,20 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
       </div>
 
       {theOrder.orderProducts.map((productOrder) => (
-        <div className="description-container">
-          <div key={id} className="products-description">
+        <div key={productOrder.id} className="description-container">
+          <div className="products-description">
             <div className="product-details">
               <div className="product-picture">
                 <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
+                <div className="product-price">
+                  {productOrder.product.price}€
+                </div>
               </div>
               <div className="product-name">
                 {productOrder.product.name}
               </div>
               <div className="product-quantity">
                 x{productOrder.quantity}
-              </div>
-              <div className="product-price">
-                {productOrder.product.price}€
               </div>
             </div>
           </div>

@@ -25,6 +25,8 @@ import Account from 'src/containers/Account';
 import EditAccount from 'src/containers/EditAccount';
 import RegistrationForm from '../../containers/RegistrationForm';
 
+import './page.scss'
+
 const Page = ({ isLogged, loading }) => (
   <div className="page">
     <div className="page-content">

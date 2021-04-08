@@ -1,184 +1,63 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 import Carousel from 'react-bootstrap/Carousel';
 // == Import
 import './carrousel.scss';
 /* import './carousel.js'; */
 // == Composant
 const Carrousel = ({ productsList }) => {
-  const products = productsList.filter((product) => product.picture);
 
-  const images = [];
-  productsList.forEach((product) => {
-    images.push(product.picture);
-  });
-  console.log('carrousel');
+  const imageBoissons = productsList.filter((product) => product.category.slug === 'boissons');
+  const imageSnack = productsList.filter((product) => product.category.slug === 'snack');
+  const imageGlaces = productsList.filter((product) => product.category.slug === 'glaces');
+  console.log(productsList);
   return (
     <div className="carrousel">
-      <div className="container">
+      <div className="container ">
 
-        <div className="carrousel-line row">
-          <div className="item col-4 d-xs-none">
+        <div className="carrousel-line d-none  d-md-flex row">
+          <div className="col-4 item ">
             <Carousel>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  s
-                  src={`https://www.onthespot.link/back/public/${images[1]}`}
-                  alt="First slide"
-                />
+              {imageBoissons.map((product) => (
+                <Carousel.Item key={product.id}>
+                  <img
+                    className="image center-block "
+                    src={`https://www.onthespot.link/back/public/${product.picture}`}
+                    alt="First slide"
+                  />
 
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[2]}`}
-                  alt="Second slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[3]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[4]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[5]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[6]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[7]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[8]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
+                </Carousel.Item>
+              ))}
             </Carousel>
           </div>
-          <div className="col-4 d-xs-none">
+          <div className="col-4 item ">
             <Carousel>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  s
-                  src={`https://www.onthespot.link/back/public/${images[9]}`}
-                  alt="First slide"
-                />
+              {imageSnack.map((product) => (
+                <Carousel.Item key={product.id}>
+                  <img
+                    className="image center-block "
+                    src={`https://www.onthespot.link/back/public/${product.picture}`}
+                    alt="First slide"
+                  />
 
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[10]}`}
-                  alt="Second slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[11]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[12]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
+                </Carousel.Item>
+              ))}
             </Carousel>
           </div>
-          <div className="col-4 d-xs-none">
+          <div className="col-4 item ">
             <Carousel>
-              <Carousel.Item>
-                <img
-                  className="image"
-                
-                  src={`https://www.onthespot.link/back/public/${images[13]}`}
-                  alt="First slide"
-                />
+              {imageGlaces.map((product) => (
+                <Carousel.Item key={product.id}>
+                  <img
+                    className="image center-block "
+                    src={`https://www.onthespot.link/back/public/${product.picture}`}
+                    alt="First slide"
+                  />
 
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[14]}`}
-                  alt="Second slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[15]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img
-                  className="image"
-                  s
-                  src={`https://www.onthespot.link/back/public/${images[16]}`}
-                  alt="First slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[17]}`}
-                  alt="Second slide"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="image"
-                  src={`https://www.onthespot.link/back/public/${images[18]}`}
-                  alt="Third slide"
-                />
-
-              </Carousel.Item>
+                </Carousel.Item>
+              ))}
             </Carousel>
-
           </div>
 
         </div>
@@ -187,6 +66,17 @@ const Carrousel = ({ productsList }) => {
 
     </div>
   );
+};
+
+Carrousel.propTypes = {
+  productsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 // == Export
