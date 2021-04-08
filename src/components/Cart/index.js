@@ -91,7 +91,11 @@ const Cart = ({
             </button>
           )
             : (
-              <Link className="sendOrderButton" to="/connexion">Valider la commande</Link>
+              <Link to="/connexion">
+                <button type="button">
+                  Valider la commande
+                </button>
+              </Link>
             )}
         </div>
       </form>
