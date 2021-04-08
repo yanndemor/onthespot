@@ -6,7 +6,9 @@ main {
     margin: auto;
 
     .about-intro {
-      margin: 5% 0;
+      max-width: 900px;
+      justify-self: center;
+      margin: 5% auto;
 
       h1 {
         font-size: 2em;
@@ -30,6 +32,7 @@ main {
       margin-top: 7%;
       padding-top: 5%;
       justify-content: center;
+      display: grid;
 
       h1 {
         font-size: 2em;
@@ -48,7 +51,7 @@ main {
           background-color: coral;
           box-shadow: 2px 2px 3px rgba(255, 255, 255, .6),
             -2px -2px 3px rgba(0, 0, 0, .6);
-          margin: 3% 1%;
+          margin: 3% 1% 5%;
           padding: 1em 0em 1em;
           position: relative;
           max-width: 500px;
@@ -101,10 +104,17 @@ main {
   main {
     .about {
       .about-team {
+        .about-intro {
+          margin: 3% 6%;
+        }
+
         .team-cards {
           display: flex;
           flex-wrap: wrap;
-          .team-card {}
+          
+          .team-card {
+            margin: 3% 1.5% 1%;
+          }
         }
       }
     }
