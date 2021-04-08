@@ -28,7 +28,7 @@ const Order = ({
                 <ul className="">
                   <div className="row">
                     <div className="col-7">
-                      <p>P{productItem.product.name}</p>
+                      <p>{productItem.product.name}</p>
                     </div>
                     <p className="quantity col-2">x{productItem.quantity}</p>
                     <p className="price col-3"> {productItem.product.price}€</p>
