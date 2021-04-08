@@ -26,7 +26,7 @@ const RegistrationForm = ({
   };
 
   let flash = null;
-  if (flashMessage.type !== "") {
+  if (flashMessage.type !== '') {
     console.log('il y a un flash message');
     flash = (
       <div className={`alert alert-${flashMessage.type}`} role="alert">
@@ -34,6 +34,11 @@ const RegistrationForm = ({
       </div>
     );
   }
+
+  const RegexMaj = /(?=.*[A-Z])/;
+  const RegexMin = /(?=.*[a-z])/;
+  const RegexNum = /(?=.*[0-9])/;
+  const RegexCar = /(?=.*[_\.!\?\-@~$€£µ,;:+\/])/;
 
   console.log(firstname);
   return (
@@ -68,6 +73,16 @@ const RegistrationForm = ({
           value={passwordRegister}
           helpText="Necessite minimum 8 caracteres, dont au moins 1 majuscule, 1 minuscule, 1 chiffre et 1 caractere spécial parmi : _.!?-@~$€£µ,;:+/"
         />
+        <div className="checkPassword">
+          <ul>
+            {(passwordRegister.length >= 8) && <li>Minimum 8 caractères: ok</li>}
+            {(passwordRegister !== '') && (RegexMaj.test(passwordRegister)) && <li>Majuscule: ok</li>}
+            {(passwordRegister !== '') && (RegexMin.test(passwordRegister)) && <li>Minuscule: ok</li>}
+            {(passwordRegister !== '') && (RegexNum.test(passwordRegister)) && <li>Chiffre: ok</li>}
+            {(passwordRegister !== '') && (RegexCar.test(passwordRegister)) && <li>Caractère spécial: ok</li>}
+            {(passwordRegister !== '') && (passwordRegister === passwordRegisterCheck) && <li>Password identique</li>}
+          </ul>
+        </div>
         <Field
           name="passwordRegisterCheck"
           type="password"
@@ -111,7 +126,5 @@ RegistrationForm.propTypes = {
   isWaiting: PropTypes.bool.isRequired,
 
 };
-
-
 
 export default RegistrationForm;

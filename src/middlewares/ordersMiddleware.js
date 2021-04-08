@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { FETCH_ORDERS, saveOrders } from 'src/actions/orders';
+import { logOut } from 'src/actions/auth';
+
 
 // const API_URL = 'http://ec2-3-85-110-30.compute-1.amazonaws.com/apo-OnTheSpot-back/public/api';
 const API_URL = 'https://api.onthespot.link/api';
@@ -23,6 +25,9 @@ const ordersMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error.response);
+          if (error.response.status === 401) {
+            store.dispatch(logOut());
+          }
         });
 
       next(action);

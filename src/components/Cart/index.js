@@ -32,9 +32,12 @@ const Cart = ({
   const handleChangePoint = (evt) => {
     handleChangeSpot(evt.target.value);
   };
-  
+
   if (redirect !== null && ordersList.some((order) => redirect === order.id)) {
     return <Redirect to={`/commande/${redirect}`} />;
+  }
+  if (redirect !== null && redirect === '/connexion') {
+    return <Redirect to="/connexion" />;
   }
 
   let flash = null;

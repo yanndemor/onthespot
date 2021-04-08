@@ -1,4 +1,4 @@
-import { RETRIEVE_USER, DELETE_USER, EDIT_USER, REDIRECT_TO_NULL, FLASH} from 'src/actions/users';
+import { RETRIEVE_USER, DELETE_USER, EDIT_USER, REDIRECT_TO_NULL, FLASH, RESET_FLASH } from 'src/actions/users';
 import { UPDATE_USER_FIELD } from 'src/actions/auth';
 import { useState } from 'react';
 
@@ -38,6 +38,11 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         flashMessage: { ...state.flashMessage, type: action.flashType, message: action.message },
+      };
+    case RESET_FLASH:
+      return {
+        ...state,
+        flashMessage: { ...state.flashMessage, type: '', message: '' },
       };
     case UPDATE_USER_FIELD:
       if (action.name === 'firstname') {

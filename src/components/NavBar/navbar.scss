@@ -7,7 +7,12 @@
 header {
   background-color: #fedb5b;
   position: relative;
-
+  transition: 0.2s linear;
+  .active{
+    // background-color: #f0f;
+    // box-shadow: 1px 1px 1px 1px black;
+    text-decoration: underline;
+  }
   .navbar {
     position: relative;
     background-color: #e96b42;
@@ -19,6 +24,7 @@ header {
 
     a:hover {
       text-decoration: underline;
+
     }
 
     .navbar-brand {
@@ -26,6 +32,10 @@ header {
 
       img {
         max-height: 3rem;
+      }
+      &:hover{
+        transform: rotate(360deg);
+        transition: transform 1s;
       }
     }
 

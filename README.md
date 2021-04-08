@@ -149,7 +149,7 @@ git revert [hash du commit]
 Si le précèdent message vous convient et que vous voulez pas le modifier :
 
 ```git
-git revert [hash du commit] --no-edit**
+git revert [hash du commit] --no-edit
 ```
 
 #### git reset

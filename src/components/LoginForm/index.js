@@ -16,6 +16,8 @@ const LoginForm = ({
   loggedMessage,
   isWaiting,
   flashMessage,
+  resetRedirect,
+  redirect,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -32,6 +34,10 @@ const LoginForm = ({
         {flashMessage.message}
       </div>
     );
+  }
+
+  if (redirect !== null) {
+    resetRedirect();
   }
 
   console.log(username);

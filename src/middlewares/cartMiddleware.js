@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { flash } from 'src/actions/users';
+import { flash, resetFlash, redirect } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 import {
   SEND_COMMAND,
@@ -9,7 +9,10 @@ import {
   removeCart,
   notWaiting,
   orderSubmitted,
+  redirectTo
 } from 'src/actions/cart';
+
+import { logOut } from 'src/actions/auth';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
@@ -19,6 +22,7 @@ const cartMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SEND_COMMAND: {
       const { orderProducts } = store.getState().cart;
+      const user = JSON.parse(localStorage.getItem('user'));
       console.log(orderProducts);
       const orders = orderProducts.map((products) => {
         console.log(products);
@@ -32,8 +36,9 @@ const cartMiddleware = (store) => (next) => (action) => {
         deliveryTime: store.getState().cart.deliveryTime,
       }, {
         headers: {
-          Authorization: `Bearer ${store.getState().auth.token}`,
+          Authorization: `Bearer ${user}`,
         },
+
       })
         .then((response) => {
           console.log('middleware auth : on dispatch les actions');
@@ -44,15 +49,20 @@ const cartMiddleware = (store) => (next) => (action) => {
           store.dispatch(fetchOrders());
           store.dispatch(orderSubmitted(response.data.id));
           // window.location = `/commande/${response.data.id}`;
+          store.dispatch(resetFlash());
         })
         .catch((error) => {
-          if (error.response.data.code === 401) {
+          console.log('erreur d\'envoi de commande', error.response.status);
+          if (error.response.status === 422) {
             store.dispatch(flash('danger', error.response.data.detail));
             store.dispatch(notWaiting());
           }
-          console.log(error);
-          alert('Vous n\'etes pas connecté');
-          // TODO Rediriger vers connexion
+          if (error.response.status === 401) {
+            store.dispatch(logOut());
+            store.dispatch(redirectTo('/connexion'));
+            store.dispatch(notWaiting());
+          }
+          // alert('Vous n\'etes pas connecté');
         })
         .then(() => {
           // always executed

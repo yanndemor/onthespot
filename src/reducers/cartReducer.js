@@ -12,6 +12,7 @@ import {
   ORDER_WAITING,
   ORDER_SUBMITTED,
   RESET_CART_REDIRECT,
+  REDIRECT_TO,
 } from 'src/actions/cart';
 
 const initialState = {
@@ -69,6 +70,12 @@ function cartReducer(state = initialState, action) {
       return {
         ...state,
         redirect: action.id,
+      };
+
+    case REDIRECT_TO:
+      return {
+        ...state,
+        redirect: action.url,
       };
 
     case RESET_CART_REDIRECT:
