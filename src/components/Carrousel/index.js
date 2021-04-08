@@ -15,14 +15,14 @@ const Carrousel = ({ productsList }) => {
   console.log('carrousel');
   return (
     <div className="carrousel">
-      <div className="container">
+      <div className="container ">
 
-        <div className="carrousel-line row">
-          <div className="item col-4 d-xs-none">
+        <div className="carrousel-line d-none  d-md-flex row">
+          <div className="col-4 item ">
             <Carousel>
               <Carousel.Item>
                 <img
-                  className="image"
+                  className="image center-block "
                   s
                   src={`https://www.onthespot.link/back/public/${images[1]}`}
                   alt="First slide"
@@ -129,7 +129,6 @@ const Carrousel = ({ productsList }) => {
               <Carousel.Item>
                 <img
                   className="image"
-                
                   src={`https://www.onthespot.link/back/public/${images[13]}`}
                   alt="First slide"
                 />
