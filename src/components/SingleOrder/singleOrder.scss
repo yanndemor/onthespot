@@ -21,8 +21,8 @@
   }
 
   .order-state {
-    display: grid;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin : 5%;
     
 
     .content {
@@ -46,31 +46,86 @@
   }
 
   .description-container {
-    border: 2px solid black;
     border-radius:30px;
-    background-color: coral;
     margin:2%;
     padding: 2%;
 
     .products-description {
-      display: grid;
 
       .product-details {
+        display : flex;
+        background-color: #ff7f50;
+        box-shadow:
+        2px 2px 3px rgba(255, 255, 255, 0.6),
+        -2px -2px 3px rgba(0, 0, 0, 0.6);
+        border-radius: 30px;
+        min-height: 135px;
+        margin-bottom: 10px;
+        padding: 1rem 15px 0;
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
 
         .product-picture {
           img{
-            height:50px;
-            width:40px;
-            margin: 0 auto;
-            border: 0;
-            border-radius:55%;
-            background-color: vars.$yellow-color;
-            box-shadow:  2px 2px 3px rgba(255, 255, 255, .6),
-          -2px -2px 3px rgba(0, 0, 0, .6);
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #ffdb5c;
+            box-shadow:
+              2px 2px 3px rgba(255, 255, 255, 0.6),
+              -2px -2px 3px rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
           }
         }
+
+        .product-name {
+          background-color: white;
+          border-radius: 30px;
+          font-size: 15px;
+          margin: auto 20%;
+          font-weight: 900;
+          padding: 2%;
+          box-shadow:  2px 2px 3px rgba(255, 255, 255, .6),
+          -2px -2px 3px rgba(0, 0, 0, .6);
+          width: 35%;
+          height : 20%
+        }
+
+        .product-quantity {
+          width: 10%;
+
+          p {
+              margin-right : 10px;
+              border-radius: 30px;
+              background-color: white;
+              height: 45px;
+              width: 45px;
+          }
+        }
+
+        .product-price {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 80%;
+        height: 45px;
+        width: 45px;
+        font-size: 1em;
+        top: 15px;
+        left: 85px;
+        z-index: 1;
+        background-color: white;
+
+          p {
+            text-align: center;
+          }
+        }
+
       }
     }
   }
 
 }
+
