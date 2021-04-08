@@ -30,7 +30,7 @@ const CartOverview = ({ orderProducts }) => {
     <div className="cartOverview-cart">
       <div className="cartOverview-cart-recap">
         <div className="cartOverview-cart-number">
-          Panier <span className="badge badge-light">{totalQty} articles</span>
+          Panier <span className="badge badge-light">{totalQty} article{totalQty > 1 && 's'}</span>
         </div>
         <div className="cartOverview-cart-total"><span>total : </span>{total} €</div>
       </div>
