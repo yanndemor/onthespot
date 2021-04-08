@@ -69,8 +69,8 @@ const Cart = ({
         <div className="listDelevery">
           <label htmlFor="delevery-point ">Choisir un point de retrait:</label>
           <select onChange={handleChangePoint} required>
-            <option value="">--Choisir un point de retrait--</option>
-            {deliveryPoint.map((point) => <option value={point.id}>{point.name}</option>)}
+            <option value="" >--Choisir un point de retrait--</option>
+            {deliveryPoint.map((point) => <option key={point.id} value={point.id}>{point.name}</option>)}
           </select>
         </div>
 
@@ -79,7 +79,7 @@ const Cart = ({
           <select onChange={handleChange} required>
             <option value="">--Choisir une heure de retrait--</option>
             {/* <option value="test">test</option> */}
-            {stepTime.map((option) => <option value={option.deliveryTime}>{option.deliveryTime}</option>)}
+            {stepTime.map((option) => <option key={option.deliveryTime} value={option.deliveryTime}>{option.deliveryTime}</option>)}
           </select>
 
         </div>

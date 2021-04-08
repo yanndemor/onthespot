@@ -62,8 +62,8 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
       </div>
 
       {theOrder.orderProducts.map((productOrder) => (
-        <div className="description-container">
-          <div key={id} className="products-description">
+        <div key={productOrder.id} className="description-container">
+          <div className="products-description">
             <div className="product-details">
               <div className="product-picture">
                 <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />

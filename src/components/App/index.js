@@ -23,7 +23,7 @@ const App = ({
   loadCategories,
   loadDeliveryPoints,
   loading,
-  user,
+ /*  user, */
   checklogin,
   redirect,
 }) => {
@@ -60,7 +60,7 @@ App.propTypes = {
   loadDeliveryPoints: PropTypes.func.isRequired,
   // user: PropTypes.string.isRequired,
   checklogin: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
+  /* user: PropTypes.object.isRequired, */
   redirect: PropTypes.string,
   loadOrders: PropTypes.func.isRequired,
   loadDeliveryPoints: PropTypes.func.isRequired,
