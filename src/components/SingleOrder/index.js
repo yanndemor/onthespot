@@ -67,15 +67,15 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
             <div className="product-details">
               <div className="product-picture">
                 <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
+                <div className="product-price">
+                  {productOrder.product.price}€
+                </div>
               </div>
               <div className="product-name">
                 {productOrder.product.name}
               </div>
               <div className="product-quantity">
                 x{productOrder.quantity}
-              </div>
-              <div className="product-price">
-                {productOrder.product.price}€
               </div>
             </div>
           </div>

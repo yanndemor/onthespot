@@ -16,7 +16,12 @@
   // margin-top: -2.5em;
   // overflow-y: auto;
 
-  button {
+  .buttonContainer {
+    // padding: 1rem;
+  }
+
+  button,
+  .sendOrderButton {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -29,6 +34,7 @@
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
+    border-radius: 8px;
   }
 
   h2 {
