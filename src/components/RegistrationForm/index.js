@@ -27,7 +27,7 @@ const RegistrationForm = ({
 
   let flash = null;
   if (flashMessage.type !== '') {
-    console.log('il y a un flash message');
+/*     console.log('il y a un flash message'); */
     flash = (
       <div className={`alert alert-${flashMessage.type}`} role="alert">
         {flashMessage.message}
@@ -40,7 +40,7 @@ const RegistrationForm = ({
   const RegexNum = /(?=.*[0-9])/;
   const RegexCar = /(?=.*[_\.!\?\-@~$€£µ,;:+\/])/;
 
-  console.log(firstname);
+/*   console.log(firstname); */
   return (
     <div className="form" id="inscription">
       <h2>Inscription</h2>

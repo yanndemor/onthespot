@@ -17,19 +17,19 @@ import { logOut } from 'src/actions/auth';
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
 const cartMiddleware = (store) => (next) => (action) => {
-  console.log('on a intercepté une action dans le middleware cart: ', action);
-
+ /*  console.log('on a intercepté une action dans le middleware cart: ', action);
+ */
   switch (action.type) {
     case SEND_COMMAND: {
       const { orderProducts } = store.getState().cart;
       const user = JSON.parse(localStorage.getItem('user'));
-      console.log(orderProducts);
+    /*   console.log(orderProducts); */
       const orders = orderProducts.map((products) => {
-        console.log(products);
+      /*   console.log(products); */
         return { product: products.id, quantity: products.quantity };
       });
-      console.log(orders);
-
+      console.log(orders);/* 
+ */
       axios.post(`${API_URL}/orders`, {
         orderProducts: orders,
         deliveryPoint: store.getState().cart.deliveryPointToOrder,
@@ -41,7 +41,7 @@ const cartMiddleware = (store) => (next) => (action) => {
 
       })
         .then((response) => {
-          console.log('middleware auth : on dispatch les actions');
+        /*   console.log('middleware auth : on dispatch les actions'); */
           // vider le panier
           // alert('Votre commande est envoyée vous allez recevoir un mail de confirmation');
           store.dispatch(notWaiting());
@@ -52,7 +52,7 @@ const cartMiddleware = (store) => (next) => (action) => {
           store.dispatch(resetFlash());
         })
         .catch((error) => {
-          console.log('erreur d\'envoi de commande', error.response.status);
+         /*  console.log('erreur d\'envoi de commande', error.response.status); */
           if (error.response.status === 422) {
             store.dispatch(flash('danger', error.response.data.detail));
             store.dispatch(notWaiting());
@@ -77,7 +77,7 @@ const cartMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveDeliveryPoint(response.data));
         })
         .catch((error) => {
-          console.log(error);
+         /*  console.log(error); */
         });
 
       next(action);

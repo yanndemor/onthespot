@@ -42,7 +42,7 @@ const Cart = ({
 
   let flash = null;
   if (flashMessage.type !== "") {
-    console.log('il y a un flash message');
+    /* console.log('il y a un flash message'); */
     flash = (
       <div className={`alert alert-${flashMessage.type}`} role="alert">
         {flashMessage.message}
@@ -51,8 +51,8 @@ const Cart = ({
   }
 
   const stepTime = getStepTime(15, 8, 19);
-  console.log('leopopold', stepTime);
-  console.log('deliverypoint', deliveryPoint);
+  /* console.log('leopopold', stepTime); */
+/*   console.log('deliverypoint', deliveryPoint); */
   return (
     <div className="cart">
       <h2>Panier</h2>

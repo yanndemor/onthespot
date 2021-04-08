@@ -12,13 +12,13 @@ import { Link, useParams } from 'react-router-dom';
 import './products.scss';
 
 const Products = ({ productsList, loading, orderProducts }) => {
-  console.log('the products in products', productsList);
+ /*  console.log('the products in products', productsList); */
 
   const { slug } = useParams();
 
   const products = productsList.filter((product) => product.category.slug === slug);
 
-  console.log('the singleproducts in products', products);
+ /*  console.log('the singleproducts in products', products); */
 
   let cart;
   if (orderProducts.length === 0) {

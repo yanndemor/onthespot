@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+/* import PropTypes from 'prop-types'; */
 import { Redirect, Link, useLocation } from 'react-router-dom';
 import Field from '../LoginForm/Field';
 
@@ -13,15 +13,15 @@ const EditAccount = ({
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('handleEdit appelée');
+   /*  console.log('handleEdit appelée'); */
     handleEdit();
   };
   if (redirect !== null) {
     return <Redirect to={redirect} />;
   }
 
-  console.log('UseLocation: ', useLocation());
-  console.log(userDetail);
+ /*  console.log('UseLocation: ', useLocation()); */
+ /*  console.log(userDetail); */
   return (
     <div className="form" id="connexion">
       <h2>Modifier les champs</h2>

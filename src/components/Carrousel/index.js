@@ -11,7 +11,7 @@ const Carrousel = ({ productsList }) => {
   const imageBoissons = productsList.filter((product) => product.category.slug === 'boissons');
   const imageSnack = productsList.filter((product) => product.category.slug === 'snack');
   const imageGlaces = productsList.filter((product) => product.category.slug === 'glaces');
-  console.log(productsList);
+ /*  console.log(productsList); */
   return (
     <div className="carrousel">
       <div className="container ">

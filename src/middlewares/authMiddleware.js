@@ -38,7 +38,7 @@ const authMiddleware = (store) => (next) => (action) => {
           localStorage.setItem('user', JSON.stringify(response.data.token));
           store.dispatch(fetchOrders());
 
-          console.log(response.data);
+         /*  console.log(response.data); */
 
           store.dispatch(saveUser(
             response.data.logged,
@@ -86,7 +86,7 @@ const authMiddleware = (store) => (next) => (action) => {
           store.dispatch(flash('success', 'Inscription en cours, vous allez recevoir un mail de validation dans quelques minutes'));
         })
         .catch((error) => {
-          console.log(error.response.data.detail);
+        /*   console.log(error.response.data.detail); */
           store.dispatch(flash('danger', error.response.data.detail));
           store.dispatch(notWaiting());
         });

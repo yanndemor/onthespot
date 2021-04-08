@@ -24,7 +24,7 @@ const ordersMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveOrders(response.data));
         })
         .catch((error) => {
-          console.log(error.response);
+        /*   console.log(error.response); */
           if (error.response.status === 401) {
             store.dispatch(logOut());
           }

@@ -14,8 +14,8 @@ const Categories = ({
   productsList,
   loading,
 }) => {
-  console.log('categoriesList', categoriesList);
-  console.log('productsList', productsList);
+  /* console.log('categoriesList', categoriesList); */
+/*   console.log('productsList', productsList); */
   return (
 
     <div>

@@ -13,8 +13,8 @@ const Orders = ({ ordersList }) => {
   const { theId } = useParams();
   // trouver la commande qui a le l'id indiqué
   const order = ordersList.filter((orderItem) => orderItem.id === theId);
-  console.log('La commande :', order);
-
+/*   console.log('La commande :', order);
+ */
   return (
     <main className="orders">
       <h1 className="title">Commandes</h1>
