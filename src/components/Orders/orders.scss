@@ -3,6 +3,8 @@
 .orders {
   // margin: vars.$gutter auto;
   display:block;
+  max-width: 900px;
+  margin: auto;
 
   .title {
     margin-top: 1%;
@@ -29,7 +31,6 @@
            -2px -2px 3px rgba(0, 0, 0, .6);
           
       .order-name {
-        border: 1px solid black;
         border-radius: 10px;
         font-size:15px;
         margin-bottom: 2%;
@@ -40,6 +41,8 @@
         font-weight: vars.$title-font-weight;
         text-transform: uppercase;
         width: 45%;
+        background-color: white;
+        box-shadow: 2px 2px 3px hsla(0,0%,100%,.6), -2px -2px 3px rgba(0,0,0,.6);
       }
 
       .order {
@@ -48,11 +51,15 @@
 
         .order-description {
           display: grid;
-          width : 70%;
-          border: 1px solid black;
+          width : 80%;
           background-color: white;
           border-radius: 12px;
-          padding: 0.5%;
+          padding: 2% 5% 2% 1%;
+          box-shadow: 2px 2px 3px hsla(0,0%,100%,.6), -2px -2px 3px rgba(0,0,0,.6);
+
+          p {
+            font-size: 1.1em;
+          }
         }
 
         .order-state {

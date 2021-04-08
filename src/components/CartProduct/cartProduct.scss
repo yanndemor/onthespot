@@ -116,6 +116,7 @@
 @media (min-width: 576px) {
   .products {
     .product-listElements {
+
       .products-items {
         .product-image {
           width: 5em;
@@ -139,6 +140,9 @@
 @media (min-width: 992px) {
   .products {
     .product-listElements {
+      padding: 0% 2%;
+      margin-left: 3%;
+
       .products-items {
         .product-image {
           width: 9em;
