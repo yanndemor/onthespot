@@ -3,36 +3,109 @@
 main {
 
   .about {
+    margin: auto;
 
     .about-intro {
       margin: 5% 0;
-      
+
       h1 {
         font-size: 2em;
         margin-bottom: 1em;
       }
-    
+
       p {
         font-size: 1.2em;
         margin: 4% 6%;
         line-height: 1.3em;
       }
-    
+
       display: block;
       text-align: center;
       font-family: vars.$title-font;
-      
+
     }
 
     .about-team {
       border-top: 4px solid rgba(255, 127, 80, 0.412);
-      margin-top: 5%;
-      
+      margin-top: 7%;
+      padding-top: 5%;
+      justify-content: center;
+
       h1 {
         font-size: 2em;
         margin-bottom: 1em;
         font-family: vars.$title-font;
         text-align: center;
+      }
+
+      .team-cards {
+        text-align: center;
+        justify-content: center;
+
+        .team-card {
+          border: 0px solid black;
+          border-radius: 10px;
+          background-color: coral;
+          box-shadow: 2px 2px 3px rgba(255, 255, 255, .6),
+            -2px -2px 3px rgba(0, 0, 0, .6);
+          margin: 3% 1%;
+          padding: 1em 0em 1em;
+          position: relative;
+          max-width: 500px;
+          display: flex;
+
+          .team-picture {
+            height: auto;
+            width: auto;
+            max-width: 8em;
+            max-height: 10em;
+            right: .5em;
+            top: -1.4em;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 2px 2px 3px #682107f0;
+          }
+
+          .team-person {
+            // border: 1px solid black;
+            background-color: #fff;
+            max-width: 69%;
+            border-radius: 10px;
+            padding: .6em;
+            -webkit-box-shadow: 2px 2px 3px hsla(0, 0%, 100%, .6), -2px -2px 3px rgba(0, 0, 0, .6);
+            box-shadow: 2px 2px 3px hsla(0, 0%, 100%, .6), -2px -2px 3px rgba(0, 0, 0, .6);
+            margin: 0.5em 1em;
+            font-size: 1.1em;
+
+            h2 {
+              font-size: 1.2em;
+              font-weight: 900;
+            }
+
+            h3 {
+              font-weight: 900;
+              margin-top: 3px;
+            }
+
+            p {
+              margin-top: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    .about {
+      .about-team {
+        .team-cards {
+          display: flex;
+          flex-wrap: wrap;
+          .team-card {}
+        }
       }
     }
   }
