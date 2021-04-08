@@ -4,6 +4,7 @@ export const RETRIEVE_USER = 'RETRIEVE_USER';
 export const FLASH = 'FLASH';
 export const EDIT_USER = 'EDIT_USER';
 export const REDIRECT_TO_NULL = 'REDIRECT_TO_NULL';
+export const RESET_FLASH = 'RESET_FLASH';
 
 export const fetchUser = () => ({
   type: FETCH_USER,
@@ -29,4 +30,8 @@ export const editUser = () => ({
 export const redirectToNull = () => ({
   type: REDIRECT_TO_NULL,
  
-})
+});
+
+export const resetFlash = () => ({
+  type: RESET_FLASH,
+});

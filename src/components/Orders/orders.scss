@@ -21,11 +21,12 @@
     flex-direction: column-reverse;
     
     .order-detail {
-      border: 2px solid black;
       border-radius:30px;
       background-color: coral;
       margin:2%;
       padding: 2%;
+      box-shadow:  2px 2px 3px rgba(255, 255, 255, .6),
+           -2px -2px 3px rgba(0, 0, 0, .6);
           
       .order-name {
         border: 1px solid black;
@@ -73,9 +74,6 @@
             // margin-top: vars.$gutter / 2;
           }
     
-          &:hover {
-            background-color: vars.$order-hover-color;
-          }
       }
 
       }

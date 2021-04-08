@@ -67,6 +67,9 @@ const usersMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+          if (error.response.status === 401) {
+            store.dispatch(logOut());
+          }
         });
 
       next(action);
@@ -91,6 +94,9 @@ const usersMiddleware = (store) => (next) => (action) => {
 
         .catch((error) => {
           console.log(error);
+          if (error.response.status === 401) {
+            store.dispatch(logOut());
+          }
         });
 
       next(action);

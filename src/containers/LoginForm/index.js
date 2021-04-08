@@ -1,4 +1,5 @@
 import { updateUserField, logIn, logOut } from 'src/actions/auth';
+import { resetCartRedirect } from 'src/actions/cart';
 
 import { connect } from 'react-redux';
 
@@ -12,6 +13,9 @@ const mapStateToProps = (state) => ({
   username: state.auth.username,
   password: state.auth.password,
   isLogged: state.auth.isLogged,
+  isWaiting: state.auth.isWaiting,
+  flashMessage: state.Users.flashMessage,
+  redirect: state.cart.redirect,
 });
 
 // === mapDispatchToProps
@@ -27,6 +31,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleLogout: () => {
     dispatch(logOut());
+  },
+
+  resetRedirect: () => {
+    dispatch(resetCartRedirect());
   },
 });
 

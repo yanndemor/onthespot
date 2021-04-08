@@ -10,7 +10,7 @@ import {
   notWaiting,
   logOut,
 } from 'src/actions/auth';
-import { fetchUser, flash } from 'src/actions/users';
+import { fetchUser, flash, resetFlash } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
@@ -46,12 +46,15 @@ const authMiddleware = (store) => (next) => (action) => {
             response.data.user,
           ));
           store.dispatch(fetchUser());
+          store.dispatch(notWaiting());
+          store.dispatch(resetFlash());
         })
 
         .catch((error) => {
-          // console.log(error.response.status);
-          if (error.response.status === 401) {
+          if (error.response.data.code === 401) {
             store.dispatch(logOut());
+            store.dispatch(flash('danger', 'Identifiant ou mot de passe invalide'));
+            store.dispatch(notWaiting());
           }
         });
 

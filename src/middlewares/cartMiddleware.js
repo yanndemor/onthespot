@@ -1,10 +1,15 @@
 import axios from 'axios';
 
+import { flash, resetFlash, redirect } from 'src/actions/users';
+import { fetchOrders } from 'src/actions/orders';
 import {
   SEND_COMMAND,
   FECTH_DELIVERY_POINTS,
   saveDeliveryPoint,
   removeCart,
+  notWaiting,
+  orderSubmitted,
+  redirectTo
 } from 'src/actions/cart';
 
 import { logOut } from 'src/actions/auth';
@@ -38,16 +43,26 @@ const cartMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log('middleware auth : on dispatch les actions');
           // vider le panier
-          alert('Votre commande est envoyée vous allez recevoir un mail de confirmation');
+          // alert('Votre commande est envoyée vous allez recevoir un mail de confirmation');
+          store.dispatch(notWaiting());
           store.dispatch(removeCart());
+          store.dispatch(fetchOrders());
+          store.dispatch(orderSubmitted(response.data.id));
+          // window.location = `/commande/${response.data.id}`;
+          store.dispatch(resetFlash());
         })
         .catch((error) => {
-          console.log(error);
-          alert('Vous n\'etes pas connecté');
-          // TODO Rediriger vers connexion
+          console.log('erreur d\'envoi de commande', error.response.status);
+          if (error.response.status === 422) {
+            store.dispatch(flash('danger', error.response.data.detail));
+            store.dispatch(notWaiting());
+          }
           if (error.response.status === 401) {
             store.dispatch(logOut());
+            store.dispatch(redirectTo('/connexion'));
+            store.dispatch(notWaiting());
           }
+          // alert('Vous n\'etes pas connecté');
         })
         .then(() => {
           // always executed
