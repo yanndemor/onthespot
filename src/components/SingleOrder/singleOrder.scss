@@ -21,17 +21,21 @@
   }
 
   .order-state {
-    justify-content: space-between;
     margin : 5%;
+    
+    
     
 
     .content {
-      justify-content: space-between;
+      display: flex;
+      justify-content: space-around;
       padding: 2%;
       margin-top: 0.5%;
       border: 1px solid black;
       background-color: white;
       border-radius: 10px;
+      width: 100%;
+
     
       .status {
 
@@ -46,10 +50,16 @@
   }
 
   .description-container {
+    display: flex;
     border-radius:30px;
     padding: 2%;
 
     .products-description {
+      align-items: center;
+      margin: auto;
+      max-width: 900px;
+      width : 100%;
+
 
       .product-details {
         display : flex;
@@ -60,10 +70,12 @@
         border-radius: 30px;
         min-height: 135px;
         margin-bottom: 10px;
-        padding: 1rem 15px 0;
+        padding: 0 15px;
         position: relative;
         justify-content: space-between;
         align-items: center;
+        // max-width: 900px;
+        
 
         .product-picture {
           position: relative;
