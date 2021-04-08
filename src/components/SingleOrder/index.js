@@ -40,7 +40,7 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
       <h1 className="title">Détails</h1>
       <h2 className="order-name">Commande {id} du {dateFrCreatedAt} </h2>
       <div className="order-state">
-        <div className="content row">
+        <div className="content row-fluid">
           <div className="status col-3">
             {
             status === 0 && <div>Etat : en attente </div>
