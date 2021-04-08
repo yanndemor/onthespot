@@ -69,7 +69,7 @@ const About = () => (
               <div className="team-person">
                 <h2>Pierre Ferré</h2>
                 <h3>Scrum master & dev back</h3>
-                <p>Il aime la programmation et la galette saucisse, c'est un fier breton, un breton dev.  </p>
+                <p>Il s'est jeté à corps perdu dans la programmation et aime la galette saucisse, c'est un fier breton, un breton dev.  </p>
                 <p>Retrouvez-le ici : <a target="_blank" href="https://www.linkedin.com/in/pierre-ferre/"><Linkedin color="blue" size="1.5em"/></a></p>
               </div>
             </div>
