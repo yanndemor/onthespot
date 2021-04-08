@@ -12,6 +12,8 @@ import {
   redirectTo
 } from 'src/actions/cart';
 
+import { logOut } from 'src/actions/auth';
+
 const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
 
 const cartMiddleware = (store) => (next) => (action) => {
@@ -20,6 +22,7 @@ const cartMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SEND_COMMAND: {
       const { orderProducts } = store.getState().cart;
+      const user = JSON.parse(localStorage.getItem('user'));
       console.log(orderProducts);
       const orders = orderProducts.map((products) => {
         console.log(products);
@@ -33,8 +36,9 @@ const cartMiddleware = (store) => (next) => (action) => {
         deliveryTime: store.getState().cart.deliveryTime,
       }, {
         headers: {
-          Authorization: `Bearer ${store.getState().auth.token}`,
+          Authorization: `Bearer ${user}`,
         },
+
       })
         .then((response) => {
           console.log('middleware auth : on dispatch les actions');
@@ -54,6 +58,7 @@ const cartMiddleware = (store) => (next) => (action) => {
             store.dispatch(notWaiting());
           }
           if (error.response.status === 401) {
+            store.dispatch(logOut());
             store.dispatch(redirectTo('/connexion'));
             store.dispatch(notWaiting());
           }

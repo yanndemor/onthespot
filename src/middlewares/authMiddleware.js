@@ -1,6 +1,15 @@
 import axios from 'axios';
 
-import { LOG_IN, REGISTRATION, LOG_OUT, saveUser, CHECK_LOG_IN, forceLog, notWaiting, logOut } from 'src/actions/auth';
+import {
+  LOG_IN,
+  REGISTRATION,
+  LOG_OUT,
+  saveUser,
+  CHECK_LOG_IN,
+  forceLog,
+  notWaiting,
+  logOut,
+} from 'src/actions/auth';
 import { fetchUser, flash, resetFlash } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 
@@ -43,9 +52,9 @@ const authMiddleware = (store) => (next) => (action) => {
 
         .catch((error) => {
           if (error.response.data.code === 401) {
+            store.dispatch(logOut());
             store.dispatch(flash('danger', 'Identifiant ou mot de passe invalide'));
             store.dispatch(notWaiting());
-            store.dispatch(logOut());
           }
         });
 

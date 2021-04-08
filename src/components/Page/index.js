@@ -9,7 +9,7 @@ import {
 import Products from 'src/containers/Products';
 import Categories from 'src/containers/Categories';
 import PropTypes from 'prop-types';
-
+import About from 'src/components/About';
 import CGU from 'src/components/CGU';
 import Product from 'src/containers/Product';
 import CartProduct from 'src/containers/CartProduct';
@@ -29,6 +29,10 @@ const Page = ({ isLogged, loading }) => (
   <div className="page">
     <div className="page-content">
       <Switch>
+
+        <Route path="/qui-sommes-nous">
+          <About />
+        </Route>
         <Route path="/produits/:slug" exact>
           {/* <div className="row mx-0 position-relative">
             <div className="col-sm-8  "> */}

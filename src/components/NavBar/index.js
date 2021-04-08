@@ -20,7 +20,7 @@ const NavBar = ({ isLogged }) => {
   return (
     <header className="container-fluid">
       <Navbar expand="lg" variant="dark">
-        <NavLink to="/" className="navbar-brand">
+        <NavLink to="/" className="navbar-brand" exact>
           <img src={logoIconeBeach} alt="Logo On The Spot" />
         </NavLink>
         <NavLink to="/panier" className="navlink-cart mr-auto d-lg-none">
@@ -61,7 +61,7 @@ const NavBar = ({ isLogged }) => {
                 <div className="dropdown-divider" />
               </>
             )}
-            <NavLink to="/" className="navlink" activeClassName="active">
+            <NavLink to="/" className="navlink" activeClassName="active" exact>
               Accueil
             </NavLink>
             <div className="dropdown-divider" />
