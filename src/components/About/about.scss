@@ -44,7 +44,6 @@ main {
       .team-cards {
         text-align: center;
         justify-content: center;
-        margin-bottom: 1em;
 
         .team-card {
           border: 0px solid black;
@@ -112,7 +111,7 @@ main {
         .team-cards {
           display: flex;
           flex-wrap: wrap;
-
+          
           .team-card {
             margin: 3% 1.5% 1%;
           }
