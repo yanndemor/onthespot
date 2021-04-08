@@ -21,6 +21,7 @@ const CartProduct = ({ productItems, addTotalCart }) => {
   return (
     <main>
       <div className="products">
+        {(productItems.length === 0) && <div className="emptycart"> Votre panier est vide <img src="https://cdn.pixabay.com/photo/2017/10/10/11/04/shopping-cart-2836779__480.jpg" alt="image de panier vide"/></div>}
         {/* <div className="container"> */}
         {productItems.map((item) => (
           <div key={item.id} className="product-listElements">
@@ -36,7 +37,7 @@ const CartProduct = ({ productItems, addTotalCart }) => {
               </div>
 
               <div className="product-name ">
-                <Link to={`/product/${item.slug}`}>
+                <Link to={`/produit/${item.slug}`}>
                   {item.name}
                 </Link>
               </div>

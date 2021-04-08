@@ -25,7 +25,7 @@ import Account from 'src/containers/Account';
 import EditAccount from 'src/containers/EditAccount';
 import RegistrationForm from '../../containers/RegistrationForm';
 
-import './page.scss'
+import './page.scss';
 
 const Page = ({ isLogged, loading }) => (
   <div className="page">
@@ -63,15 +63,15 @@ const Page = ({ isLogged, loading }) => (
         </Route>
         <Route path="/panier" exact>
           {/* <div className="row position-relative"> */}
-            {loading && <LoadingSpinner />}
-            {!loading && (
-            // <div className="col-sm-8  ">
-              <CartProduct />
-            // </div>
-            )}
-            {/* <div className="col-sm-4 "> */}
-              {/* <Cart /> */}
-            {/* </div> */}
+          {loading && <LoadingSpinner />}
+          {!loading && (
+          // <div className="col-sm-8  ">
+          <CartProduct />
+          // </div>
+          )}
+          {/* <div className="col-sm-4 "> */}
+          {/* <Cart /> */}
+          {/* </div> */}
           {/* </div> */}
         </Route>
         <Route path="/commandes">
