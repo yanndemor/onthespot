@@ -4,7 +4,7 @@
 import React from 'react';
 // import Product from 'src/components/Product';
 import MiniSpinner from 'src/components/MiniSpinner';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './cart.scss';
 import getStepTime from 'src/utils/getStepTime';
@@ -19,6 +19,7 @@ const Cart = ({
   redirect,
   ordersList,
   flashMessage,
+  isLogged,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -41,7 +42,7 @@ const Cart = ({
   }
 
   let flash = null;
-  if (flashMessage.type !== "") {
+  if (flashMessage.type !== '') {
     console.log('il y a un flash message');
     flash = (
       <div className={`alert alert-${flashMessage.type}`} role="alert">
@@ -83,9 +84,16 @@ const Cart = ({
           </select>
 
         </div>
-        <button type="submit">
-          {isWaiting ? <MiniSpinner /> : 'Valider la commande'}
-        </button>
+        <div className="buttonContainer">
+          {isLogged ? (
+            <button type="submit">
+              {isWaiting ? <MiniSpinner /> : 'Valider la commande'}
+            </button>
+          )
+            : (
+              <Link className="sendOrderButton" to="/connexion">Valider la commande</Link>
+            )}
+        </div>
       </form>
     </div>
   );
