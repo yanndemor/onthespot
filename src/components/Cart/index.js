@@ -8,6 +8,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './cart.scss';
 import getStepTime from 'src/utils/getStepTime';
+import { Link } from 'react-router-dom';
 
 const Cart = ({
   handleCart,
@@ -19,6 +20,7 @@ const Cart = ({
   redirect,
   ordersList,
   flashMessage,
+  isLogged,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -83,9 +85,14 @@ const Cart = ({
           </select>
 
         </div>
-        <button type="submit">
-          {isWaiting ? <MiniSpinner /> : 'Valider la commande'}
-        </button>
+        {isLogged ? (
+          <button type="submit">
+            {isWaiting ? <MiniSpinner /> : 'Valider la commande'}
+          </button>
+        )
+          : (
+            <Link to="/connexion" className="button">Valider la commande</Link>
+          )}
       </form>
     </div>
   );

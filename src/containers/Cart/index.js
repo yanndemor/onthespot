@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
   redirect: state.cart.redirect,
   ordersList: state.orders.ordersList,
   flashMessage: state.Users.flashMessage,
+  isLogged: state.auth.isLogged,
 });
 
 // === mapDispatchToProps
