@@ -16,7 +16,7 @@ import ButtonLogout from 'src/containers/ButtonLogout';
 
 // == Composant
 const NavBar = ({ isLogged }) => {
-  console.log('navbar');
+ /*  console.log('navbar'); */
   return (
     <header className="container-fluid">
       <Navbar expand="lg" variant="dark">

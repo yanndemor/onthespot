@@ -8,12 +8,12 @@ import { useParams } from 'react-router-dom';
 import './singleOrder.scss';
 
 const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
-  console.log('ordersList: ----------', ordersList);
+ /*  console.log('ordersList: ----------', ordersList); */
 
   // useParams() retourne un objet qui contient tous les paramètres qu'on a
   // capturés dans l'URL (avec ":") => on décompose pour récupérer les paramètres
   const { id } = useParams();
-  console.log(useParams());
+/*   console.log(useParams()); */
 
   // renvoi la commande qui a l'id indiqué (find retourne nouveau tableau)
   const theOrder = ordersList.find((order) => order.id === parseInt(id, 10));
@@ -21,7 +21,7 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
   const {
     orderProducts, createdAt, status, deliveryTime, deliveryPoint,
   } = theOrder;
-  console.log('theOrder:', theOrder, orderProducts, createdAt, status, deliveryTime, deliveryPoint);
+ /*  console.log('theOrder:', theOrder, orderProducts, createdAt, status, deliveryTime, deliveryPoint); */
   // Calcule du montant total de la commande
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const total = orderProducts.map((productItem) => productItem.product.price * productItem.quantity).reduce(reducer);
@@ -40,7 +40,7 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
       <h1 className="title">Détails</h1>
       <h2 className="order-name">Commande {id} du {dateFrCreatedAt} </h2>
       <div className="order-state">
-        <div className="content row">
+        <div className="content row-fluid">
           <div className="status col-3">
             {
             status === 0 && <div>Etat : en attente </div>
@@ -62,20 +62,20 @@ const SingleOrder = ({ ordersList, redirect, resetRedirect, }) => {
       </div>
 
       {theOrder.orderProducts.map((productOrder) => (
-        <div className="description-container">
-          <div key={id} className="products-description">
+        <div key={productOrder.id} className="description-container">
+          <div className="products-description">
             <div className="product-details">
               <div className="product-picture">
                 <img src={`https://www.onthespot.link/back/public/${productOrder.product.picture}`} alt="product" />
+                <div className="product-price">
+                  {productOrder.product.price}€
+                </div>
               </div>
               <div className="product-name">
                 {productOrder.product.name}
               </div>
               <div className="product-quantity">
                 x{productOrder.quantity}
-              </div>
-              <div className="product-price">
-                {productOrder.product.price}€
               </div>
             </div>
           </div>

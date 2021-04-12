@@ -10,11 +10,11 @@ import './product.scss';
 
 const Product = ({ productsList, categoriesList }) => {
   const { slug } = useParams();
-  console.log('productsList', productsList);
+/*   console.log('productsList', productsList); */
 
   const theProduct = productsList.find((product) => product.slug === slug);
 
-  console.log('the product', theProduct);
+/*   console.log('the product', theProduct); */
 
   
   return (

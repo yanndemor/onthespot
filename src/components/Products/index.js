@@ -12,13 +12,13 @@ import { Link, useParams } from 'react-router-dom';
 import './products.scss';
 
 const Products = ({ productsList, loading, orderProducts }) => {
-  console.log('the products in products', productsList);
+ /*  console.log('the products in products', productsList); */
 
   const { slug } = useParams();
 
   const products = productsList.filter((product) => product.category.slug === slug);
 
-  console.log('the singleproducts in products', products);
+ /*  console.log('the singleproducts in products', products); */
 
   let cart;
   if (orderProducts.length === 0) {
@@ -43,20 +43,20 @@ const Products = ({ productsList, loading, orderProducts }) => {
       <>
         <div className="productsList">
           {products.map((item) => (
-            <>
-              <div key={item.id} className="productsList-product">
-                <Link to={`/produit/${item.slug}`} className="productsList-product-picture">
-                  <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt={item.name} />
-                  <div className="productsList-product-price">{item.price} €</div>
+
+            <div key={item.id} className="productsList-product">
+              <Link to={`/produit/${item.slug}`} className="productsList-product-picture">
+                <img src={`https://www.onthespot.link/back/public/${item.picture}`} alt={item.name} />
+                <div className="productsList-product-price">{item.price} €</div>
+              </Link>
+              <div className="productsList-product-name">
+                <Link to={`/produit/${item.slug}`}>
+                  {item.name}
                 </Link>
-                <div className="productsList-product-name">
-                  <Link to={`/produit/${item.slug}`}>
-                    {item.name}
-                  </Link>
-                </div>
-                <ButtonAddCart product={item} />
               </div>
-            </>
+              <ButtonAddCart product={item} />
+            </div>
+
           ))}
         </div>
 

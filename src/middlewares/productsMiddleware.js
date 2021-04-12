@@ -14,7 +14,7 @@ const productsMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveProducts(response.data));
         })
         .catch((error) => {
-          console.log('error:', error);
+      /*     console.log('error:', error); */
         });
 
       next(action);

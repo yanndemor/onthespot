@@ -9,7 +9,7 @@ import {
 const API_URL = 'https://api.onthespot.link/api';
 
 const usersMiddleware = (store) => (next) => (action) => {
-  console.log('on a intercepté une action dans le middleware user: ', action);
+ /*  console.log('on a intercepté une action dans le middleware user: ', action); */
 
   switch (action.type) {
     case FETCH_USER: {
@@ -26,11 +26,11 @@ const usersMiddleware = (store) => (next) => (action) => {
           // console.log('middleware auth : on dispatch les actions');
 
           store.dispatch(retrieveUser(response.data));
-          console.log('reponse du users', response.data);
+         /*  console.log('reponse du users', response.data); */
         })
 
         .catch((error) => {
-          console.log(error);
+         /*  console.log(error); */
           if (error.response.status === 401) {
             store.dispatch(logOut());
           }
@@ -60,13 +60,13 @@ const usersMiddleware = (store) => (next) => (action) => {
         })
         .then((res) => {
           if (res.status === 200) {
-            console.log('REDIRECTION avec status => ', res.status);
+          /*   console.log('REDIRECTION avec status => ', res.status); */
 
             window.location = '/';
           }
         })
         .catch((error) => {
-          console.log(error);
+         /*  console.log(error); */
           if (error.response.status === 401) {
             store.dispatch(logOut());
           }
@@ -88,12 +88,12 @@ const usersMiddleware = (store) => (next) => (action) => {
 
         .then((res) => {
           if (res.status === 200) {
-            console.log('REDIRECTION avec status => ', res.status);
+         /*    console.log('REDIRECTION avec status => ', res.status); */
           }
         })
 
         .catch((error) => {
-          console.log(error);
+       /*    console.log(error); */
           if (error.response.status === 401) {
             store.dispatch(logOut());
           }

@@ -52,14 +52,14 @@ const Account = ({
 };
 
 Account.propTypes = {
-  userDetail: PropTypes.arrayOf(
+  /* userDetail: PropTypes.arrayOf(
     PropTypes.shape({
       lastname: PropTypes.string.isRequired,
       firstname: PropTypes.string.isRequired,
       telNumber: PropTypes.number.isRequired,
-      email: PropTypes.string.isRequired,
+      email: PropTypes.object.isRequired,
     }).isRequired,
-  ).isRequired,
+  ).isRequired, */
   handleDelete: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
   redirect: PropTypes.string,

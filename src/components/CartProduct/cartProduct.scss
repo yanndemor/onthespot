@@ -5,6 +5,13 @@
   margin-left: 1%;
   margin-bottom: 1%;
   padding: 0 1em;
+  
+  .emptycart{
+    font-size: 1.5rem;
+    img{
+      width: 100%;
+    }
+  }
 
   .product-listElements {
     border: 0 solid black;
@@ -116,6 +123,7 @@
 @media (min-width: 576px) {
   .products {
     .product-listElements {
+
       .products-items {
         .product-image {
           width: 5em;
@@ -139,6 +147,9 @@
 @media (min-width: 992px) {
   .products {
     .product-listElements {
+      padding: 0% 2%;
+      margin-left: 3%;
+
       .products-items {
         .product-image {
           width: 9em;

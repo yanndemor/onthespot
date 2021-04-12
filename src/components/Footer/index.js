@@ -7,7 +7,7 @@ import './footer.scss';
 
 // == Composant
 const Footer = () => {
-  console.log('footer');
+ /*  console.log('footer'); */
   return (
     <div className="footer">
       <div className="footer-mobile d-sm-none">

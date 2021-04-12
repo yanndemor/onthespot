@@ -28,7 +28,7 @@ const LoginForm = ({
 
   let flash = null;
   if (flashMessage.type !== "") {
-    console.log('il y a un flash message');
+    /* console.log('il y a un flash message'); */
     flash = (
       <div className={`alert alert-${flashMessage.type}`} role="alert">
         {flashMessage.message}
@@ -40,7 +40,7 @@ const LoginForm = ({
     resetRedirect();
   }
 
-  console.log(username);
+ /*  console.log(username); */
   return (
     <div>
       {logged && (
