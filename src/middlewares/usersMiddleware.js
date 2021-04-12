@@ -6,7 +6,7 @@ import {
   FETCH_USER, DELETE_USER, EDIT_USER, deleteUser, retrieveUser, editRedirect,
 } from 'src/actions/users';
 
-const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
+const API_URL = 'https://api.onthespot.link/api';
 
 const usersMiddleware = (store) => (next) => (action) => {
  /*  console.log('on a intercepté une action dans le middleware user: ', action); */

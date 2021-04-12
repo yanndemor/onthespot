@@ -14,7 +14,7 @@ import {
 
 import { logOut } from 'src/actions/auth';
 
-const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
+const API_URL = 'https://api.onthespot.link/api';
 
 const cartMiddleware = (store) => (next) => (action) => {
  /*  console.log('on a intercepté une action dans le middleware cart: ', action);

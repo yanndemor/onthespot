@@ -23,13 +23,13 @@ const CartProduct = ({ productItems, addTotalCart }) => {
       <div className="products">
         {(productItems.length === 0) && <div className="emptycart"> Votre panier est vide <img src="https://cdn.pixabay.com/photo/2017/10/10/11/04/shopping-cart-2836779__480.jpg" alt="image de panier vide"/></div>}
         {/* <div className="container"> */}
-        {productItems.map((item) => (
-          <div key={item.id} className="product-listElements">
-            <div className="products-items">
-
-              <div className="product-image">
-                <div className="rounded-picture">
-                  <img src={`https://onthespot.apotheoz.tech/back/public/${item.picture}`} alt="product" />
+          {productItems.map((item) => (
+            <div key={item.id} className="product-listElements">
+              <div className="products-items">
+  
+                <div className="product-image">
+                  <div className="rounded-picture">
+                    <img src={`https://onthespot.link/back/public/${item.picture}`} alt="product" />
                 </div>
                 <div className="px-0 align-self-start price">
                   <p>{item.price}</p>
