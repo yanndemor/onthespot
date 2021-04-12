@@ -28,7 +28,7 @@ const CartProduct = ({ productItems, addTotalCart }) => {
   
                 <div className="product-image">
                   <div className="rounded-picture">
-                    <img src={`https://onthespot.apotheoz.tech/back/public/${item.picture}`} alt="product" />                  
+                    <img src={`https://onthespot.link/back/public/${item.picture}`} alt="product" />                  
                   </div>
                   <div className="px-0 align-self-start price">
                       <p>{item.price}</p>

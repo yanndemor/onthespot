@@ -13,7 +13,7 @@ import {
 import { fetchUser, flash, resetFlash } from 'src/actions/users';
 import { fetchOrders } from 'src/actions/orders';
 
-const API_URL = 'https://onthespot.apotheoz.tech/back/public/api';
+const API_URL = 'https://api.onthespot.link/api';
 
 const authMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware auth: ', action);
