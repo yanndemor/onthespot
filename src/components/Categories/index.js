@@ -8,8 +8,8 @@ import './categories.scss';
 
 const Categories = ({
   categoriesList,
-  productsList,
-  loading,
+ /*  productsList,
+  loading, */
 }) => {
   /* console.log('categoriesList', categoriesList); */
 /*   console.log('productsList', productsList); */
@@ -66,7 +66,7 @@ Categories.propTypes = {
       slug: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  productsList: PropTypes.arrayOf(
+ /*  productsList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
@@ -74,7 +74,7 @@ Categories.propTypes = {
       price: PropTypes.string.isRequired,
       picture: PropTypes.string.isRequired,
     }).isRequired,
-  ).isRequired,
+  ).isRequired, */
 };
 
 export default Categories;
