@@ -7,9 +7,7 @@ import LoadingSpinner from 'src/components/LoadingSpinner';
 import ButtonAddCart from 'src/containers/ButtonAddCart';
 import CartOverview from 'src/containers/CartOverview';
 
-/* import { $ } from 'src/assets/images/products/can-coca.png'; */
 
-/* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './products.scss';
 
 const Products = ({ productsList, loading, orderProducts }) => {
@@ -65,7 +63,8 @@ const Products = ({ productsList, loading, orderProducts }) => {
 
           ))}
         </div>
-
+        {/*   adding components cartOverview aside the List of the productsList
+      with only the one matching the categoy */}
         <CartOverview />
       </>
       )}
