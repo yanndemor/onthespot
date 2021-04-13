@@ -1,8 +1,8 @@
-// === action types
+// action types
 export const FETCH_ORDERS = 'FETCH_ORDERS';
 export const SAVE_ORDERS = 'SAVE_ORDERS';
 
-// === action creators
+// action creators
 export const fetchOrders = () => ({
   type: FETCH_ORDERS,
 });

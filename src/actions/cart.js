@@ -1,3 +1,5 @@
+// action types
+
 export const ADD_CART = 'ADD_CART';
 export const TOTAL_CART = 'TOTAL_CART';
 export const REMOVE_CART = 'REMOVE_CART';
@@ -14,6 +16,8 @@ export const ORDER_SUBMITTED = 'ORDER_SUBMITTED';
 export const RESET_CART_REDIRECT = 'RESET_CART_REDIRECT';
 export const REDIRECT_TO = 'REDIRECT_TO';
 
+// action creators
+
 export const addCart = (product) => ({
   type: ADD_CART,
   // newValue: newValue
@@ -28,8 +32,6 @@ export const notWaiting = () => ({
 
 export const totalCart = (total) => ({
   type: TOTAL_CART,
-  // newValue: newValue
-  // shorthand property (ES6)
   total,
 });
 
@@ -39,15 +41,11 @@ export const removeCart = () => ({
 
 export const timeSelect = (time) => ({
   type: TIME_SELECT,
-  // newValue: newValue
-  // shorthand property (ES6)
   time,
 });
 
 export const spotSelect = (spot) => ({
   type: SPOT_SELECT,
-  // newValue: newValue
-  // shorthand property (ES6)
   spot,
 });
 

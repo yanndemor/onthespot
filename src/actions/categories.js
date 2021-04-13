@@ -1,9 +1,9 @@
-// === action types
+// action types
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const SAVE_CATEGORIES = 'SAVE_CATEGORIES';
 export const SHOW_CATEGORIE = 'SHOW_CATEGORIE';
 
-// === action creators
+// action creators
 export const fetchCategories = () => ({
   type: FETCH_CATEGORIES,
 });

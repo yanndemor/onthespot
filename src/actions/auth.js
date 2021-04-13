@@ -1,3 +1,5 @@
+// action types
+
 export const UPDATE_USER_FIELD = 'UPDATE_USER_FIELD';
 export const LOG_IN = 'LOG_IN';
 export const SAVE_USER = 'SAVE_USER';
@@ -6,6 +8,8 @@ export const REGISTRATION = 'REGISTRATION';
 export const NOT_WAITING = 'NOT_WAITING';
 export const CHECK_LOG_IN = 'CHECK_LOG_IN';
 export const FORCE_LOG = 'FORCE_LOG';
+
+// action creators
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
