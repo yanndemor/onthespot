@@ -7,10 +7,14 @@ const API_URL = 'https://api.onthespot.link/api';
 const productsMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
   switch (action.type) {
+    /* aciton fetch defined in the container of App to load all porducts as soon as the 
+    component app is called (start of the website) */
     case FETCH_PRODUCTS:
+      // request to get all categories from the route defined by the backend
       axios.get(`${API_URL}/products`)
         .then((response) => {
           // console.log('response: ', response);
+          // action creator to save products in the store via productsReducer
           store.dispatch(saveProducts(response.data));
         })
         .catch((error) => {

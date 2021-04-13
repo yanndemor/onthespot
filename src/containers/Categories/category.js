@@ -1,3 +1,4 @@
+//! containers not needed
 import { connect } from 'react-redux';
 
 // on importe le composant de présentation
