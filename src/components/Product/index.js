@@ -9,18 +9,21 @@ import CartOverview from 'src/containers/CartOverview';
 import './product.scss';
 
 const Product = ({ productsList, categoriesList }) => {
+  // use of the parameter of the url slug defined in the Link of the components products
+  // and also in the component page where the route is defined
   const { slug } = useParams();
-/*   console.log('productsList', productsList); */
+  /*   console.log('productsList', productsList); */
 
+  // code lign to find the components containing only the product in the productList
+  // with the slug correspondant
   const theProduct = productsList.find((product) => product.slug === slug);
 
-/*   console.log('the product', theProduct); */
+  /*   console.log('the product', theProduct); */
 
-  
   return (
     <main>
 
-      <div key={theProduct.slug} className="product">        
+      <div key={theProduct.slug} className="product">
         <div className="container  product-detail ">
           <div className="d-flex align-items-center product-header ">
 
@@ -47,10 +50,12 @@ const Product = ({ productsList, categoriesList }) => {
 
           <div className="d-flex  my-4 align-items-center justify-content-center text-center">
             <div className="add-cart-button">
-            <ButtonAddCart product={theProduct} />
+              {/* components to add this product to the cart */}
+              <ButtonAddCart product={theProduct} />
             </div>
           </div>
           <div className="div-button">
+            {/* Link to return to the products page by category */}
             <Link to={`/produits/${theProduct.category.slug}`}>
               <button type="button" className="button-return">Retour à la catégorie {`${theProduct.category.title}`}
               </button>
@@ -60,8 +65,7 @@ const Product = ({ productsList, categoriesList }) => {
         </div>
 
       </div>
-
-      
+      {/* adding the cart into the the component */}
       <CartOverview />
     </main>
   );
