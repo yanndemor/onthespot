@@ -1,11 +1,11 @@
 import React from 'react';
-// import product from 'src/assets/images/products/can-coca.png';
+// import tools
 import PropTypes from 'prop-types';
-import ButtonAddCart from 'src/containers/ButtonAddCart';
 import { useParams, Link } from 'react-router-dom';
+// import components
+import ButtonAddCart from 'src/containers/ButtonAddCart';
 import CartOverview from 'src/containers/CartOverview';
 
-/* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './product.scss';
 
 const Product = ({ productsList, categoriesList }) => {
