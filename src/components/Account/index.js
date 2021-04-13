@@ -36,9 +36,12 @@ const Account = ({
 
       <div className="button-edit-sup">
         <div className="account-delete">
+          {/* eventOnClick to call the request in the userMiddleware to delete the user
+           linked to the token in localstorage */}
           <button type="button" onClick={handleAccount}>Suppression du compte </button>
         </div>
         <div className="account-edit">
+          {/* Link to the components to edit the userDetails */}
           <Link to="/edit-compte">
             <button type="button">modifier vos coordonnées </button>
           </Link>

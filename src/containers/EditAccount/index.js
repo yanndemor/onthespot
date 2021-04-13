@@ -8,11 +8,8 @@ import EditAccount from 'src/components/EditAccount';
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
+  // send userDetail to editAccount to make the user able to see his details and edit them
   userDetail: state.Users.userList,
-/*   prenom: state.Users.userList.firstname,
-  nom: state.Users.userList.lastname,
-  email: state.Users.userList.email,
-  tel: state.Users.userList.telNumber, */
  redirect: state.Users.redirect,
 });
 

@@ -6,9 +6,13 @@ import Account from 'src/components/Account';
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
-  // nom de la prop à remplir: élément à récupérer dans le state
+  
+  /* props with the userDetail obtained from the request fetchUser with the 
+  token obtained during the authentification */
   userDetail: state.Users.userList,
+  /* props needed to execute some actions and display */
   isLogged: state.auth.isLogged,
+  /* Props to redirect to a precise page */
   redirect: state.Users.redirect,
 });
 
@@ -20,7 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log(`newValue '${newValue}' for field '${name}'`);
     dispatch(deleteUser());
   },
- 
+
   resetRedirect: () => {
     dispatch(redirectToNull());
   },

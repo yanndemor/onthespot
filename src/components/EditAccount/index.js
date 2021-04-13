@@ -8,12 +8,15 @@ import './edit-account.scss';
 const EditAccount = ({
   userDetail,
   handleEdit,
+  /* changeField call to a function update UserField in the auth.action file, 
+  defined in the container as well */
   changeField,
   redirect,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
    /*  console.log('handleEdit appelée'); */
+   // call to the action editUser defined in container and file action
     handleEdit();
   };
   if (redirect !== null) {
@@ -61,3 +64,4 @@ const EditAccount = ({
 };
 
 export default EditAccount;
+
