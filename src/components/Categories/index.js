@@ -1,11 +1,8 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
+// import tools
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-/* import { getProductsByCategory } from 'src/utils'; */
-// import LoadingSpinner from 'src/components/LoadingSpinner';
 import PropTypes from 'prop-types';
-
-import Products from 'src/containers/Products';
 
 import './categories.scss';
 
@@ -21,14 +18,19 @@ const Categories = ({
     <div>
       <div className="page-intro">
         <h1>Bonjour à toi ami de la plage !</h1>
-        <p>Et bienvenue sur l'appli qui te permet de régaler tes papilles, d'étancher ta soif et de combler ce p'tit creux sans bouger de ta serviette ! Dégaine ton téléphone, choisis ton bonheur, valide ton panier et un de nos livreurs arrivera avec ta commande dans un temps record !</p>
+        <p>Et bienvenue sur l'appli qui te permet de régaler tes papilles, d'étancher ta soif
+          et de combler ce p'tit creux sans bouger de ta serviette ! Dégaine ton téléphone,
+          choisis ton bonheur, valide ton panier et un de nos livreurs arrivera avec ta commande
+          dans un temps record !
+        </p>
         <p>Relax, les doigts de pieds en éventail, profite du spot ...</p>
       </div>
       <h1 className="page-name">Les catégories de produits</h1>
       <div className="container">
-
+        {/* Mapping the categoriesList tab to display all categories */}
         {categoriesList.map((categorie) => (
           <div key={categorie.id}>
+            {/* link to the products list with slug field matching */}
             <Link to={`/produits/${categorie.slug}`} className="category">
 
               <div className="categories p-2">
