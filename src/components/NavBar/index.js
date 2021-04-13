@@ -1,7 +1,6 @@
 // == Import npm
 import React from 'react';
 
-//!  Logo a récupérer panier et compte
 import { ShoppingCart, User } from 'react-feather';
 import PropTypes from 'prop-types';
 
@@ -15,9 +14,9 @@ import logoIconeBeach from 'src/assets/images/iconbeach.png';
 import ButtonLogout from 'src/containers/ButtonLogout';
 
 // == Composant
-const NavBar = ({ isLogged }) => {
- /*  console.log('navbar'); */
-  return (
+const NavBar = ({ isLogged }) =>
+/*  console.log('navbar'); */
+  (
     <header className="container-fluid">
       <Navbar expand="lg" variant="dark">
         <NavLink to="/" className="navbar-brand" exact>
@@ -54,24 +53,24 @@ const NavBar = ({ isLogged }) => {
             </NavLink>
             <div className="dropdown-divider" />
             {isLogged && (
-              <>
-                <NavLink to="/compte" className="navlink d-none d-lg-inline-block" activeClassName="active">
-                  <User size={20} /> Mon compte
-                </NavLink>
-                <div className="dropdown-divider" />
-              </>
+            <>
+              <NavLink to="/compte" className="navlink d-none d-lg-inline-block" activeClassName="active">
+                <User size={20} /> Mon compte
+              </NavLink>
+              <div className="dropdown-divider" />
+            </>
             )}
             <NavLink to="/" className="navlink" activeClassName="active" exact>
               Accueil
             </NavLink>
             <div className="dropdown-divider" />
             {isLogged && (
-              <>
-                <NavLink to="/commandes" className="navlink" activeClassName="active">
-                  Commandes
-                </NavLink>
-                <div className="dropdown-divider" />
-              </>
+            <>
+              <NavLink to="/commandes" className="navlink" activeClassName="active">
+                Commandes
+              </NavLink>
+              <div className="dropdown-divider" />
+            </>
             )}
             <NavLink to="/qui-sommes-nous" className="navlink" activeClassName="active">
               Qui sommes nous ?
@@ -89,8 +88,6 @@ const NavBar = ({ isLogged }) => {
       <div className="header-title d-none d-lg-block text-center">On The Spot !!!</div>
     </header>
   );
-};
-
 NavBar.propTypes = {
   isLogged: PropTypes.bool.isRequired,
 };

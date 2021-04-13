@@ -1,4 +1,13 @@
-import { UPDATE_USER_FIELD, SAVE_USER, LOG_OUT, FORCE_LOG, REGISTRATION, NOT_WAITING, LOG_IN } from 'src/actions/auth';
+import {
+  UPDATE_USER_FIELD,
+  SAVE_USER,
+  LOG_OUT,
+  FORCE_LOG,
+  REGISTRATION,
+  NOT_WAITING,
+  LOG_IN,
+}
+  from 'src/actions/auth';
 import { DELETE_USER } from 'src/actions/users';
 
 const initialState = {
@@ -104,13 +113,13 @@ function authReducer(state = initialState, action) {
         ...state,
         isWaiting: true,
       };
-      
+
     case FORCE_LOG:
       return {
         ...state,
         isLogged: true,
       };
-      
+
     case DELETE_USER:
       return {
         ...state,

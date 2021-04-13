@@ -1,35 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-/* import Product from 'src/components/Product'; */
 import ButtonAddCart from 'src/containers/ButtonAddCart';
 import Cart from 'src/containers/Cart';
 import { Link } from 'react-router-dom';
-/* import { $ } from 'src/assets/images/products/can-coca.png'; */
-/* import RecipeSmall from 'src/containers/Home/RecipeSmall'; */
 import './cartProduct.scss';
 
 const CartProduct = ({ productItems, addTotalCart }) => {
   /*  console.log('products-items', productItems); */
+  // Sum of the cart
   const testSum = (accumulator, currentValue) => accumulator + currentValue;
   const totalCart = productItems.map((product) => product.price * product.quantity);
   if (totalCart.length !== 0) {
     const total = totalCart.reduce(testSum);
+    // Save Sum of cart in state
     addTotalCart(total);
   }
-  // alert(total);
 
   return (
     <main>
       <div className="products">
-        {(productItems.length === 0) && <div className="emptycart"> Votre panier est vide <img src="https://cdn.pixabay.com/photo/2017/10/10/11/04/shopping-cart-2836779__480.jpg" alt="image de panier vide"/></div>}
-        {/* <div className="container"> */}
-          {productItems.map((item) => (
-            <div key={item.id} className="product-listElements">
-              <div className="products-items">
-  
-                <div className="product-image">
-                  <div className="rounded-picture">
-                    <img src={`https://onthespot.link/back/public/${item.picture}`} alt="product" />
+        {(productItems.length === 0) && <div className="emptycart"> Votre panier est vide <img src="https://cdn.pixabay.com/photo/2017/10/10/11/04/shopping-cart-2836779__480.jpg" alt="image de panier vide" /></div>}
+        {productItems.map((item) => (
+          <div key={item.id} className="product-listElements">
+            <div className="products-items">
+
+              <div className="product-image">
+                <div className="rounded-picture">
+                  <img src={`https://onthespot.link/back/public/${item.picture}`} alt="product" />
                 </div>
                 <div className="px-0 align-self-start price">
                   <p>{item.price}</p>
@@ -54,8 +51,6 @@ const CartProduct = ({ productItems, addTotalCart }) => {
             </div>
           </div>
         ))}
-        {/* </div> */}
-
       </div>
       <Cart />
     </main>

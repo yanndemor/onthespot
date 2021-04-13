@@ -53,7 +53,7 @@ const Cart = ({
 
   const stepTime = getStepTime(15, 8, 19);
   /* console.log('leopopold', stepTime); */
-/*   console.log('deliverypoint', deliveryPoint); */
+  /* console.log('deliverypoint', deliveryPoint); */
   return (
     <div className="cart">
       <h2>Panier</h2>
@@ -107,6 +107,13 @@ Cart.propTypes = {
   handleCart: PropTypes.func.isRequired,
   handleChangeTime: PropTypes.func.isRequired,
   handleChangeSpot: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   totalCart: PropTypes.number.isRequired,
+  ordersList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      deliveryTime: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 export default Cart;

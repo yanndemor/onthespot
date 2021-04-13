@@ -29,20 +29,19 @@ function cartReducer(state = initialState, action) {
       // console.log("state.orderProducts", state.orderProducts);
       // console.log("action.product.id", action.product.id);
       if (!state.orderProducts.some((orderProduct) => orderProduct.id === action.product.id)) {
-        console.log('ok');
+        // console.log('ok');
         return {
           ...state,
           orderProducts:
            [...state.orderProducts, { ...action.product, quantity: 1 }],
         };
-      } 
+      }
       return {
         ...state,
         orderProducts: state.orderProducts.map((product) => (product.id === action.product.id
           ? { ...product, quantity: product.quantity + 1 }
           : product)),
       };
-      
     // eslint-disable-next-line no-fallthrough
     case TIME_SELECT:
       return {
@@ -103,9 +102,6 @@ function cartReducer(state = initialState, action) {
         orderProducts: [],
       };
 
-
-
-
     case UPDATE_QUANTITY: {
       // return state.orderProducts.map((orderproduct) => {
       //   if (orderproduct.id === action.id) {
@@ -139,7 +135,7 @@ function cartReducer(state = initialState, action) {
       };
     }
     case QUANTITY_LESS: {
-      console.log('Suppression d\'un produit dans le panier');
+      // console.log('Suppression d\'un produit dans le panier');
       if (state.orderProducts.find((product) => product.id === action.product.id).quantity <= 1) {
         return {
           ...state,
