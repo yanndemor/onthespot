@@ -13,6 +13,7 @@ const categoriesMiddleware = (store) => (next) => (action) => {
       axios.get(`${API_URL}/categories`)
         .then((response) => {
           // console.log('response: ', response);
+          // action creator to save the categories!
           store.dispatch(saveCategories(response.data));
         })
         .catch((error) => {
