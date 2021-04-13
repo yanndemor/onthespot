@@ -25,23 +25,14 @@ const mapDispatchToProps = (dispatch) => ({
   loadProduct: () => {
     const action = fetchProducts();
     dispatch(action);
-
-    // sans variable intermédiaire :
-    // dispatch(fetchRecipes());
   },
   loadCategories: () => {
     const action = fetchCategories();
     dispatch(action);
-
-    // sans variable intermédiaire :
-    // dispatch(fetchRecipes());
   },
   loadOrders: () => {
     const action = fetchOrders();
     dispatch(action);
-
-    // sans variable intermédiaire :
-    // dispatch(fetchRecipes());
   },
   loadDeliveryPoints: () => {
     const action = fetchDeliveryPoint();

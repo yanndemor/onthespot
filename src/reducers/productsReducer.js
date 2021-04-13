@@ -17,7 +17,7 @@ function productsReducer(state = initialState, action) {
   switch (action.type) {
     case SAVE_PRODUCTS:
       // save products in the empty tab productsList in the initial state above
-      // loadedproducts defined in the file porducts.action
+      // loadedproducts defined in the file products.action
       // passing the props loading to false as well
       return {
         ...state,
